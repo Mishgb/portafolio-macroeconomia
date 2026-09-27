@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0D0D10">
-<title>Portafolio · Macroeconomía · Michelle Griffiths</title>
-<meta name="description" content="Portafolio de Macroeconomía y Empresa: apuntes interactivos, trabajos, ejercicios resueltos y datos macroeconómicos de Bolivia en vivo.">
+<title>Portafolio · Macroeconomía del Desarrollo</title>
+<meta name="description" content="Portafolio de grupo, Macroeconomía del Desarrollo: apuntes interactivos, trabajos, ejercicios resueltos y datos macroeconómicos de Bolivia en vivo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
@@ -102,7 +102,7 @@
 <div class="poster">
   <div class="aguayo thin"></div>
   <nav class="top"><div class="in">
-    <a class="brand" href="#apuntes"><i></i><div>Macroeconomía<small>Portafolio · M. Griffiths</small></div></a>
+    <a class="brand" href="#apuntes"><i></i><div>Macroeconomía<small>Portafolio · Grupo</small></div></a>
     <div class="tabs" id="tabs-top"></div>
   </div></nav>
 
@@ -110,7 +110,7 @@
   <div class="view on" id="v-apuntes">
     <header class="hero2">
       <div>
-        <div class="kicker">Macroeconomía y Empresa · UCB · 2026</div>
+        <div class="kicker">Macroeconomía del Desarrollo · UCB · 2026</div>
         <h1 style="margin-top:10px">Apuntes</h1>
         <p class="sub" id="apuntes-sub">Cada parte del cuaderno convertida en una infografía interactiva: simuladores, calculadoras y casos paso a paso. Toca una tarjeta para abrirla.</p>
       </div>
@@ -148,7 +148,7 @@
     </section>
   </div>
 
-  <footer><div><b id="f-name">Michelle Griffiths Boada</b> · Macroeconomía y Empresa · UCB · 2026</div><div id="f-right">INE · BCB</div></footer>
+  <footer><div><b id="f-name">Portafolio de grupo</b> · Macroeconomía del Desarrollo · UCB · 2026</div><div id="f-right">INE · BCB</div></footer>
   <div class="aguayo"></div>
 </div>
 
@@ -181,7 +181,7 @@
 
   // contenido
   fetch('data/contenido.json',{cache:'no-store'}).then(r=>r.json()).then(c=>{
-    $('f-name').textContent=c.estudiante;document.querySelector('.brand small').textContent='Portafolio · '+c.estudiante.split(' ')[0]+' '+c.estudiante.split(' ')[1];
+    $('f-name').textContent=c.estudiante;document.querySelector('.brand small').textContent='Portafolio · Grupo';
     $('notes').innerHTML=c.apuntes.map((a,i)=>`<a class="note-card" href="${a.archivo}" data-i="${i}"><div class="id">${a.unidad}${a.sesiones?' · '+a.sesiones:''}</div><h3>${a.titulo}</h3><p>${a.resumen}</p><div class="tags">${(a.interactivo||[]).map(t=>`<span class="i">${t}</span>`).join('')}</div></a>`).join('');
     $('notes').querySelectorAll('.note-card').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openNote(c.apuntes[+el.dataset.i]);}));
     const ws=(c.trabajos||[]).slice().sort((a,b)=>b.fecha.localeCompare(a.fecha));

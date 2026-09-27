@@ -1,6 +1,6 @@
 # Portafolio · Macroeconomía y Empresa
 
-Portafolio académico de **Michelle Griffiths Boada** (UCB, 2026). Una sola página con cuatro pestañas: Apuntes (infografías interactivas), Trabajos, Ejercicios y Datos macroeconómicos de Bolivia en vivo (INE · BCB).
+Portafolio académico de grupo, **Macroeconomía del Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con cuatro pestañas: Apuntes (infografías interactivas), Trabajos, Ejercicios y Datos macroeconómicos de Bolivia en vivo (INE · BCB).
 
 ## Estructura
 
