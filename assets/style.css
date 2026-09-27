@@ -1,7 +1,7 @@
-/* Sistema visual · Portafolio Macroeconomía · Michelle Griffiths */
+/* Sistema visual Aguayo Noche · ver DESIGN.md */
 :root{
   --bg:#0D0D10; --bg2:#15151A; --card:#1B1B21; --line:#2A2A33;
-  --text:#ECEAE4; --muted:#9A9890; --dim:#6B6A64;
+  --text:#ECEAE4; --muted:#9A9890; --dim:#8A8880;
   --acento:#E8236B; --azul:#4FB0FF;
   --ok:#3DD68C; --bad:#FF4D5E; --warn:#FFC53D;
   --pad:clamp(18px,5vw,72px);
