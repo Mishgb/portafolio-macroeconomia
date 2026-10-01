@@ -113,11 +113,11 @@
     cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
     const vals=rows.map(x=>x[key]);const mx=Math.max(...vals,0.1),mn=Math.min(...vals,0);const pad={l:38,r:8,t:16,b:26};
     const Y=v=>pad.t+(mx-v)/(mx-mn||1)*(H-pad.t-pad.b);const bw=(W-pad.l-pad.r)/rows.length;
-    ctx.strokeStyle='#26262E';ctx.lineWidth=1;ctx.font='500 9.5px JetBrains Mono';ctx.fillStyle='#9A9890';ctx.textAlign='right';
+    ctx.strokeStyle='#E2D8C4';ctx.lineWidth=1;ctx.font='500 9.5px JetBrains Mono';ctx.fillStyle='#6B6458';ctx.textAlign='right';
     const step=(mx-mn)>15?5:(mx-mn)>6?2:1;for(let v=Math.ceil(mn/step)*step;v<=mx;v+=step){const y=Y(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();ctx.fillText(v+'%',pad.l-5,y+3);}
-    ctx.strokeStyle='#8A8880';ctx.beginPath();ctx.moveTo(pad.l,Y(0));ctx.lineTo(W-pad.r,Y(0));ctx.stroke();
-    rows.forEach((x,i)=>{const v=x[key];const c=v<0?'#3DD68C':color;ctx.fillStyle=c;const x0=pad.l+i*bw+bw*0.15;const y0=Y(Math.max(v,0)),y1=Y(Math.min(v,0));ctx.fillRect(x0,y0,bw*0.7,Math.max(1,y1-y0));
-      if(i===rows.length-1||x.periodo.endsWith('-12')){ctx.fillStyle='#9A9890';ctx.textAlign='center';ctx.font='500 9.5px JetBrains Mono';ctx.fillText(x.periodo.endsWith('-12')?x.anio:MES[+x.periodo.slice(5)-1]+' '+String(x.anio).slice(2),x0+bw*0.35,H-8);}});
+    ctx.strokeStyle='#8C8373';ctx.beginPath();ctx.moveTo(pad.l,Y(0));ctx.lineTo(W-pad.r,Y(0));ctx.stroke();
+    rows.forEach((x,i)=>{const v=x[key];const c=v<0?'#0F7A45':color;ctx.fillStyle=c;const x0=pad.l+i*bw+bw*0.15;const y0=Y(Math.max(v,0)),y1=Y(Math.min(v,0));ctx.fillRect(x0,y0,bw*0.7,Math.max(1,y1-y0));
+      if(i===rows.length-1||x.periodo.endsWith('-12')){ctx.fillStyle='#6B6458';ctx.textAlign='center';ctx.font='500 9.5px JetBrains Mono';ctx.fillText(x.periodo.endsWith('-12')?x.anio:MES[+x.periodo.slice(5)-1]+' '+String(x.anio).slice(2),x0+bw*0.35,H-8);}});
     cv.onclick=e=>{const rect=cv.getBoundingClientRect();const i=Math.floor((e.clientX-rect.left-pad.l)/bw);if(rows[i])$('ipcnote').innerHTML=`<b>${rows[i].mes} ${rows[i].anio}</b> · IPC ${f(rows[i].indice,2)} · mensual ${f(rows[i].mensual,2)}% · acumulada ${f(rows[i].acumulada,2)}% · interanual ${f(rows[i].interanual,2)}%`;};
   }
   function line(cv,pts,label){
@@ -126,11 +126,11 @@
     const pad={l:40,r:14,t:16,b:26};const t0=new Date(pts[0].fecha).getTime(),t1=new Date(pts[pts.length-1].fecha).getTime();
     const vs=pts.map(p=>p.oficial);const mn=Math.floor(Math.min(...vs)-0.5),mx=Math.ceil(Math.max(...vs)+0.5);
     const X=t=>pad.l+(t-t0)/((t1-t0)||1)*(W-pad.l-pad.r),Y=v=>pad.t+(mx-v)/(mx-mn)*(H-pad.t-pad.b);
-    ctx.strokeStyle='#26262E';ctx.font='500 9.5px JetBrains Mono';ctx.fillStyle='#9A9890';ctx.textAlign='right';
+    ctx.strokeStyle='#E2D8C4';ctx.font='500 9.5px JetBrains Mono';ctx.fillStyle='#6B6458';ctx.textAlign='right';
     for(let v=mn;v<=mx;v+=1){ctx.beginPath();ctx.moveTo(pad.l,Y(v));ctx.lineTo(W-pad.r,Y(v));ctx.stroke();ctx.fillText(v.toFixed(0),pad.l-5,Y(v)+3);}
-    ctx.beginPath();ctx.strokeStyle='#E8236B';ctx.lineWidth=2.5;pts.forEach((p,i)=>{const x=X(new Date(p.fecha).getTime()),y=Y(p.oficial);i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
-    pts.forEach(p=>{const x=X(new Date(p.fecha).getTime()),y=Y(p.oficial);ctx.fillStyle='#FFC53D';ctx.beginPath();ctx.arc(x,y,4,0,7);ctx.fill();});
-    ctx.fillStyle='#9A9890';ctx.textAlign='left';ctx.fillText(pts[0].fecha,pad.l,H-8);ctx.textAlign='right';ctx.fillText(pts[pts.length-1].fecha,W-pad.r,H-8);
+    ctx.beginPath();ctx.strokeStyle='#D0185F';ctx.lineWidth=2.5;pts.forEach((p,i)=>{const x=X(new Date(p.fecha).getTime()),y=Y(p.oficial);i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
+    pts.forEach(p=>{const x=X(new Date(p.fecha).getTime()),y=Y(p.oficial);ctx.fillStyle='#D99100';ctx.beginPath();ctx.arc(x,y,4,0,7);ctx.fill();});
+    ctx.fillStyle='#6B6458';ctx.textAlign='left';ctx.fillText(pts[0].fecha,pad.l,H-8);ctx.textAlign='right';ctx.fillText(pts[pts.length-1].fecha,W-pad.r,H-8);
   }
   function render(d){
     const ipc=d.ipc||[],last=ipc[ipc.length-1]||{},tc=d.tipo_cambio||{},ufv=d.ufv||{};
@@ -146,7 +146,7 @@
       <div><small>UFV</small><b>Bs ${f(ufv.valor,5)}</b><span>BCB · ${ufv.fecha||''}</span></div>
       ${dec.map(x=>`<div><small>Inflación ${x.anio}</small><b class="${x.interanual>10?'bad':x.interanual>5?'warn':'ok'}">${f(x.interanual,2)}%</b><span>INE · cierre de año</span></div>`).join('')}`;
     $('src').innerHTML=Object.values(d.fuentes||{}).join('<br>');
-    if(ipc.length){bars($('c1'),ipc,'interanual','#E8236B');bars($('c2'),ipc,'mensual','#4FB0FF');
+    if(ipc.length){bars($('c1'),ipc,'interanual','#D0185F');bars($('c2'),ipc,'mensual','#1A62C0');
       const top=ipc.reduce((a,b)=>b.interanual>a.interanual?b:a);$('ipcnote').innerHTML=`Último dato: <b>${last.mes} ${last.anio}</b>, interanual ${f(last.interanual,2)}%. Pico de la serie: ${top.mes} ${top.anio} con ${f(top.interanual,2)}%. Los meses en verde en el gráfico mensual son deflación (variación negativa).`;}
     const h=d.tc_historico||[];if(h.length>1){line($('c3'),h);const a=h[0].oficial,b=h[h.length-1].oficial;$('tcsub').textContent=`${h[0].fecha} → ${h[h.length-1].fecha}`;
       $('tcgrid').innerHTML=`<div class="card"><h4>Encarecimiento del dólar</h4><p class="mono" style="color:var(--text);font-size:22px">${f((b/a-1)*100,1)}%</p><p>De Bs ${f(a,2)} a Bs ${f(b,2)} por dólar. Es la cifra relevante para un importador.</p></div>

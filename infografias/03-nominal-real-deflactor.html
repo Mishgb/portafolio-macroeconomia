@@ -141,12 +141,12 @@
     cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
     const pad={l:44,r:14,t:18,b:28};const max=Math.max(...rows.map(x=>Math.max(x.nom,x.real)))*1.1;
     const X=i=>pad.l+(i+0.5)*(W-pad.l-pad.r)/3, Y=v=>H-pad.b-v/max*(H-pad.t-pad.b);
-    ctx.strokeStyle='#26262E';ctx.lineWidth=1;ctx.font='500 10px JetBrains Mono';ctx.fillStyle='#9A9890';ctx.textAlign='right';
+    ctx.strokeStyle='#E2D8C4';ctx.lineWidth=1;ctx.font='500 10px JetBrains Mono';ctx.fillStyle='#6B6458';ctx.textAlign='right';
     for(let g=0;g<=4;g++){const v=max*g/4,y=Y(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();ctx.fillText(v.toFixed(0),pad.l-6,y+3);}
     const bw=(W-pad.l-pad.r)/3*0.28;
-    rows.forEach((x,i)=>{ctx.fillStyle='#E8236B';ctx.fillRect(X(i)-bw-2,Y(x.nom),bw,H-pad.b-Y(x.nom));ctx.fillStyle='#4FB0FF';ctx.fillRect(X(i)+2,Y(x.real),bw,H-pad.b-Y(x.real));
-      ctx.fillStyle='#ECEAE4';ctx.textAlign='center';ctx.font='600 11px Manrope';ctx.fillText('Año '+(i+1),X(i),H-10);});
-    ctx.font='600 11px Manrope';ctx.textAlign='left';ctx.fillStyle='#E8236B';ctx.fillText('■ Nominal',pad.l+4,pad.t-4);ctx.fillStyle='#4FB0FF';ctx.fillText('■ Real',pad.l+74,pad.t-4);
+    rows.forEach((x,i)=>{ctx.fillStyle='#D0185F';ctx.fillRect(X(i)-bw-2,Y(x.nom),bw,H-pad.b-Y(x.nom));ctx.fillStyle='#1A62C0';ctx.fillRect(X(i)+2,Y(x.real),bw,H-pad.b-Y(x.real));
+      ctx.fillStyle='#1C1A16';ctx.textAlign='center';ctx.font='600 11px Manrope';ctx.fillText('Año '+(i+1),X(i),H-10);});
+    ctx.font='600 11px Manrope';ctx.textAlign='left';ctx.fillStyle='#D0185F';ctx.fillText('■ Nominal',pad.l+4,pad.t-4);ctx.fillStyle='#1A62C0';ctx.fillText('■ Real',pad.l+74,pad.t-4);
   }
   function update(){
     const q=[100,+$('q2').value,+$('q3').value], p=[1.3,+$('p2').value,+$('p3').value], b=+$('base').value-1;
@@ -156,7 +156,7 @@
     $('tbl').querySelector('tbody').innerHTML=rows.map((r,i)=>`<tr><td>Año ${i+1}${i===b?' (base)':''}</td><td class="n">Bs ${f(r.nom,2)}</td><td class="n">Bs ${f(r.real,2)}</td><td class="n">${f(r.def,1)}</td><td class="n">${r.inf===null?'—':f(r.inf,1)+'%'}</td></tr>`).join('');
     const gn=(rows[2].nom/rows[0].nom-1)*100, gr=(rows[2].real/rows[0].real-1)*100, pi=(rows[2].def/rows[0].def-1)*100;
     $('gn').textContent=f(gn,1)+'%';$('gr').textContent=f(gr,1)+'%';$('pi').textContent=f(pi,1)+'%';
-    $('gr').style.color=gr<0?'#FF4D5E':'#3DD68C';
+    $('gr').style.color=gr<0?'#C62A3A':'#0F7A45';
     let n=`De ${f(gn,1)}% de crecimiento nominal, <b>${f(gr,1)}%</b> fue producción real adicional; el resto (${f(pi,1)}% acumulado) es aumento de precios.`;
     if(gr<0&&gn>0)n+=' <b>Caso 1985 en miniatura:</b> el PIB nominal crece mientras la producción real cae.';
     if(Math.abs(gr+pi-gn)>1.5)n+=` La aproximación g<sub>n</sub> ≈ g<sub>r</sub> + π daría ${f(gr+pi,1)}%: error de ${f(Math.abs(gr+pi-gn),1)} puntos. Con estas tasas se usa la identidad exacta.`;

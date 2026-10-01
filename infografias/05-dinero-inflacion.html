@@ -132,15 +132,15 @@
     cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
     const pad={l:44,r:14,t:20,b:34},maxIT=it(pimax,a)*1.15;
     const X=p=>pad.l+p/300*(W-pad.l-pad.r),Y=v=>H-pad.b-v/maxIT*(H-pad.t-pad.b);
-    ctx.strokeStyle='#26262E';ctx.lineWidth=1;ctx.font='500 10px JetBrains Mono';ctx.fillStyle='#9A9890';
+    ctx.strokeStyle='#E2D8C4';ctx.lineWidth=1;ctx.font='500 10px JetBrains Mono';ctx.fillStyle='#6B6458';
     for(let g=0;g<=4;g++){const y=pad.t+g*(H-pad.t-pad.b)/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();}
     ctx.textAlign='center';for(let p=0;p<=300;p+=50){ctx.fillText(p+'%',X(p),H-pad.b+14);}
-    ctx.strokeStyle='#8A8880';ctx.beginPath();ctx.moveTo(pad.l,pad.t);ctx.lineTo(pad.l,H-pad.b);ctx.lineTo(W-pad.r,H-pad.b);ctx.stroke();
-    ctx.fillStyle='#ECEAE4';ctx.font='600 11px Manrope';ctx.textAlign='right';ctx.fillText('inflación π',W-pad.r,H-pad.b+28);ctx.textAlign='left';ctx.fillText('recaudación real IT',pad.l+4,pad.t-6);
-    ctx.beginPath();ctx.strokeStyle='#E8236B';ctx.lineWidth=3;for(let p=0;p<=300;p+=2){const x=X(p),y=Y(it(p,a));p?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();
-    ctx.setLineDash([4,4]);ctx.strokeStyle='#6B6A64';ctx.beginPath();ctx.moveTo(X(pimax),pad.t);ctx.lineTo(X(pimax),H-pad.b);ctx.stroke();ctx.setLineDash([]);
-    ctx.fillStyle='#FFC53D';ctx.beginPath();ctx.arc(X(pi),Y(it(pi,a)),7,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#0D0D10';ctx.lineWidth=3;ctx.stroke();
-    ctx.fillStyle='#ECEAE4';ctx.font='700 12px Manrope';ctx.textAlign='left';ctx.fillText('π = '+pi+'%',Math.min(X(pi)+10,W-70),Y(it(pi,a))-8);
+    ctx.strokeStyle='#8C8373';ctx.beginPath();ctx.moveTo(pad.l,pad.t);ctx.lineTo(pad.l,H-pad.b);ctx.lineTo(W-pad.r,H-pad.b);ctx.stroke();
+    ctx.fillStyle='#1C1A16';ctx.font='600 11px Manrope';ctx.textAlign='right';ctx.fillText('inflación π',W-pad.r,H-pad.b+28);ctx.textAlign='left';ctx.fillText('recaudación real IT',pad.l+4,pad.t-6);
+    ctx.beginPath();ctx.strokeStyle='#D0185F';ctx.lineWidth=3;for(let p=0;p<=300;p+=2){const x=X(p),y=Y(it(p,a));p?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();
+    ctx.setLineDash([4,4]);ctx.strokeStyle='#766D5C';ctx.beginPath();ctx.moveTo(X(pimax),pad.t);ctx.lineTo(X(pimax),H-pad.b);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='#D99100';ctx.beginPath();ctx.arc(X(pi),Y(it(pi,a)),7,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#FFFBF2';ctx.lineWidth=3;ctx.stroke();
+    ctx.fillStyle='#1C1A16';ctx.font='700 12px Manrope';ctx.textAlign='left';ctx.fillText('π = '+pi+'%',Math.min(X(pi)+10,W-70),Y(it(pi,a))-8);
     let n;
     if(pi<pimax*0.9)n=`Con π = ${pi}% el efecto tasa domina: subir la inflación aún <b>aumenta</b> la recaudación. La base M/P (${f(mp(pi,a),1)}) todavía es alta.`;
     else if(pi<=pimax*1.1)n=`<b>Máximo de la curva.</b> Alrededor de π = ${f(pimax,0)}% el gobierno recauda lo máximo posible por emisión. Más inflación ya no rinde.`;

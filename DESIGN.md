@@ -1,20 +1,20 @@
 ---
 version: alpha
-name: Aguayo Noche
-description: Fondo negro, tipografía moderna, un solo acento fucsia; el aguayo boliviano vive solo como franja tejida. Sistema visual del portafolio de Macroeconomía (UCB 2026), aprobado por Mish y Anton tras tres iteraciones.
+name: Aguayo Crema
+description: Fondo crema, texto negro, tipografía moderna, un solo acento fucsia; el aguayo boliviano vive solo como franja tejida. Sistema visual del portafolio de Macroeconomía (UCB 2026), aprobado por Mish y Anton tras tres iteraciones.
 colors:
-  primary: "#ECEAE4"
-  secondary: "#9A9890"
-  tertiary: "#E8236B"
-  neutral: "#0D0D10"
-  surface: "#15151A"
-  card: "#1B1B21"
-  line: "#2A2A33"
-  dim: "#8A8880"
-  info: "#4FB0FF"
-  ok: "#3DD68C"
-  bad: "#FF4D5E"
-  warn: "#FFC53D"
+  primary: "#1C1A16"
+  secondary: "#4F4A40"
+  tertiary: "#C8155A"
+  neutral: "#F5EEDC"
+  surface: "#EEE5CF"
+  card: "#FFFBF2"
+  line: "#E0D5BE"
+  dim: "#6E6656"
+  info: "#1A62C0"
+  ok: "#0F7A45"
+  bad: "#C62A3A"
+  warn: "#9A5F00"
   aguayo-rojo: "#B4102F"
   aguayo-fucsia: "#E8236B"
   aguayo-azul: "#1F3FBF"
@@ -200,23 +200,23 @@ components:
 
 ## Overview
 
-Aguayo Noche es el sistema visual de los materiales académicos de Mish (UCB, 2026): infografías, portafolio, y más adelante la tesis y su defensa. Nació de una foto de aguayo que la pareja mandó como referencia y de tres rondas de correcciones. La regla que quedó: **el aguayo es identidad, no decoración**. Vive únicamente como franja tejida diagonal arriba y abajo de cada pieza. Todo lo demás es negro, gris carbón, tipografía moderna y un solo acento fucsia.
+Aguayo Crema es el sistema visual de los materiales académicos de Mish (UCB, 2026): infografías, portafolio, y más adelante la tesis y su defensa. Nació de una foto de aguayo que la pareja mandó como referencia y de tres rondas de correcciones. La regla que quedó: **el aguayo es identidad, no decoración**. Vive únicamente como franja tejida diagonal arriba y abajo de cada pieza. Todo lo demás es fondo crema, texto negro, tipografía moderna y un solo acento fucsia. (Antes se llamó Aguayo Noche y era de fondo negro; en septiembre de 2026 el grupo lo cambió a crema.)
 
-Lo que se rechazó, para no volver: fondo crema, paleta multicolor dentro del contenido, tipografías condensadas "de cartel de tienda", emojis, íconos decorativos, grecas de colores como separadores.
+Lo que se rechazó, para no volver: paleta multicolor dentro del contenido, tipografías condensadas "de cartel de tienda", emojis, íconos decorativos, grecas de colores como separadores.
 
 El tono de la redacción es parte del sistema: voz plana de apunte propio. No se escribe "vale la pena", "ojo", "esto es clave", "no es una teoría". Se afirma y punto: "es una identidad contable: se cumple siempre".
 
 ## Colors
 
-- **Neutral (#0D0D10):** fondo de página. Negro con una gota de azul para que no sea negro puro.
-- **Surface (#15151A):** fondo de secciones alternas. Contraste apenas perceptible con el fondo.
-- **Card (#1B1B21) + Line (#2A2A33):** tarjetas gris carbón con borde fino de 1 px. Toda la jerarquía se construye con estas dos, sin sombras.
-- **Primary (#ECEAE4):** texto principal, blanco cálido. Nunca #FFFFFF sobre el fondo.
-- **Secondary (#9A9890):** texto de párrafo. El cuerpo se lee en gris; el énfasis (`<b>`) sube a Primary.
-- **Dim (#8A8880):** metadatos, fuentes, pies. Es el gris más oscuro que pasa WCAG AA sobre Card (4.5:1); no bajar más.
-- **Tertiary (#E8236B, fucsia):** el único acento. Numeración de secciones, kickers, variable destacada en fórmulas, pestaña activa, thumb de sliders, curva o punto de equilibrio nuevo. Si dos cosas compiten por el fucsia, una de las dos no lo lleva.
-- **Info (#4FB0FF):** segunda serie en gráficos y notas informativas. No es acento; no se usa en títulos.
-- **Ok / Bad / Warn:** semáforo estricto. Verde = correcto, rojo = incorrecto, amarillo = advertencia. Nunca como color de marca ni de fondo. En tableros de datos: inflación >10 % en rojo, 5-10 % amarillo, <5 % verde.
+- **Neutral (#F5EEDC):** fondo de página, crema cálido.
+- **Surface (#EEE5CF):** fondo de secciones alternas, un tono más oscuro que el fondo.
+- **Card (#FFFBF2) + Line (#E0D5BE):** tarjetas marfil con borde fino de 1 px. Toda la jerarquía se construye con estas dos, sin sombras.
+- **Primary (#1C1A16):** texto principal, negro cálido.
+- **Secondary (#4F4A40):** texto de párrafo. El cuerpo se lee en gris; el énfasis (`<b>`) sube a Primary.
+- **Dim (#6E6656):** metadatos, fuentes, pies. Pasa WCAG AA (4.5:1) sobre el fondo crema; no aclarar más.
+- **Tertiary (#C8155A, fucsia):** el único acento. Numeración de secciones, kickers, variable destacada en fórmulas, pestaña activa, thumb de sliders, curva o punto de equilibrio nuevo. Si dos cosas compiten por el fucsia, una de las dos no lo lleva.
+- **Info (#1A62C0):** segunda serie en gráficos y notas informativas. No es acento; no se usa en títulos.
+- **Ok / Bad / Warn:** semáforo estricto. Verde (#0F7A45) = correcto, rojo (#C62A3A) = incorrecto, ámbar (#9A5F00) = advertencia; tonos oscurecidos para que se lean sobre crema. Nunca como color de marca ni de fondo. En tableros de datos: inflación >10 % en rojo, 5-10 % amarillo, <5 % verde.
 - **Aguayo (rojo, fucsia, azul, amarillo, verde, naranja, morado):** exclusivamente dentro de `aguayo-band`. Ninguno sale de la franja.
 
 ## Typography
@@ -242,7 +242,7 @@ Escala fluida con `clamp()`; el 90 % de las vistas son desde celular, así que l
 
 ## Elevation & Depth
 
-Sin sombras dentro de la pieza: la profundidad es Neutral → Surface → Card con bordes Line. La única sombra existe en escritorio ancho (`0 30px 80px rgba(0,0,0,.6)`) para separar la pieza del fondo. Los callouts usan fondo teñido al 6-7 % del color del semáforo con borde al 35-40 %.
+Sin sombras dentro de la pieza: la profundidad es Neutral → Surface → Card con bordes Line. La única sombra existe en escritorio ancho (`0 30px 80px rgba(90,64,20,.14)`) para separar la pieza del fondo. Los callouts usan fondo teñido al 6-7 % del color del semáforo con borde al 35-40 %.
 
 ## Shapes
 
@@ -270,4 +270,4 @@ Esquinas de 10 px en tarjetas, fórmulas y callouts; 6 px en botones de caso; p�
 - No: verde/rojo/amarillo para marcar, resaltar o decorar. Solo semáforo.
 - No: voz de IA en los textos.
 - No: `nowrap` + `overflow: hidden` en fórmulas.
-- No: sombras dentro de la pieza, fondos claros, tipografías condensadas.
+- No: sombras dentro de la pieza, fondos oscuros, tipografías condensadas.
