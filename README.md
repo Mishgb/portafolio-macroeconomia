@@ -1,13 +1,15 @@
 # Portafolio · Macroeconomía y Empresa
 
-Portafolio académico de grupo, **Macroeconomía del Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con siete pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabos, bibliografía), Datos macroeconómicos de Bolivia en vivo (INE · BCB), Apuntes (infografías interactivas), Lecturas, Ejercicios, Simulador (IS-LM) y Trabajos.
+Portafolio académico de grupo, **Macroeconomía del Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con siete pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabos, bibliografía), Datos macroeconómicos de Bolivia en vivo (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Lecturas, Ejercicios, Simulador (IS-LM) y Trabajos.
 
 ## Estructura
 
 ```
 index.html               página principal (pestañas)
 assets/style.css         sistema visual compartido
+apuntes/cuaderno/        hojas del cuaderno (una imagen por hoja, en orden)
 infografias/             una infografía interactiva por parte del cuaderno
+simulador/is-lm.html     simulador IS-LM (pestaña Simulador)
 data/contenido.json      macroeconomía, apuntes, lecturas, ejercicios y trabajos (editar aquí para agregar)
 data/macro.json          datos INE/BCB (lo actualiza el script)
 scripts/actualizar_datos.py   descarga IPC, tipo de cambio y UFV del BCB
@@ -26,6 +28,17 @@ trabajos/                archivos entregados
 ```
 
 `estado` puede ser `pendiente`, `entregado` o `calificado`; opcionalmente `"nota": "95"`.
+
+## Agregar una hoja al cuaderno
+
+1. Guardar la imagen en `apuntes/cuaderno/` (por ejemplo `26-hoja-13.jpg`).
+2. Agregar una entrada en la lista `cuaderno` de `data/contenido.json`, en la posición donde debe aparecer:
+
+```json
+{"pag": "13", "titulo": "Trilema de política económica", "archivo": "apuntes/cuaderno/26-hoja-13.jpg", "w": 1700, "h": 2500}
+```
+
+`w` y `h` son el ancho y alto de la imagen en píxeles.
 
 ## Agregar un ejercicio o una lectura
 
