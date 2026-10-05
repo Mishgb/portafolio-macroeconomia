@@ -179,6 +179,23 @@
   .work .btn{margin-top:8px;background:transparent;border:1px solid var(--line);color:var(--muted);font:600 12px 'Manrope';padding:6px 12px;border-radius:999px;cursor:pointer}
   .work .sol{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);line-height:1.55}
   .work.open .sol{display:block}
+  .rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:12px}
+  .rcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 20px 20px 24px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden;min-width:0}
+  .rcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acento)}
+  .rcard .id{font-family:'JetBrains Mono';font-size:11px;color:var(--acento);font-weight:600;letter-spacing:.1em}
+  .rcard h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:0;line-height:1.25}
+  .rcard .by{font-family:'JetBrains Mono';font-size:11px;color:var(--dim)}
+  .rcard p{font-size:13.5px;line-height:1.55}
+  .rfiles{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .rfile{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-decoration:none;color:inherit;transition:border-color .15s}
+  .rfile:hover{border-color:var(--acento)}
+  .rfile .ico{font-family:'JetBrains Mono';font-size:10px;font-weight:600;letter-spacing:.06em;color:#fff;background:var(--acento);border-radius:6px;padding:9px 7px}
+  .rfile .tx{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .rfile small{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--acento);font-weight:600}
+  .rfile b{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
+  .rfile em{font-style:normal;font-size:12px;color:var(--dim);line-height:1.4}
+  .rfile .go{font-size:16px;color:var(--dim)}
+  .rfile:hover .go{color:var(--acento)}
   .empty{border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center;color:var(--dim);font-size:13.5px}
   .empty code{font-family:'JetBrains Mono';color:var(--muted)}
   /* simulador */
@@ -442,7 +459,9 @@
     $('notes').querySelectorAll('.note-card').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openNote(c.apuntes[+el.dataset.i]);}));
     // 4 · Lecturas
     const ls=c.lecturas||[];
-    $('lects').innerHTML=ls.length?ls.map(l=>`<div class="work nodate"><div><h3>${esc(l.titulo)}</h3>${l.autor?`<div class="by">${esc(l.autor)}</div>`:''}${l.descripcion?`<p>${esc(l.descripcion)}</p>`:''}${l.archivo?link(l.archivo,'abrir lectura',true):''}</div></div>`).join(''):'<div class="empty">Próximamente: aquí estarán las lecturas del curso.</div>';
+    const fileA=f=>`<a class="rfile" href="${esc(f.archivo)}" target="_blank" rel="noopener"><span class="ico">PDF</span><span class="tx"><small>${esc(f.tipo||'Archivo')}</small><b>${esc(f.nombre||'')}</b>${f.detalle?`<em>${esc(f.detalle)}</em>`:''}</span><span class="go" aria-hidden="true">↗</span></a>`;
+    $('lects').innerHTML=ls.length?`<div class="rgrid">${ls.map((l,i)=>{const fs=l.archivos||(l.archivo?[{tipo:'Lectura',nombre:l.titulo,archivo:l.archivo}]:[]);
+      return `<div class="rcard"><div class="id">${String(i+1).padStart(2,'0')}</div><h3>${esc(l.titulo)}</h3>${l.autor?`<div class="by">${esc(l.autor)}</div>`:''}${l.descripcion?`<p>${esc(l.descripcion)}</p>`:''}<div class="rfiles">${fs.map(fileA).join('')}</div></div>`;}).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las lecturas del curso.</div>';
     // 5 · Ejercicios
     const es=c.ejercicios||[];
     $('exs').innerHTML=es.length?es.map(e=>`<div class="work${e.fecha?'':' nodate'}">${e.fecha?`<div class="d">${esc(e.fecha)}<small>${esc(e.sesion||'')}</small></div>`:''}<div><h3>${esc(e.titulo)}</h3>${e.descripcion?`<p>${esc(e.descripcion)}</p>`:''}${e.enunciado?`<p>${esc(e.enunciado)}</p>`:''}${e.archivo?link(e.archivo,'abrir práctica',true):''}${e.solucion?`<br><button class="btn">Ver solución</button><div class="sol">${esc(e.solucion)}</div>`:''}</div></div>`).join(''):'<div class="empty">Próximamente: aquí estarán las prácticas resueltas en clase.</div>';

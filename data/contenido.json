@@ -954,7 +954,26 @@
     }
   ],
   "ejercicios": [],
-  "lecturas": [],
+  "lecturas": [
+    {
+      "titulo": "Analizar la política monetaria de Bolivia",
+      "descripcion": "Presentación del Banco Central de Bolivia sobre las medidas de política monetaria y cambiaria de 2026, y el ejercicio del grupo basado en ella.",
+      "archivos": [
+        {
+          "tipo": "Lectura",
+          "nombre": "Medidas de política monetaria y cambiaria",
+          "detalle": "Banco Central de Bolivia · David Iván Espinoza Torrico, presidente a.i. · PDF, 24 láminas",
+          "archivo": "lecturas/01-bcb-medidas-politica-monetaria-cambiaria.pdf"
+        },
+        {
+          "tipo": "Ejercicio",
+          "nombre": "Analizar la política monetaria en Bolivia",
+          "detalle": "Resumen y comentario del grupo · PDF, 3 páginas",
+          "archivo": "lecturas/01-ejercicio-politica-monetaria-bolivia.pdf"
+        }
+      ]
+    }
+  ],
   "integrantes": [
     {
       "nombre": "Michelle Griffiths Boada",
