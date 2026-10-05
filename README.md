@@ -1,6 +1,6 @@
 # Portafolio · Macroeconomía para el Desarrollo
 
-Portafolio académico de grupo, **Macroeconomía para el Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con siete pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabos, bibliografía), Datos macroeconómicos de Bolivia en vivo (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Lecturas, Ejercicios, Simulador (IS-LM) y Trabajos.
+Portafolio académico de grupo, **Macroeconomía para el Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con siete pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabos, bibliografía), Datos macroeconómicos de Bolivia en vivo (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Lecturas, Ejercicios, Simulador (IS-LM), Trabajos y Columnas (columnas de opinión del docente).
 
 ## Estructura
 
@@ -13,6 +13,7 @@ simulador/is-lm.html     simulador IS-LM (pestaña Simulador)
 data/contenido.json      macroeconomía, apuntes, lecturas, ejercicios y trabajos (editar aquí para agregar)
 data/macro.json          datos INE/BCB (lo actualiza el script)
 data/indicadores.json    PIB y desempleo (INE/BCB), se actualiza a mano con cada publicación
+data/columnas.json       columnas del docente (título, fecha, resumen, temas y enlaces)
 scripts/actualizar_datos.py   descarga IPC, tipo de cambio y UFV del BCB
 trabajos/                archivos entregados
 .github/workflows/       actualización diaria automática

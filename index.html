@@ -21,12 +21,12 @@
   nav.top .brand small{display:block;font-family:'JetBrains Mono';font-weight:500;font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
   nav.top .tabs{margin:0;gap:4px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
   nav.top .tabs::-webkit-scrollbar{display:none}
-  nav.top .tabs button{flex:0 0 auto;min-width:0;padding:8px 13px;font-size:13px;border-radius:999px}
+  nav.top .tabs button{flex:0 0 auto;min-width:0;padding:8px 11px;font-size:13px;border-radius:999px}
   @media (max-width:960px){nav.top .tabs{display:none}}
   nav.bottom{display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(245,238,220,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
   nav.bottom .tabs{margin:0;gap:0;padding:6px 4px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
   nav.bottom .tabs::-webkit-scrollbar{display:none}
-  nav.bottom .tabs button{flex:1 1 0;border:0;background:transparent;border-radius:10px;padding:8px 0;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--dim);min-width:0}
+  nav.bottom .tabs button{flex:1 0 56px;border:0;background:transparent;border-radius:10px;padding:8px 0;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--dim);min-width:0}
   nav.bottom .tabs button span{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   nav.bottom .tabs button svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   nav.bottom .tabs button.on{color:var(--acento);background:rgba(200,21,90,.08)}
@@ -196,6 +196,25 @@
   .rfile em{font-style:normal;font-size:12px;color:var(--dim);line-height:1.4}
   .rfile .go{font-size:16px;color:var(--dim)}
   .rfile:hover .go{color:var(--acento)}
+  .col-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+  .col-links a{font:600 12.5px 'Manrope';color:var(--muted);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px}
+  .col-links a:hover{border-color:var(--acento);color:var(--text)}
+  .col-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .col-filter button{font:600 12px 'Manrope';color:var(--muted);border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 12px;cursor:pointer}
+  .col-filter button.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+  .colgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:12px}
+  .col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px 18px 22px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden;min-width:0}
+  .col::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acento)}
+  .col time{font-family:'JetBrains Mono';font-size:11px;color:var(--acento);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .col h3{font-size:17px;font-weight:800;line-height:1.3;margin:0}
+  .col h3 a{color:var(--text);text-decoration:none}
+  .col h3 a:hover{text-decoration:underline;text-decoration-color:var(--acento)}
+  .col p{font-size:13.5px;line-height:1.55;flex:1}
+  .col .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .col .tags span{font-family:'JetBrains Mono';font-size:10px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+  .col .reads{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;padding-top:10px;border-top:1px solid var(--line)}
+  .col .reads a{font:700 12px 'Manrope';color:var(--text);text-decoration:none;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 11px}
+  .col .reads a:hover{border-color:var(--acento);color:var(--acento)}
   .empty{border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center;color:var(--dim);font-size:13.5px}
   .empty code{font-family:'JetBrains Mono';color:var(--muted)}
   /* simulador */
@@ -367,6 +386,16 @@
     <section style="border-top:0;padding-top:0" id="works"></section>
   </div>
 
+  <!-- 8 · COLUMNAS -->
+  <div class="view" id="v-columnas">
+    <header class="hero2"><div><div class="kicker" id="col-autor">Gonzalo Chávez Álvarez</div><h1 style="margin-top:10px">Columnas</h1><p class="sub" id="col-desc"></p><div class="col-links" id="col-links"></div></div></header>
+    <section style="border-top:0;padding-top:0">
+      <div class="col-filter" id="col-filter" role="group" aria-label="Filtrar por tema"></div>
+      <div class="colgrid" id="cols"></div>
+      <div class="src" id="col-src"></div>
+    </section>
+  </div>
+
   <footer><div><b id="f-name">Portafolio de grupo</b> · Macroeconomía para el Desarrollo · UCB · 2026</div><div id="f-right">INE · BCB</div></footer>
   <div class="aguayo"></div>
 </div>
@@ -390,7 +419,8 @@
               ['lecturas','Lecturas','Lecturas','<svg viewBox="0 0 24 24"><path d="M2 5h7a3 3 0 013 3v12a2 2 0 00-2-2H2z"/><path d="M22 5h-7a3 3 0 00-3 3v12a2 2 0 012-2h8z"/></svg>'],
               ['ejercicios','Ejercicios','Ejercicios','<svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>'],
               ['simulador','Simulador','Simulador','<svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>'],
-              ['trabajos','Trabajos','Trabajos','<svg viewBox="0 0 24 24"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3M3 12h18"/></svg>']];
+              ['trabajos','Trabajos','Trabajos','<svg viewBox="0 0 24 24"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3M3 12h18"/></svg>'],
+              ['columnas','Columnas','Columnas','<svg viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 01-2-2z"/><path d="M17 9h3v8a2 2 0 01-2 2"/><path d="M7 9h7M7 12h7M7 15h4"/></svg>']];
   function show(id,push=true){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+id));
     document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('on',b.dataset.tab===id));
     const act=document.querySelector('#tabs-bottom [data-tab="'+id+'"]');if(act)act.scrollIntoView({block:'nearest',inline:'nearest'});
@@ -459,6 +489,24 @@
   $('v-close').addEventListener('click',closeNote);window.addEventListener('keydown',e=>{if(e.key==='Escape')closeNote();});
 
   const link=(href,txt,first)=>`<a${first?' class="first"':''} href="${esc(href)}" target="_blank" rel="noopener">${esc(txt||'abrir archivo')} ↗</a>`;
+
+  // columnas del docente
+  const MESL=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const fechaL=s=>{const [y,m,d]=s.split('-').map(Number);return `${d} de ${MESL[m-1]} de ${y}`;};
+  fetch('data/columnas.json',{cache:'no-store'}).then(r=>r.json()).then(C=>{
+    $('col-autor').textContent=C.autor+' · docente del curso';$('col-desc').textContent=C.descripcion;
+    $('col-links').innerHTML=(C.perfiles||[]).map(p=>`<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.nombre)} ↗</a>`).join('');
+    const cols=(C.columnas||[]).slice().sort((a,b)=>b.fecha.localeCompare(a.fecha));
+    const temas=[...new Set(cols.flatMap(c=>c.temas||[]))].map(x=>[x,cols.filter(c=>(c.temas||[]).includes(x)).length]).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).filter(x=>x[1]>1).map(x=>x[0]);
+    let sel='';
+    const draw=()=>{const vis=sel?cols.filter(c=>(c.temas||[]).includes(sel)):cols;
+      $('cols').innerHTML=vis.map(c=>`<article class="col"><time datetime="${c.fecha}">${fechaL(c.fecha)}</time><h3><a href="${esc(c.enlaces[0].url)}" target="_blank" rel="noopener">${esc(c.titulo)}</a></h3><p>${esc(c.resumen)}</p><div class="tags">${(c.temas||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div><div class="reads">${c.enlaces.map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">Leer en ${esc(l.medio)} ↗</a>`).join('')}</div></article>`).join('');
+      $('col-filter').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.t===sel));};
+    $('col-filter').innerHTML=`<button data-t="">Todas (${cols.length})</button>`+temas.map(x=>`<button data-t="${esc(x)}">${esc(x)}</button>`).join('');
+    $('col-filter').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{sel=b.dataset.t;draw();}));
+    draw();
+    $('col-src').textContent=`${cols.length} columnas desde el ${fechaL(cols[cols.length-1].fecha)} · resúmenes del grupo · última revisión ${fechaL(C.actualizado)}`;
+  }).catch(()=>{$('cols').innerHTML='<div class="empty">No se pudo leer <code>data/columnas.json</code>.</div>';});
 
   // macroeconomía: tarjetas con los datos del sílabo
   function renderMacro(M,integ){const C=M.curso||{},P=M.profesor||{},S=M.silabo||{},B=M.bibliografia||[];
