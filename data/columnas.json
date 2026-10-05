@@ -1,56 +1,237 @@
 {
   "autor": "Gonzalo Chávez Álvarez",
-  "descripcion": "Columnas de opinión del docente del curso, publicadas cada semana desde agosto de 2026. Cada tarjeta resume la idea central con nuestras palabras; el texto completo está en el medio original.",
   "perfiles": [
-    {"nombre": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion-autores/gonzalo-chavez-alvarez"},
-    {"nombre": "El Deber", "url": "https://eldeber.com.bo/autor/gonzalo-chavez-alvarez"},
-    {"nombre": "Facebook", "url": "https://www.facebook.com/share/1cEDZV2Fmt/"}
+    {
+      "nombre": "Noticias Fides",
+      "url": "https://www.noticiasfides.com/opinion-autores/gonzalo-chavez-alvarez"
+    },
+    {
+      "nombre": "El Deber",
+      "url": "https://eldeber.com.bo/autor/gonzalo-chavez-alvarez"
+    },
+    {
+      "nombre": "Facebook",
+      "url": "https://www.facebook.com/share/1cEDZV2Fmt/"
+    }
   ],
   "actualizado": "2026-10-05",
   "columnas": [
-    {"fecha": "2026-10-04", "titulo": "La suegra FMI finalmente abrió la cartera",
-     "resumen": "Con el desembolso del FMI llegan dólares y credibilidad, pero el autor lo ve como un respiro y no como una solución. La prueba real será cumplir las metas del programa y pasar de la estabilización a una economía más productiva y diversificada.",
-     "temas": ["FMI", "Reservas internacionales", "Reformas estructurales"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/la-suegra-fmi-finalmente-abrio-la-cartera__03-10-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/suegra-fmi-finalmente-abrio-cartera_1791071782"}]},
-    {"fecha": "2026-09-27", "titulo": "El dieselazo, el dólar se divorcia y el BCB saca la aspiradora",
-     "resumen": "El alza del diésel, la liberación del tipo de cambio oficial y la absorción de liquidez del BCB llegan al mismo tiempo. Advierte que frenar la inflación solo con restricción monetaria, sin apoyar la producción, puede costar empleo e inversión.",
-     "temas": ["Shock de oferta", "Inflación", "Política monetaria", "Tipo de cambio"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/el-dieselazo-el-dolar-se-divorcia-y-el-bcb-saca-la-aspiradora__27-09-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/dieselazo-dolar-divorcia-bcb-saca-aspiradora_1790458998"}]},
-    {"fecha": "2026-09-20", "titulo": "Del subsidio al misil: Bolivia importa petróleo… y ahora también la guerra",
-     "resumen": "Quitar la subvención universal a los combustibles es correcto, pero deja al consumidor expuesto a los vaivenes del petróleo, que hoy dependen de guerras y sanciones. Propone un mecanismo que amortigüe los shocks extraordinarios y proteja solo a quien lo necesita, en lugar de bonos dispersos.",
-     "temas": ["Subsidios", "Shocks externos", "Focalización"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/del-subsidio-al-misil-bolivia-importa-petroleo-y-ahora-tambien-la-guerra__20-09-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/subsidio-misil-bolivia-importa-petroleo-ahora-guerra_1789866586"}]},
-    {"fecha": "2026-09-13", "titulo": "Tipocambitis aguda: el dólar como obsesión nacional",
-     "resumen": "Describe la obsesión nacional por el precio del dólar y cómo las expectativas pueden convertirse en profecías autocumplidas. Plantea una flexibilidad administrada, con movimientos ordenados, sin congelar el tipo de cambio ni dejarlo a la deriva.",
-     "temas": ["Tipo de cambio", "Expectativas", "Flexibilidad administrada"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/tipocambitis-aguda-el-dolar-como-obsesion-nacional__12-09-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/tipocambitis-aguda-dolar-obsesion-nacional_1789251933"}]},
-    {"fecha": "2026-09-06", "titulo": "Cuando la olla está vacía, hasta la suegra FMI es bienvenida",
-     "resumen": "Defiende aceptar el crédito del FMI de USD 1.900 millones porque las alternativas son peores, aunque advierte que solo compra tiempo para hacer reformas. Critica a exautoridades que hoy cuestionan las condiciones del Fondo después de haber contribuido a la crisis fiscal.",
-     "temas": ["FMI", "Déficit fiscal", "Condicionalidad"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/cuando-la-olla-esta-vacia-hasta-la-suegra-fmi-es-bienvenida__06-09-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/cuando-olla-esta-vacia-suegra-fmi-bienvenida_1788648755"}]},
-    {"fecha": "2026-08-30", "titulo": "Token energético: eliminar el subsidio sin eliminar al paciente",
-     "resumen": "Propone reemplazar el subsidio generalizado a los combustibles por un “token” que asigne cupos subsidiados según el consumo y la actividad, con trazabilidad digital. La idea es reducir el gasto fiscal de forma gradual, sin un salto brusco de precios para los más vulnerables.",
-     "temas": ["Subsidios", "Política fiscal", "Focalización"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/token-energetico-eliminar-el-subsidio-sin-eliminar-al-paciente__29-08-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/token-energetico-eliminar-subsidio-eliminar-paciente_1788038056"}]},
-    {"fecha": "2026-08-23", "titulo": "Mientras miramos el circo, la economía se hunde",
-     "resumen": "Mientras la atención pública se va a los escándalos políticos, la economía acumula recesión, inflación y deterioro social. Sostiene que salir de la crisis exige credibilidad institucional y políticas consistentes, no anuncios.",
-     "temas": ["Recesión", "Inflación", "Pobreza"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/mientras-miramos-el-circo-la-economia-se-hunde__22-08-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/mientras-miramos-circo-economia-hunde_1787438703"}]},
-    {"fecha": "2026-08-17", "titulo": "Diésel a Bs 18 para los grandes consumidores: primera reacción",
-     "resumen": "Primera reacción al precio diferenciado del diésel para grandes consumidores: la medida tiene lógica económica, pero abre la puerta al arbitraje y a presiones inflacionarias. Requiere control digital y una política monetaria prudente para que el costo no se traslade a toda la población.",
-     "temas": ["Subsidios", "Precios diferenciados", "Inflación"],
-     "enlaces": [{"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/diesel-bs-18-grandes-consumidores-primera-reaccion_1786984318"}]},
-    {"fecha": "2026-08-16", "titulo": "Bolivia busca inversionistas: abstenerse alérgicos a la incertidumbre",
-     "resumen": "Una ley de inversiones atractiva no basta: el capital busca seguridad jurídica, estabilidad institucional y reglas previsibles. Sin un acuerdo político duradero, hasta las mejores normas fallarán en atraer inversión extranjera de calidad.",
-     "temas": ["Inversión", "Instituciones", "Seguridad jurídica"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/bolivia-busca-inversionistas-abstenerse-alergicos-a-la-incertidumbre__15-08-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/bolivia-busca-inversionistas-abstenerse-alergicos-incertidumbre_1786841018"}]},
-    {"fecha": "2026-08-09", "titulo": "Discurso presidencial: cuando el espejo aplaude, pero los bolsillos protestan",
-     "resumen": "Sobre el discurso presidencial: los logros anunciados contrastan con lo que la gente vive a diario, como la escasez de combustible y la inflación. La confianza no se decreta desde un podio; se mide en crecimiento, empleo y precios estables.",
-     "temas": ["Confianza", "Recesión", "Empleo"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/discurso-presidencial-cuando-el-espejo-aplaude-pero-los-bolsillos-protestan__09-08-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/cuando-espejo-aplaude-bolsillos-protestan_1786232986"}]},
-    {"fecha": "2026-08-02", "titulo": "El dólar no lee decretos (pero sí las expectativas)",
-     "resumen": "El tipo de cambio responde más a las expectativas que a las normas oficiales. El nuevo reglamento cambiario del BCB es un avance técnico, pero sin credibilidad y disciplina fiscal no logrará estabilizar el dólar.",
-     "temas": ["Tipo de cambio", "Expectativas", "Credibilidad"],
-     "enlaces": [{"medio": "Noticias Fides", "url": "https://www.noticiasfides.com/opinion/el-dolar-no-lee-decretos-pero-si-las-expectativas__02-08-2026"}, {"medio": "El Deber", "url": "https://eldeber.com.bo/opinion/dolar-no-lee-decretos-si-expectativas_1785629024"}]}
+    {
+      "fecha": "2026-10-04",
+      "titulo": "La suegra FMI finalmente abrió la cartera",
+      "resumen": "Con el desembolso del FMI llegan dólares y credibilidad, pero el autor lo ve como un respiro y no como una solución. La prueba real será cumplir las metas del programa y pasar de la estabilización a una economía más productiva y diversificada.",
+      "temas": [
+        "FMI",
+        "Reservas internacionales",
+        "Reformas estructurales"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/la-suegra-fmi-finalmente-abrio-la-cartera__03-10-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/suegra-fmi-finalmente-abrio-cartera_1791071782"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-09-27",
+      "titulo": "El dieselazo, el dólar se divorcia y el BCB saca la aspiradora",
+      "resumen": "El alza del diésel, la liberación del tipo de cambio oficial y la absorción de liquidez del BCB llegan al mismo tiempo. Advierte que frenar la inflación solo con restricción monetaria, sin apoyar la producción, puede costar empleo e inversión.",
+      "temas": [
+        "Shock de oferta",
+        "Inflación",
+        "Política monetaria",
+        "Tipo de cambio"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/el-dieselazo-el-dolar-se-divorcia-y-el-bcb-saca-la-aspiradora__27-09-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/dieselazo-dolar-divorcia-bcb-saca-aspiradora_1790458998"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-09-20",
+      "titulo": "Del subsidio al misil: Bolivia importa petróleo… y ahora también la guerra",
+      "resumen": "Quitar la subvención universal a los combustibles es correcto, pero deja al consumidor expuesto a los vaivenes del petróleo, que hoy dependen de guerras y sanciones. Propone un mecanismo que amortigüe los shocks extraordinarios y proteja solo a quien lo necesita, en lugar de bonos dispersos.",
+      "temas": [
+        "Subsidios",
+        "Shocks externos",
+        "Focalización"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/del-subsidio-al-misil-bolivia-importa-petroleo-y-ahora-tambien-la-guerra__20-09-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/subsidio-misil-bolivia-importa-petroleo-ahora-guerra_1789866586"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-09-13",
+      "titulo": "Tipocambitis aguda: el dólar como obsesión nacional",
+      "resumen": "Describe la obsesión nacional por el precio del dólar y cómo las expectativas pueden convertirse en profecías autocumplidas. Plantea una flexibilidad administrada, con movimientos ordenados, sin congelar el tipo de cambio ni dejarlo a la deriva.",
+      "temas": [
+        "Tipo de cambio",
+        "Expectativas",
+        "Flexibilidad administrada"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/tipocambitis-aguda-el-dolar-como-obsesion-nacional__12-09-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/tipocambitis-aguda-dolar-obsesion-nacional_1789251933"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-09-06",
+      "titulo": "Cuando la olla está vacía, hasta la suegra FMI es bienvenida",
+      "resumen": "Defiende aceptar el crédito del FMI de USD 1.900 millones porque las alternativas son peores, aunque advierte que solo compra tiempo para hacer reformas. Critica a exautoridades que hoy cuestionan las condiciones del Fondo después de haber contribuido a la crisis fiscal.",
+      "temas": [
+        "FMI",
+        "Déficit fiscal",
+        "Condicionalidad"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/cuando-la-olla-esta-vacia-hasta-la-suegra-fmi-es-bienvenida__06-09-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/cuando-olla-esta-vacia-suegra-fmi-bienvenida_1788648755"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-08-30",
+      "titulo": "Token energético: eliminar el subsidio sin eliminar al paciente",
+      "resumen": "Propone reemplazar el subsidio generalizado a los combustibles por un “token” que asigne cupos subsidiados según el consumo y la actividad, con trazabilidad digital. La idea es reducir el gasto fiscal de forma gradual, sin un salto brusco de precios para los más vulnerables.",
+      "temas": [
+        "Subsidios",
+        "Política fiscal",
+        "Focalización"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/token-energetico-eliminar-el-subsidio-sin-eliminar-al-paciente__29-08-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/token-energetico-eliminar-subsidio-eliminar-paciente_1788038056"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-08-23",
+      "titulo": "Mientras miramos el circo, la economía se hunde",
+      "resumen": "Mientras la atención pública se va a los escándalos políticos, la economía acumula recesión, inflación y deterioro social. Sostiene que salir de la crisis exige credibilidad institucional y políticas consistentes, no anuncios.",
+      "temas": [
+        "Recesión",
+        "Inflación",
+        "Pobreza"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/mientras-miramos-el-circo-la-economia-se-hunde__22-08-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/mientras-miramos-circo-economia-hunde_1787438703"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-08-17",
+      "titulo": "Diésel a Bs 18 para los grandes consumidores: primera reacción",
+      "resumen": "Primera reacción al precio diferenciado del diésel para grandes consumidores: la medida tiene lógica económica, pero abre la puerta al arbitraje y a presiones inflacionarias. Requiere control digital y una política monetaria prudente para que el costo no se traslade a toda la población.",
+      "temas": [
+        "Subsidios",
+        "Precios diferenciados",
+        "Inflación"
+      ],
+      "enlaces": [
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/diesel-bs-18-grandes-consumidores-primera-reaccion_1786984318"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-08-16",
+      "titulo": "Bolivia busca inversionistas: abstenerse alérgicos a la incertidumbre",
+      "resumen": "Una ley de inversiones atractiva no basta: el capital busca seguridad jurídica, estabilidad institucional y reglas previsibles. Sin un acuerdo político duradero, hasta las mejores normas fallarán en atraer inversión extranjera de calidad.",
+      "temas": [
+        "Inversión",
+        "Instituciones",
+        "Seguridad jurídica"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/bolivia-busca-inversionistas-abstenerse-alergicos-a-la-incertidumbre__15-08-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/bolivia-busca-inversionistas-abstenerse-alergicos-incertidumbre_1786841018"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-08-09",
+      "titulo": "Discurso presidencial: cuando el espejo aplaude, pero los bolsillos protestan",
+      "resumen": "Sobre el discurso presidencial: los logros anunciados contrastan con lo que la gente vive a diario, como la escasez de combustible y la inflación. La confianza no se decreta desde un podio; se mide en crecimiento, empleo y precios estables.",
+      "temas": [
+        "Confianza",
+        "Recesión",
+        "Empleo"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/discurso-presidencial-cuando-el-espejo-aplaude-pero-los-bolsillos-protestan__09-08-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/cuando-espejo-aplaude-bolsillos-protestan_1786232986"
+        }
+      ]
+    },
+    {
+      "fecha": "2026-08-02",
+      "titulo": "El dólar no lee decretos (pero sí las expectativas)",
+      "resumen": "El tipo de cambio responde más a las expectativas que a las normas oficiales. El nuevo reglamento cambiario del BCB es un avance técnico, pero sin credibilidad y disciplina fiscal no logrará estabilizar el dólar.",
+      "temas": [
+        "Tipo de cambio",
+        "Expectativas",
+        "Credibilidad"
+      ],
+      "enlaces": [
+        {
+          "medio": "Noticias Fides",
+          "url": "https://www.noticiasfides.com/opinion/el-dolar-no-lee-decretos-pero-si-las-expectativas__02-08-2026"
+        },
+        {
+          "medio": "El Deber",
+          "url": "https://eldeber.com.bo/opinion/dolar-no-lee-decretos-si-expectativas_1785629024"
+        }
+      ]
+    }
   ]
 }

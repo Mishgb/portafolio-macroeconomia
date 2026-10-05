@@ -1,6 +1,6 @@
 # Portafolio · Macroeconomía para el Desarrollo
 
-Portafolio académico de grupo, **Macroeconomía para el Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con siete pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabos, bibliografía), Datos macroeconómicos de Bolivia en vivo (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Lecturas, Ejercicios, Simulador (IS-LM), Trabajos y Columnas (columnas de opinión del docente).
+Portafolio académico de grupo, **Macroeconomía para el Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con seis pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabo, bibliografía), Datos macroeconómicos de Bolivia (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Simulador (IS-LM), Trabajos (secciones Lecturas, Ejercicios y Entregas) y Columnas (columnas de opinión del docente).
 
 ## Estructura
 

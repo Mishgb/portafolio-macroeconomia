@@ -199,6 +199,9 @@
   .col-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
   .col-links a{font:600 12.5px 'Manrope';color:var(--muted);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px}
   .col-links a:hover{border-color:var(--acento);color:var(--text)}
+  .tjump button{font:600 12.5px 'Manrope';color:var(--muted);border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px;cursor:pointer}
+  .tjump button:hover{border-color:var(--acento);color:var(--text)}
+  .tsec{scroll-margin-top:66px}
   .col-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
   .col-filter button{font:600 12px 'Manrope';color:var(--muted);border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 12px;cursor:pointer}
   .col-filter button.on{background:var(--text);color:var(--bg);border-color:var(--text)}
@@ -356,18 +359,6 @@
     </section>
   </div>
 
-  <!-- 4 · LECTURAS -->
-  <div class="view" id="v-lecturas">
-    <header class="hero2"><div><div class="kicker">Material del curso</div><h1 style="margin-top:10px">Lecturas</h1><p class="sub">Textos enviados para el curso.</p></div></header>
-    <section style="border-top:0;padding-top:0" id="lects"></section>
-  </div>
-
-  <!-- 5 · EJERCICIOS -->
-  <div class="view" id="v-ejercicios">
-    <header class="hero2"><div><div class="kicker">Práctica</div><h1 style="margin-top:10px">Ejercicios</h1></div></header>
-    <section style="border-top:0;padding-top:0" id="exs"></section>
-  </div>
-
   <!-- 6 · SIMULADOR -->
   <div class="view" id="v-simulador">
     <header class="hero2"><div><div class="kicker">Herramienta interactiva</div><h1 style="margin-top:10px">Simulador IS-LM</h1><p class="sub">La IS recoge el equilibrio del mercado de bienes; la LM, el del mercado de dinero. Su cruce fija producción (Y) y tasa de interés (i). Las políticas desplazan las curvas; los parámetros cambian su inclinación. E₀ es el equilibrio inicial y E₁ el nuevo.</p></div></header>
@@ -377,15 +368,27 @@
     </section>
   </div>
 
-  <!-- 7 · TRABAJOS -->
+  <!-- 7 · TRABAJOS (lecturas, ejercicios y entregas) -->
   <div class="view" id="v-trabajos">
-    <header class="hero2"><div><div class="kicker">Entregas del semestre</div><h1 style="margin-top:10px">Trabajos</h1><p class="sub">Tareas, talleres y actividades, en orden cronológico. Cada entrada enlaza al archivo entregado.</p></div></header>
-    <section style="border-top:0;padding-top:0" id="works"></section>
+    <header class="hero2"><div><div class="kicker">Material y entregas del semestre</div><h1 style="margin-top:10px">Trabajos</h1><p class="sub">Lecturas del curso, ejercicios resueltos y trabajos entregados por el grupo.</p>
+      <div class="col-links tjump"><button data-go="t-lecturas">Lecturas</button><button data-go="t-ejercicios">Ejercicios</button><button data-go="t-entregas">Entregas</button></div></div></header>
+    <section class="tsec" id="t-lecturas" style="border-top:0;padding-top:0">
+      <div class="h2"><div class="num">01</div><h2>Lecturas<small>Textos enviados para el curso.</small></h2></div>
+      <div id="lects"></div>
+    </section>
+    <section class="tsec" id="t-ejercicios">
+      <div class="h2"><div class="num">02</div><h2>Ejercicios<small>Prácticas resueltas por el grupo.</small></h2></div>
+      <div id="exs"></div>
+    </section>
+    <section class="tsec" id="t-entregas">
+      <div class="h2"><div class="num">03</div><h2>Entregas<small>Trabajos entregados, en orden cronológico.</small></h2></div>
+      <div id="works"></div>
+    </section>
   </div>
 
   <!-- 8 · COLUMNAS -->
   <div class="view" id="v-columnas">
-    <header class="hero2"><div><div class="kicker" id="col-autor">Gonzalo Chávez Álvarez</div><h1 style="margin-top:10px">Columnas</h1><p class="sub" id="col-desc"></p><div class="col-links" id="col-links"></div></div></header>
+    <header class="hero2"><div><div class="kicker" id="col-autor">Gonzalo Chávez Álvarez</div><h1 style="margin-top:10px">Columnas</h1><div class="col-links" id="col-links"></div></div></header>
     <section style="border-top:0;padding-top:0">
       <div class="col-filter" id="col-filter" role="group" aria-label="Filtrar por tema"></div>
       <div class="colgrid" id="cols"></div>
@@ -413,11 +416,12 @@
   const TABS=[['macroeconomia','Macroeconomía','Macro','<svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M9.5 10v9M14.5 10v9M19 10v9M3 21h18"/></svg>'],
               ['datos','Datos macroeconómicos','Datos','<svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 16V9M11 16V5M16 16v-7M21 16V11"/></svg>'],
               ['apuntes','Apuntes','Apuntes','<svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h8M16 4v4h4"/></svg>'],
-              ['lecturas','Lecturas','Lecturas','<svg viewBox="0 0 24 24"><path d="M2 5h7a3 3 0 013 3v12a2 2 0 00-2-2H2z"/><path d="M22 5h-7a3 3 0 00-3 3v12a2 2 0 012-2h8z"/></svg>'],
-              ['ejercicios','Ejercicios','Ejercicios','<svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>'],
               ['simulador','Simulador','Simulador','<svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>'],
               ['trabajos','Trabajos','Trabajos','<svg viewBox="0 0 24 24"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3M3 12h18"/></svg>'],
               ['columnas','Columnas','Columnas','<svg viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 01-2-2z"/><path d="M17 9h3v8a2 2 0 01-2 2"/><path d="M7 9h7M7 12h7M7 15h4"/></svg>']];
+  const ALIAS={lecturas:'t-lecturas',ejercicios:'t-ejercicios',entregas:'t-entregas'};
+  function goSection(sec){const el=$(sec);if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),60);}
+  function route(h,push){if(ALIAS[h]){show('trabajos',push);goSection(ALIAS[h]);return true;}if(TABS.some(t=>t[0]===h)){show(h,push);return true;}return false;}
   function show(id,push=true){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+id));
     document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('on',b.dataset.tab===id));
     const act=document.querySelector('#tabs-bottom [data-tab="'+id+'"]');if(act)act.scrollIntoView({block:'nearest',inline:'nearest'});
@@ -426,7 +430,8 @@
   $('tabs-top').innerHTML=TABS.map(t=>`<button data-tab="${t[0]}"><span>${t[1]}</span></button>`).join('');
   $('tabs-bottom').innerHTML=TABS.map(t=>`<button data-tab="${t[0]}">${t[3]}<span>${t[2]}</span></button>`).join('');
   document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
-  window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(TABS.some(t=>t[0]===h))show(h,false);});
+  window.addEventListener('hashchange',()=>route(location.hash.slice(1),false));
+  document.querySelectorAll('.tjump [data-go]').forEach(b=>b.addEventListener('click',()=>goSection(b.dataset.go)));
 
   // simulador: se carga al abrir la pestaña y ajusta su alto al contenido
   let simLoaded=false;
@@ -478,7 +483,7 @@
     pg.addEventListener('touchend',e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,dt=Date.now()-t0.t;t0=null;
       if(window.visualViewport&&visualViewport.scale>1.05)return;
       if(Math.abs(dx)>50&&Math.abs(dx)>1.6*Math.abs(dy)&&dt<800)nbGo(NB.i+(dx<0?1:-1));},{passive:true});})();
-  const initial=(location.hash||'#macroeconomia').slice(1);show(TABS.some(t=>t[0]===initial)?initial:'macroeconomia',false);
+  const initial=(location.hash||'#macroeconomia').slice(1);if(!route(initial,false))show('macroeconomia',false);
 
   // viewer
   function openNote(a){$('v-title').textContent=a.titulo;$('v-open').href=a.archivo;$('v-frame').src=a.archivo;$('viewer').classList.add('on');document.body.style.overflow='hidden';}
@@ -491,7 +496,7 @@
   const MESL=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
   const fechaL=s=>{const [y,m,d]=s.split('-').map(Number);return `${d} de ${MESL[m-1]} de ${y}`;};
   fetch('data/columnas.json',{cache:'no-store'}).then(r=>r.json()).then(C=>{
-    $('col-autor').textContent=C.autor+' · docente del curso';$('col-desc').textContent=C.descripcion;
+    $('col-autor').textContent=C.autor+' · docente del curso';
     $('col-links').innerHTML=(C.perfiles||[]).map(p=>`<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.nombre)} ↗</a>`).join('');
     const cols=(C.columnas||[]).slice().sort((a,b)=>b.fecha.localeCompare(a.fecha));
     const temas=[...new Set(cols.flatMap(c=>c.temas||[]))].map(x=>[x,cols.filter(c=>(c.temas||[]).includes(x)).length]).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).filter(x=>x[1]>1).map(x=>x[0]);
