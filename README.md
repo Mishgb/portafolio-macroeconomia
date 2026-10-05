@@ -1,6 +1,6 @@
-# Portafolio · Macroeconomía y Empresa
+# Portafolio · Macroeconomía para el Desarrollo
 
-Portafolio académico de grupo, **Macroeconomía del Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con siete pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabos, bibliografía), Datos macroeconómicos de Bolivia en vivo (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Lecturas, Ejercicios, Simulador (IS-LM) y Trabajos.
+Portafolio académico de grupo, **Macroeconomía para el Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con siete pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabos, bibliografía), Datos macroeconómicos de Bolivia en vivo (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Lecturas, Ejercicios, Simulador (IS-LM) y Trabajos.
 
 ## Estructura
 
@@ -46,7 +46,7 @@ Misma idea. Lista `ejercicios`: `titulo`, `sesion`, `fecha` (opcional), `descrip
 
 ## Pestaña Macroeconomía
 
-Las tarjetas salen del objeto `macroeconomia` de `data/contenido.json`, con los datos del sílabo (GPP-117, gestión 2026): `curso` y `profesor` (pares etiqueta/valor), `silabo` (justificación, objetivos, metodología y `programa` con las 16 sesiones y sus bloques) y `bibliografia`. La tarjeta Nosotros usa la lista `integrantes`.
+Las tarjetas salen del objeto `macroeconomia` de `data/contenido.json`, con los datos del sílabo (GPP-117, gestión 2026): `curso` y `profesor` (pares etiqueta/valor), `silabo` (justificación, objetivos, metodología y `programa` con las 16 sesiones y sus bloques) y `bibliografia`. La tarjeta Nosotros usa la lista `integrantes`: cada integrante tiene `nombre`, `perfil` y `foto` (imagen cuadrada en `assets/equipo/`). Si `perfil` está vacío, la tarjeta dice "Perfil por completar".
 
 ## Datos
 

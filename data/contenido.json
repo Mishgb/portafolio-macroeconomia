@@ -1,6 +1,6 @@
 {
-  "estudiante": "Grupo · Macroeconomía del Desarrollo",
-  "materia": "Macroeconomía y Empresa",
+  "estudiante": "Grupo · Macroeconomía para el Desarrollo",
+  "materia": "Macroeconomía para el Desarrollo",
   "docente": "Gonzalo Chávez A.",
   "universidad": "Universidad Católica Boliviana",
   "gestion": "2026",
@@ -947,10 +947,30 @@
   "ejercicios": [],
   "lecturas": [],
   "integrantes": [
-    "Henning Aguilar Valencia",
-    "Ofelia Plata Patana",
-    "Michelle Griffiths Boada",
-    "Eliana Hilda Vera Espinoza",
-    "Pablo Alejandro Jaldín"
+    {
+      "nombre": "Michelle Griffiths Boada",
+      "perfil": "Licenciada en Creación y Desarrollo de Empresas, con formación en gestión ágil de proyectos y experiencia en administración, coordinación interinstitucional, gestión documental y planificación logística en entornos académicos, comerciales, bancarios y de cooperación internacional.",
+      "foto": "assets/equipo/michelle-griffiths.jpg"
+    },
+    {
+      "nombre": "Henning Aguilar Valencia",
+      "perfil": "",
+      "foto": ""
+    },
+    {
+      "nombre": "Ofelia Plata Patana",
+      "perfil": "",
+      "foto": ""
+    },
+    {
+      "nombre": "Eliana Hilda Vera Espinoza",
+      "perfil": "",
+      "foto": ""
+    },
+    {
+      "nombre": "Pablo Alejandro Jaldín",
+      "perfil": "",
+      "foto": ""
+    }
   ]
 }
