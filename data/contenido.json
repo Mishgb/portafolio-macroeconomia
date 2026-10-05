@@ -676,7 +676,16 @@
         "obra": "Informe de Economía (11 de julio)",
         "detalle": "Diagnóstico de coyuntura boliviana."
       }
-    ]
+    ],
+    "descargas": {
+      "titulo": "Libros del curso",
+      "enlace": "https://drive.google.com/drive/folders/1R8TIzIQ7jx4V3txf_wUCnsMZvXh676Hf",
+      "items": [
+        "Mankiw, N. G. · Macroeconomía, 8.ª edición (2014)",
+        "Blanchard, O. · Macroeconomía"
+      ],
+      "nota": "Carpeta de Google Drive solo para integrantes del grupo: se abre con una cuenta autorizada."
+    }
   },
   "cuaderno": [
     {

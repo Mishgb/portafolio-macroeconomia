@@ -103,6 +103,13 @@
   .blq li{margin-bottom:2px}
   .blq .lab{display:block;font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:9px 0 2px}
   .blq .lab:first-child{margin-top:0;color:var(--acento)}
+  .dl{margin-top:18px;padding-top:4px;border-top:1px solid var(--line)}
+  .dl-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+  .dl-list li{display:flex;align-items:center;gap:8px;font-size:13.8px;color:var(--text);font-weight:600}
+  .dl-list svg{width:16px;height:16px;flex:0 0 auto;fill:none;stroke:var(--acento);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .dl-btn{display:inline-block;background:var(--acento);color:#fff;font:700 13px 'Manrope';padding:10px 16px;border-radius:999px;text-decoration:none}
+  .dl-btn:hover{filter:brightness(1.08)}
+  .mcard p.dl-note{font-family:'JetBrains Mono';font-size:10.5px;color:var(--dim);margin-top:8px}
   ol.bib{list-style:none;counter-reset:b;display:flex;flex-direction:column;gap:10px;margin-top:4px}
   ol.bib li{counter-increment:b;display:grid;grid-template-columns:26px 1fr;font-size:13.8px;line-height:1.5;color:var(--muted)}
   ol.bib li::before{content:counter(b,decimal-leading-zero);font-family:'JetBrains Mono';font-size:11px;font-weight:600;color:var(--acento);padding-top:2px}
@@ -417,7 +424,11 @@
       </div></div>
       <div class="prog-h"><div class="sub-h" style="margin:0">Programa · ${prog.length} sesiones</div><button class="openall" id="openall">Abrir todo</button></div>
       <div class="ses-grid">${prog.map(ses).join('')}</div>`,'wide');
-    $('mbiblio').innerHTML=card('05','Bibliografía',`<ol class="bib">${B.map(b=>`<li><div><b>${esc(b.autor)}</b> · <i>${esc(b.obra)}</i>${b.detalle?`. ${esc(b.detalle)}`:''}</div></li>`).join('')}</ol>`,'wide');
+    const D=M.descargas;
+    const dl=D&&D.enlace?`<div class="dl"><div class="sub-h">Descargas · ${esc(D.titulo||'')}</div>
+      <ul class="dl-list">${(D.items||[]).map(x=>`<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>${esc(x)}</li>`).join('')}</ul>
+      <a class="dl-btn" href="${esc(D.enlace)}" target="_blank" rel="noopener">Abrir carpeta en Google Drive ↗</a>${D.nota?`<p class="dl-note">${esc(D.nota)}</p>`:''}</div>`:'';
+    $('mbiblio').innerHTML=card('05','Bibliografía',`<ol class="bib">${B.map(b=>`<li><div><b>${esc(b.autor)}</b> · <i>${esc(b.obra)}</i>${b.detalle?`. ${esc(b.detalle)}`:''}</div></li>`).join('')}</ol>${dl}`,'wide');
     const oa=$('openall');if(oa)oa.addEventListener('click',()=>{const ds=[...document.querySelectorAll('#msilabo details')];const open=!ds.every(d=>d.open);ds.forEach(d=>d.open=open);oa.textContent=open?'Cerrar todo':'Abrir todo';});
   }
 
