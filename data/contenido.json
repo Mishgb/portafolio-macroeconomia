@@ -977,6 +977,24 @@
           "archivo": "ejercicios/02-practica-derivando-curva-is.pdf"
         }
       ]
+    },
+    {
+      "titulo": "Políticas contractivas IS-LM",
+      "descripcion": "Modelo IS-LM-BP en economía abierta: el equilibrio inicial y los efectos de una política monetaria y una política fiscal contractivas, con tipo de cambio fijo y flexible, paso a paso y con gráficos.",
+      "archivos": [
+        {
+          "tipo": "Presentación",
+          "nombre": "Políticas contractivas IS-LM",
+          "detalle": "Ver en el navegador · PDF, 3 láminas",
+          "archivo": "ejercicios/03-politicas-contractivas-is-lm.pdf"
+        },
+        {
+          "tipo": "Original",
+          "nombre": "Políticas contractivas IS-LM (PowerPoint)",
+          "detalle": "Descargar el archivo editable · PPTX",
+          "archivo": "ejercicios/03-politicas-contractivas-is-lm.pptx"
+        }
+      ]
     }
   ],
   "lecturas": [

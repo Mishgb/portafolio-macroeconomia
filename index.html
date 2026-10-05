@@ -556,7 +556,7 @@
     $('notes').querySelectorAll('.note-card').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openNote(c.apuntes[+el.dataset.i]);}));
     // 4 · Lecturas
     const ls=c.lecturas||[];
-    const fileA=f=>`<a class="rfile" href="${esc(f.archivo)}" target="_blank" rel="noopener"><span class="ico">PDF</span><span class="tx"><small>${esc(f.tipo||'Archivo')}</small><b>${esc(f.nombre||'')}</b>${f.detalle?`<em>${esc(f.detalle)}</em>`:''}</span><span class="go" aria-hidden="true">↗</span></a>`;
+    const fileA=f=>`<a class="rfile" href="${esc(f.archivo)}" target="_blank" rel="noopener"${/\.pdf$/i.test(f.archivo)?'':' download'}><span class="ico">${esc((f.archivo.split('.').pop()||'').toUpperCase())}</span><span class="tx"><small>${esc(f.tipo||'Archivo')}</small><b>${esc(f.nombre||'')}</b>${f.detalle?`<em>${esc(f.detalle)}</em>`:''}</span><span class="go" aria-hidden="true">${/\.pdf$/i.test(f.archivo)?'↗':'↓'}</span></a>`;
     const rcard=(l,i,tipo)=>{const fs=l.archivos||(l.archivo?[{tipo:tipo,nombre:l.titulo,archivo:l.archivo}]:[]);
       return `<div class="rcard"><div class="id">${String(i+1).padStart(2,'0')}</div><h3>${esc(l.titulo)}</h3>${l.autor?`<div class="by">${esc(l.autor)}</div>`:''}${l.descripcion?`<p>${esc(l.descripcion)}</p>`:''}<div class="rfiles">${fs.map(fileA).join('')}</div></div>`;};
     $('lects').innerHTML=ls.length?`<div class="rgrid">${ls.map((l,i)=>rcard(l,i,'Lectura')).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las lecturas del curso.</div>';
