@@ -12,6 +12,7 @@ infografias/             una infografía interactiva por parte del cuaderno
 simulador/is-lm.html     simulador IS-LM (pestaña Simulador)
 data/contenido.json      macroeconomía, apuntes, lecturas, ejercicios y trabajos (editar aquí para agregar)
 data/macro.json          datos INE/BCB (lo actualiza el script)
+data/indicadores.json    PIB y desempleo (INE/BCB), se actualiza a mano con cada publicación
 scripts/actualizar_datos.py   descarga IPC, tipo de cambio y UFV del BCB
 trabajos/                archivos entregados
 .github/workflows/       actualización diaria automática
@@ -49,6 +50,8 @@ Misma idea. Lista `ejercicios`: mismo formato que `lecturas` (una tarjeta con `t
 Las tarjetas salen del objeto `macroeconomia` de `data/contenido.json`, con los datos del sílabo (GPP-117, gestión 2026): `curso` y `profesor` (pares etiqueta/valor), `silabo` (justificación, objetivos, metodología y `programa` con las 16 sesiones y sus bloques) y `bibliografia`. La tarjeta Nosotros usa la lista `integrantes`: cada integrante tiene `nombre`, `perfil` y `foto` (imagen cuadrada en `assets/equipo/`). Si `perfil` está vacío, la tarjeta dice "Perfil por completar".
 
 ## Datos
+
+La pestaña Datos tiene cuatro secciones: PIB, inflación, desempleo y tipo de cambio. Inflación y tipo de cambio se actualizan solos cada día. PIB y desempleo vienen de `data/indicadores.json`: cuando el INE publique un trimestre nuevo, se agrega el dato a `pib.anual` o `desempleo.trimestral` con su fuente.
 
 `python scripts/actualizar_datos.py` regenera `data/macro.json`. En GitHub, el workflow lo corre cada día a las 08:30 (hora de Bolivia) y publica el cambio solo.
 

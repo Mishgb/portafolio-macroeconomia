@@ -1,0 +1,127 @@
+{
+  "actualizado": "2026-10-05",
+  "nota": "PIB y desempleo se actualizan a mano cuando el INE o el BCB publican un dato nuevo.",
+  "pib": {
+    "anual": [
+      {
+        "periodo": "2021",
+        "valor": 6.11,
+        "fuente": "INE"
+      },
+      {
+        "periodo": "2022",
+        "valor": 3.61,
+        "fuente": "INE"
+      },
+      {
+        "periodo": "2023",
+        "valor": 3.08,
+        "fuente": "INE"
+      },
+      {
+        "periodo": "2024",
+        "valor": 0.73,
+        "fuente": "INE"
+      },
+      {
+        "periodo": "2025",
+        "valor": -1.58,
+        "fuente": "INE (p)"
+      },
+      {
+        "periodo": "2026",
+        "valor": -3.6,
+        "fuente": "BCB · proyección",
+        "proyeccion": true
+      }
+    ],
+    "reciente": [
+      {
+        "etiqueta": "Primer trimestre 2026",
+        "valor": 0.06,
+        "fuente": "BCB, RIPOM II-2026 · ago 2026"
+      },
+      {
+        "etiqueta": "Acumulado a junio 2026",
+        "valor": -3.34,
+        "fuente": "BCB, RIPOM II-2026 · ago 2026"
+      }
+    ],
+    "notas": "2021–2024: INE, año base 1990. 2025: INE, cifra preliminar con el nuevo año de referencia 2017. 2026: proyección del BCB (RIPOM, agosto de 2026); el INE aún no publicó el segundo trimestre.",
+    "fuentes": [
+      {
+        "nombre": "INE · En 2024, la economía boliviana creció en 0,73%",
+        "url": "https://www.ine.gob.bo/index.php/en-2024-la-economia-boliviana-crecio-en-073/"
+      },
+      {
+        "nombre": "INE · PIB al cuarto trimestre de 2025 (p)",
+        "url": "https://www.ine.gob.bo/index.php/bolivia-producto-interno-bruto-al-cuarto-trimestre-de-2025-p/"
+      },
+      {
+        "nombre": "Economy · BCB: PIB cae 3,34% al primer semestre (RIPOM, 20-ago-2026)",
+        "url": "https://www.economy.com.bo/articulo/economia/pib-cae-334-primer-semestre-bcb-proyecta-inflacion-922-2026/20260820134514023683.html"
+      }
+    ]
+  },
+  "desempleo": {
+    "trimestral": [
+      {
+        "periodo": "T2 2024",
+        "valor": 3.7
+      },
+      {
+        "periodo": "T4 2024",
+        "valor": 3.3
+      },
+      {
+        "periodo": "T1 2025",
+        "valor": 3.8
+      },
+      {
+        "periodo": "T2 2025",
+        "valor": 3.1
+      },
+      {
+        "periodo": "T3 2025",
+        "valor": 2.9
+      },
+      {
+        "periodo": "T4 2025",
+        "valor": 2.3
+      },
+      {
+        "periodo": "T1 2026",
+        "valor": 3.2
+      }
+    ],
+    "informalidad": {
+      "valor": 84.2,
+      "periodo": "T1 2026",
+      "anterior": 82.6,
+      "periodo_anterior": "T1 2025"
+    },
+    "notas": "Tasa de desocupación del área urbana, Encuesta Continua de Empleo (INE). T3 2024 no se incluye por falta de un dato publicado verificable. Último dato disponible: primer trimestre de 2026.",
+    "fuentes": [
+      {
+        "nombre": "Los Tiempos · INE: desocupación 3,2% e informalidad 84,2% (T1 2026)",
+        "url": "https://www.lostiempos.com/actualidad/economia/20260720/empleo-informal-crecio-bolivia-1-primer-semestre-ine"
+      },
+      {
+        "nombre": "Xinhua · INE: desocupación urbana 2,3% al cierre de 2025",
+        "url": "https://spanish.xinhuanet.com/20260227/8a5e2ae02e55424595e2b0bcb44b16ae/c.html"
+      },
+      {
+        "nombre": "El Deber · INE: 2,9% en el tercer trimestre de 2025",
+        "url": "https://eldeber.com.bo/economia/bolivia-alcanza-2-9-desocupacion-urbana-hay-trabajo-baja-calidad-alta-vulnerabilidad_1762441376"
+      },
+      {
+        "nombre": "Enfoque News · INE: 3,1% en el segundo trimestre de 2025",
+        "url": "https://enfoquenews.com.bo/2025/08/23/ine-tasa-de-desempleo-en-bolivia-cae-a-31-el-segundo-trimestre/"
+      },
+      {
+        "nombre": "INE · Encuesta Continua de Empleo",
+        "url": "https://www.ine.gob.bo/index.php/desocupacion/"
+      }
+    ]
+  }
+}
