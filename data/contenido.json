@@ -972,6 +972,24 @@
           "archivo": "lecturas/01-ejercicio-politica-monetaria-bolivia.pdf"
         }
       ]
+    },
+    {
+      "titulo": "Acuerdo de BOLIVIA con el Fondo Monetario Internacional",
+      "descripcion": "Memorando de Políticas Económicas y Financieras, anexo del acuerdo de Bolivia con el FMI bajo el Servicio Ampliado del Fondo (36 meses), y una presentación que lo resume.",
+      "archivos": [
+        {
+          "tipo": "Lectura",
+          "nombre": "Memorando de Políticas Económicas y Financieras",
+          "detalle": "Anexo del acuerdo con el FMI · Servicio Ampliado del Fondo · PDF, 19 páginas",
+          "archivo": "lecturas/02-fmi-memorando-politicas-economicas-financieras.pdf"
+        },
+        {
+          "tipo": "Resumen",
+          "nombre": "Bolivia y el FMI: Memorando de Políticas Económicas y Financieras",
+          "detalle": "Presentación de resumen · PDF, 6 láminas",
+          "archivo": "lecturas/02-resumen-acuerdo-fmi.pdf"
+        }
+      ]
     }
   ],
   "integrantes": [
