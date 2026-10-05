@@ -965,6 +965,18 @@
           "archivo": "ejercicios/01-practica-macroeconomia-acuerdo-fmi.pdf"
         }
       ]
+    },
+    {
+      "titulo": "Derivando la curva IS",
+      "descripcion": "Práctica resuelta a mano por el grupo: derivación gráfica y algebraica de la curva IS a partir de la demanda de inversión y la demanda agregada, con su pendiente, el multiplicador, los desplazamientos y ejercicios numéricos.",
+      "archivos": [
+        {
+          "tipo": "Práctica",
+          "nombre": "Derivando la curva IS",
+          "detalle": "Henning Aguilar, Michelle Griffiths, Pablo Jaldín, Ofelia Plata, Eliana Vera · PDF, 16 páginas",
+          "archivo": "ejercicios/02-practica-derivando-curva-is.pdf"
+        }
+      ]
     }
   ],
   "lecturas": [
