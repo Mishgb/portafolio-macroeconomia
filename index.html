@@ -270,7 +270,6 @@
         <h1 style="margin-top:10px">Macroeconomía</h1>
         <p class="sub">El curso, el docente, el grupo y el material de referencia.</p>
       </div>
-      <div class="live" id="hero-live"></div>
     </header>
     <section style="border-top:0;padding-top:0"><div class="mcards" id="mcards"></div><div id="mequipo"></div><div id="msilabo"></div><div id="mbiblio"></div></section>
   </div>
@@ -643,7 +642,6 @@
   }).catch(()=>{$('pstat').innerHTML='<div><small>PIB</small><b>—</b><span>No se pudo leer data/indicadores.json</span></div>';});
   fetch('data/macro.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{D=d;const ipc=d.ipc||[],last=ipc[ipc.length-1]||{},tc=d.tipo_cambio||{},ufv=d.ufv||{};
     const cls=v=>v>10?'bad':v>5?'warn':'ok';
-    $('hero-live').innerHTML=`<div><small>Inflación interanual</small><b class="${cls(last.interanual)}">${f(last.interanual,2)}%</b><span>INE · ${last.mes||''} ${last.anio||''}</span></div><div><small>Dólar oficial</small><b>Bs ${f(tc.oficial_bs_usd,2)}</b><span>BCB · ${tc.fecha||''}</span></div>`;
     $('dpill').textContent='datos '+(d.actualizado||'').slice(0,10);$('dpill').classList.toggle('off',!!(d.errores&&d.errores.length));$('dupd').textContent=d.errores&&d.errores.length?'avisos: '+d.errores.join('; '):'';
     const dec=ipc.filter(x=>x.periodo.endsWith('-12')).slice(-3);
     $('dstat').innerHTML=`<div><small>Inflación interanual</small><b class="${cls(last.interanual)}">${f(last.interanual,2)}%</b><span>INE · ${last.mes||''} ${last.anio||''}</span></div>
@@ -658,7 +656,7 @@
     const FU=d.fuentes||{};$('dsrc').innerHTML=(FU.ipc||'')+'<br>Actualización automática diaria desde el BCB';$('tsrc').innerHTML=[FU.tipo_cambio,FU.ufv].filter(Boolean).join('<br>')+'<br>Actualización automática diaria desde el BCB';
     if(ipc.length){const top=ipc.reduce((a,b)=>b.interanual>a.interanual?b:a);$('dnote').innerHTML=`Último dato: <b>${last.mes} ${last.anio}</b>, interanual ${f(last.interanual,2)}%. Pico de la serie: ${top.mes} ${top.anio} con ${f(top.interanual,2)}%. Pasa el cursor o toca una barra para ver el detalle del mes.`;}
     if($('v-datos').classList.contains('on'))drawAll();window.addEventListener('resize',drawAll);
-  }).catch(()=>{$('dpill').textContent='sin datos';$('dpill').classList.add('off');$('hero-live').innerHTML='';$('dstat').innerHTML='<div><small>Inflación</small><b class="bad">—</b><span>Abre desde GitHub Pages o ejecuta scripts/actualizar_datos.py</span></div>';});
+  }).catch(()=>{$('dpill').textContent='sin datos';$('dpill').classList.add('off');$('dstat').innerHTML='<div><small>Inflación</small><b class="bad">—</b><span>Abre desde GitHub Pages o ejecuta scripts/actualizar_datos.py</span></div>';});
 })();
 </script>
 </body>
