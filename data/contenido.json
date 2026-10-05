@@ -995,6 +995,24 @@
           "archivo": "ejercicios/03-politicas-contractivas-is-lm.pptx"
         }
       ]
+    },
+    {
+      "titulo": "Efecto Multiplicador",
+      "descripcion": "Medidas económicas 2026 analizadas con el modelo IS-LM: con una propensión marginal a consumir de 0,60, se calcula el efecto multiplicador de seis políticas (alza del diésel, Bono PEPE, créditos preferenciales, Juancito Pinto, arancel cero y perdonazo tributario) y por qué el efecto real es menor en recesión.",
+      "archivos": [
+        {
+          "tipo": "Presentación",
+          "nombre": "Medidas económicas 2026 bajo el modelo IS-LM",
+          "detalle": "Ver en el navegador · PDF, 13 láminas",
+          "archivo": "ejercicios/04-efecto-multiplicador.pdf"
+        },
+        {
+          "tipo": "Original",
+          "nombre": "Efecto Multiplicador (PowerPoint)",
+          "detalle": "Descargar el archivo editable · PPTX",
+          "archivo": "ejercicios/04-efecto-multiplicador.pptx"
+        }
+      ]
     }
   ],
   "lecturas": [
