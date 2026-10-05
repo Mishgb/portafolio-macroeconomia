@@ -52,7 +52,7 @@ Las tarjetas salen del objeto `macroeconomia` de `data/contenido.json`, con los 
 
 ## Datos
 
-La pestaña Datos tiene cuatro secciones: PIB, inflación, desempleo y tipo de cambio. Inflación y tipo de cambio se actualizan solos cada día. PIB y desempleo vienen de `data/indicadores.json`: cuando el INE publique un trimestre nuevo, se agrega el dato a `pib.anual` o `desempleo.trimestral` con su fuente.
+La pestaña Datos tiene cuatro partes: Hoy (último dato de PIB, inflación, desocupación y dólar), Evolución 2022–2026 (los mismos cinco años para los cuatro indicadores), Seguimiento 2026 (inflación mensual y dólar diario, automáticos) y Notas y fuentes. Inflación y dólar se actualizan solos cada día. PIB y desocupación vienen de `data/indicadores.json`: cuando el INE publique un dato nuevo, se actualiza `actual` (y, al cerrar el año, se agrega el año a `anual` y a `anios`).
 
 `python scripts/actualizar_datos.py` regenera `data/macro.json`. En GitHub, el workflow lo corre cada día a las 08:30 (hora de Bolivia) y publica el cambio solo.
 

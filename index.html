@@ -222,11 +222,22 @@
   .simlink{display:inline-block;margin-top:14px;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 13px}
   .simlink:hover{border-color:var(--acento);color:var(--text)}
   /* datos */
-  .dsec{scroll-margin-top:70px}
-  .djump{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
-  .djump a{font:600 12.5px 'Manrope';color:var(--muted);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px}
-  .djump a:hover{border-color:var(--acento);color:var(--text)}
-  .leg2{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:12px;color:var(--muted)}
+  .stat.hoy{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .stat.hoy em{display:block;font-style:normal;font-family:'JetBrains Mono';font-size:11px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+  table.evo th:not(:first-child),table.evo td:not(:first-child){text-align:right;white-space:nowrap}
+  table.evo td.n{font-size:13.5px}
+  table.evo th.now,table.evo td.now{background:rgba(26,98,192,.06)}
+  table.evo td.now small{display:block;font-family:'JetBrains Mono';font-size:10px;color:var(--dim);font-weight:500}
+  table.evo td:first-child small{display:block;font-weight:500;font-size:11px;color:var(--dim);margin-top:2px}
+  @media (max-width:560px){.stat.hoy{grid-template-columns:1fr 1fr}.stat.hoy div{padding:12px}.stat.hoy span{font-size:10.5px}
+    table.evo{font-size:12px}table.evo th,table.evo td{padding:9px 4px}table.evo th:first-child,table.evo td:first-child{padding-left:10px}table.evo th:last-child,table.evo td:last-child{padding-right:8px}
+    table.evo th{font-size:9.5px;letter-spacing:.04em}table.evo td.n{font-size:11.5px}table.evo td:first-child{font-size:12px;line-height:1.25}table.evo td:first-child small{display:none}}
+  .dgrid.sm{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+  .dnotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:12px}
+  .dnotes .card h4{font-size:14px;margin-bottom:6px}
+  .dnotes .card p{font-size:13px;line-height:1.55}
+  .dnotes .card .src{margin-top:8px}
+  .leg2{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:var(--muted)}
   .leg2 .sw{display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--azul);vertical-align:-2px;margin-right:6px}
   .leg2 .sw.proj{background:repeating-linear-gradient(45deg,var(--azul) 0 2px,transparent 2px 5px);box-shadow:inset 0 0 0 1.5px var(--azul)}
   .dtip{position:fixed;z-index:30;pointer-events:none;background:var(--text);color:var(--bg);font:600 12px 'Manrope';line-height:1.4;padding:7px 10px;border-radius:8px;opacity:0;transition:opacity .12s;max-width:240px}
@@ -276,49 +287,36 @@
 
   <!-- 2 · DATOS -->
   <div class="view" id="v-datos">
-    <header class="hero2"><div><div class="kicker">INE · BCB</div><h1 style="margin-top:10px">Datos macroeconómicos</h1><p class="sub">Datos macroeconómicos al día de hoy.</p></div><div><span class="pill" id="dpill">cargando</span><div class="src" id="dupd"></div></div></header>
+    <header class="hero2"><div><div class="kicker">INE · BCB</div><h1 style="margin-top:10px">Datos macroeconómicos</h1><p class="sub">Datos macroeconómicos al día de hoy.</p></div><div><span class="pill" id="dpill">cargando</span></div></header>
+
     <section style="border-top:0;padding-top:0">
-      <div class="stat" id="dsum"></div>
-      <nav class="djump" aria-label="Secciones de datos"><a href="#d-pib">PIB</a><a href="#d-inf">Inflación</a><a href="#d-emp">Desempleo</a><a href="#d-tc">Tipo de cambio</a></nav>
+      <div class="h2"><div class="num">01</div><h2>Hoy<small>El último dato publicado de cada indicador, comparado con el mismo período del año anterior.</small></h2></div>
+      <div class="stat hoy" id="dhoy"></div>
     </section>
 
-    <section class="dsec" id="d-pib">
-      <div class="h2"><div class="num">01</div><h2>PIB · crecimiento económico<small>Variación del producto interno bruto real. Mide si la economía produce más o menos que el año anterior.</small></h2></div>
-      <div class="stat" id="pstat"></div>
-      <div class="chart-wrap" style="margin-top:14px"><h4>Crecimiento anual del PIB real <span>INE · BCB · %</span></h4><canvas class="chart" id="dp1"></canvas>
-        <div class="leg2"><span><i class="sw"></i>Dato publicado</span><span><i class="sw proj"></i>Proyección BCB</span></div></div>
-      <div class="note" id="pnote"></div>
-      <div class="src" id="psrc"></div>
-    </section>
-
-    <section class="dsec" id="d-inf">
-      <div class="h2"><div class="num">02</div><h2>Inflación<small>Variación del índice de precios al consumidor (IPC). Se actualiza automáticamente cada día desde el BCB.</small></h2></div>
-      <div class="stat" id="dstat"></div>
-      <div class="dgrid" style="margin-top:14px">
-        <div class="chart-wrap"><h4>Inflación interanual <span>INE · a 12 meses · %</span></h4><canvas class="chart" id="d1"></canvas></div>
-        <div class="chart-wrap"><h4>Inflación mensual <span>INE · variación mensual · %</span></h4><canvas class="chart" id="d2"></canvas></div>
+    <section>
+      <div class="h2"><div class="num">02</div><h2>Evolución 2022–2026<small>Los mismos cinco años para los cuatro indicadores. 2022 a 2025 son cierres de año; 2026 es el último dato disponible.</small></h2></div>
+      <div class="twrap"><table class="t evo" id="devo"></table></div>
+      <div class="dgrid sm" style="margin-top:14px">
+        <div class="chart-wrap"><h4>Crecimiento del PIB real <span>%</span></h4><canvas class="chart" id="c-pib"></canvas></div>
+        <div class="chart-wrap"><h4>Inflación a 12 meses <span>%</span></h4><canvas class="chart" id="c-inf"></canvas></div>
+        <div class="chart-wrap"><h4>Desocupación urbana <span>%</span></h4><canvas class="chart" id="c-emp"></canvas></div>
+        <div class="chart-wrap"><h4>Dólar oficial <span>Bs por USD</span></h4><canvas class="chart" id="c-tc"></canvas></div>
       </div>
-      <div class="note" id="dnote"></div>
-      <details class="dtab"><summary>Ver tabla mensual</summary><div class="twrap" style="margin-top:10px"><table class="t" id="dtable"><thead><tr><th>Mes</th><th>IPC</th><th>Mensual</th><th>Acumulada</th><th>Interanual</th></tr></thead><tbody></tbody></table></div></details>
-      <div class="src" id="dsrc"></div>
+      <div class="leg2"><span><i class="sw"></i>Cierre de año</span><span><i class="sw proj"></i>2026: último dato disponible</span></div>
     </section>
 
-    <section class="dsec" id="d-emp">
-      <div class="h2"><div class="num">03</div><h2>Desempleo<small>Tasa de desocupación del área urbana: porcentaje de la población económicamente activa que busca trabajo y no lo encuentra.</small></h2></div>
-      <div class="stat" id="estat"></div>
-      <div class="chart-wrap" style="margin-top:14px"><h4>Tasa de desocupación urbana por trimestre <span>INE · Encuesta Continua de Empleo · %</span></h4><canvas class="chart" id="de1"></canvas></div>
-      <div class="note" id="enote"></div>
-      <div class="src" id="esrc"></div>
-    </section>
-
-    <section class="dsec" id="d-tc">
-      <div class="h2"><div class="num">04</div><h2>Tipo de cambio<small>Cotización oficial del boliviano frente al dólar y a otras monedas. Se actualiza automáticamente cada día desde el BCB.</small></h2></div>
-      <div class="stat" id="tstat"></div>
-      <div class="dgrid" style="margin-top:14px">
-        <div class="chart-wrap"><h4>Tipo de cambio oficial <span id="d3sub">BCB · Bs/USD</span></h4><canvas class="chart" id="d3"></canvas></div>
-        <div class="chart-wrap"><h4>Cotizaciones <span id="d4sub">BCB · Bs por unidad</span></h4><div class="fx" id="fx"></div></div>
+    <section>
+      <div class="h2"><div class="num">03</div><h2>Seguimiento 2026<small>Los dos indicadores que el BCB publica con más frecuencia. Se actualizan solos cada día.</small></h2></div>
+      <div class="dgrid">
+        <div class="chart-wrap"><h4>Inflación a 12 meses, mes a mes <span id="s-inf-sub">INE · %</span></h4><canvas class="chart" id="s-inf"></canvas></div>
+        <div class="chart-wrap"><h4>Dólar oficial, día a día <span id="s-tc-sub">BCB · Bs por USD</span></h4><canvas class="chart" id="s-tc"></canvas></div>
       </div>
-      <div class="src" id="tsrc"></div>
+    </section>
+
+    <section>
+      <div class="h2"><div class="num">04</div><h2>Notas y fuentes<small>Cómo se lee cada dato y de dónde sale.</small></h2></div>
+      <div class="dnotes" id="dnotas"></div>
     </section>
     <div class="dtip" id="dtip" role="status" aria-live="polite"></div>
   </div>
@@ -569,94 +567,92 @@
   }).catch(()=>{$('mcards').innerHTML='<div class="empty">No se pudo leer <code>data/contenido.json</code>. Abre el portafolio desde un servidor (GitHub Pages).</div>';});
 
   // datos
-  let D=null;const MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-  function bars(cv,rows,key,color){const ctx=cv.getContext('2d');const r=cv.parentElement.getBoundingClientRect();const W=Math.max(260,Math.floor(r.width)-28),H=Math.round(W*0.5),dpr=window.devicePixelRatio||1;
-    cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
-    const vals=rows.map(x=>x[key]);const mx=Math.max(...vals,0.1),mn=Math.min(...vals,0);const pad={l:38,r:8,t:14,b:24};
-    const Y=v=>pad.t+(mx-v)/(mx-mn||1)*(H-pad.t-pad.b);const bw=(W-pad.l-pad.r)/rows.length;
-    ctx.strokeStyle=css('--line');ctx.lineWidth=1;ctx.font='500 9.5px JetBrains Mono';ctx.fillStyle=css('--dim');ctx.textAlign='right';
-    const step=(mx-mn)>15?5:(mx-mn)>6?2:1;for(let v=Math.ceil(mn/step)*step;v<=mx;v+=step){const y=Y(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();ctx.fillText(v+'%',pad.l-5,y+3);}
-    ctx.strokeStyle='#8C8373';ctx.beginPath();ctx.moveTo(pad.l,Y(0));ctx.lineTo(W-pad.r,Y(0));ctx.stroke();
-    rows.forEach((x,i)=>{const v=x[key];ctx.fillStyle=v<0?css('--ok'):color;const x0=pad.l+i*bw+bw*0.15;const y0=Y(Math.max(v,0)),y1=Y(Math.min(v,0));ctx.fillRect(x0,y0,bw*0.7,Math.max(1,y1-y0));
-      if(x.periodo.endsWith('-12')||i===rows.length-1){ctx.fillStyle=css('--dim');ctx.textAlign='center';ctx.fillText(x.periodo.endsWith('-12')?x.anio:MES[+x.periodo.slice(5)-1]+' '+String(x.anio).slice(2),x0+bw*0.35,H-7);}});
-    cv.onmousemove=e=>{const rect=cv.getBoundingClientRect();const i=Math.floor((e.clientX-rect.left-pad.l)/bw);const x=rows[i];if(!x){hideTip();return;}showTip(e,`${x.mes} ${x.anio} · ${f(x[key],2)}%<small>mensual ${f(x.mensual,2)}% · acumulada ${f(x.acumulada,2)}% · interanual ${f(x.interanual,2)}%</small>`);};
-    cv.onmouseleave=hideTip;cv.onclick=cv.onmousemove;}
-  function line(cv,pts){const ctx=cv.getContext('2d');const r=cv.parentElement.getBoundingClientRect();const W=Math.max(260,Math.floor(r.width)-28),H=Math.round(W*0.5),dpr=window.devicePixelRatio||1;
-    cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
-    const pad={l:38,r:12,t:14,b:24};const t0=new Date(pts[0].fecha).getTime(),t1=new Date(pts[pts.length-1].fecha).getTime();const vs=pts.map(p=>p.oficial);const mn=Math.floor(Math.min(...vs)-0.5),mx=Math.ceil(Math.max(...vs)+0.5);
-    const X=t=>pad.l+(t-t0)/((t1-t0)||1)*(W-pad.l-pad.r),Y=v=>pad.t+(mx-v)/(mx-mn)*(H-pad.t-pad.b);
-    ctx.strokeStyle=css('--line');ctx.font='500 9.5px JetBrains Mono';ctx.fillStyle=css('--dim');ctx.textAlign='right';for(let v=mn;v<=mx;v++){ctx.beginPath();ctx.moveTo(pad.l,Y(v));ctx.lineTo(W-pad.r,Y(v));ctx.stroke();ctx.fillText(v,pad.l-5,Y(v)+3);}
-    ctx.beginPath();ctx.strokeStyle=css('--acento');ctx.lineWidth=2.5;pts.forEach((p,i)=>{const x=X(new Date(p.fecha).getTime()),y=Y(p.oficial);i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
-    pts.forEach(p=>{ctx.fillStyle='#D99100';ctx.beginPath();ctx.arc(X(new Date(p.fecha).getTime()),Y(p.oficial),4,0,7);ctx.fill();});
-    ctx.fillStyle=css('--dim');ctx.textAlign='left';ctx.fillText(pts[0].fecha,pad.l,H-7);ctx.textAlign='right';ctx.fillText(pts[pts.length-1].fecha,W-pad.r,H-7);}
+  let D=null,I=null;const MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  const MESL2=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
   const tip=$('dtip');
   function showTip(e,html){tip.innerHTML=html;tip.classList.add('on');const x=Math.min(e.clientX+14,window.innerWidth-tip.offsetWidth-8),y=Math.max(8,e.clientY-tip.offsetHeight-12);tip.style.left=x+'px';tip.style.top=y+'px';}
   function hideTip(){tip.classList.remove('on');}
   function rrect(ctx,x,y,w,h,r,up){r=Math.min(r,Math.abs(h)/2,w/2);ctx.beginPath();if(up){ctx.moveTo(x,y+h);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h);}else{ctx.moveTo(x,y);ctx.lineTo(x,y+h-r);ctx.quadraticCurveTo(x,y+h,x+r,y+h);ctx.lineTo(x+w-r,y+h);ctx.quadraticCurveTo(x+w,y+h,x+w,y+h-r);ctx.lineTo(x+w,y);}ctx.closePath();}
-  // barras simples con etiquetas de valor (PIB anual, desempleo trimestral)
-  function barsQ(cv,items,color,opt={}){const ctx=cv.getContext('2d');const r=cv.parentElement.getBoundingClientRect();const W=Math.max(260,Math.floor(r.width)-28),H=Math.round(Math.min(W*0.42,300)),dpr=window.devicePixelRatio||1;
-    cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
-    const vals=items.map(x=>x.valor);let mx=Math.max(...vals,0),mn=Math.min(...vals,0);const span=(mx-mn)||1;mx+=span*0.14;if(mn<0)mn-=span*0.14;
-    const pad={l:36,r:6,t:10,b:26};const Y=v=>pad.t+(mx-v)/(mx-mn)*(H-pad.t-pad.b);const bw=(W-pad.l-pad.r)/items.length;
+  function setup(cv,ratio,maxH){const ctx=cv.getContext('2d');const r=cv.parentElement.getBoundingClientRect();const W=Math.max(260,Math.floor(r.width)-28),H=Math.round(Math.min(W*ratio,maxH)),dpr=window.devicePixelRatio||1;
+    cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);return [ctx,W,H];}
+  const fmtU=(v,o)=>o.unit==='Bs'?'Bs '+f(v,2):f(v,o.dec??1)+'%';
+  // barras anuales: mismos cinco años para todos los indicadores; el último va rayado (dato parcial)
+  function yearBars(cv,items,o){const [ctx,W,H]=setup(cv,0.46,230);const color=css('--azul');
+    const vals=items.map(x=>x.v);let mx=Math.max(...vals,0),mn=Math.min(...vals,0);const span=(mx-mn)||1;mx+=span*0.16;if(mn<0)mn-=span*0.16;
+    const pad={l:40,r:6,t:8,b:24};const Y=v=>pad.t+(mx-v)/(mx-mn)*(H-pad.t-pad.b);const bw=(W-pad.l-pad.r)/items.length;
     ctx.font='500 9.5px JetBrains Mono';ctx.strokeStyle=css('--line');ctx.lineWidth=1;ctx.fillStyle=css('--dim');ctx.textAlign='right';
-    const step=span>12?4:span>6?2:1;for(let v=Math.ceil(mn/step)*step;v<=mx;v+=step){const y=Y(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();ctx.fillText(v+'%',pad.l-5,y+3);}
+    const raw=span/4,mag=Math.pow(10,Math.floor(Math.log10(raw))),step=[1,2,2.5,5,10].map(s=>s*mag).find(s=>s>=raw);
+    for(let v=Math.ceil(mn/step)*step;v<=mx+1e-9;v+=step){const y=Y(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();ctx.fillText(o.unit==='Bs'?f(v,0):f(v,step<1?1:0)+'%',pad.l-5,y+3);}
     ctx.strokeStyle='#8C8373';ctx.beginPath();ctx.moveTo(pad.l,Y(0));ctx.lineTo(W-pad.r,Y(0));ctx.stroke();
-    const geo=[];
-    items.forEach((x,i)=>{const w=Math.min(bw*0.62,56),x0=pad.l+i*bw+(bw-w)/2,v=x.valor,y0=Y(Math.max(v,0)),y1=Y(Math.min(v,0)),h=Math.max(1.5,y1-y0);geo.push([pad.l+i*bw,pad.l+(i+1)*bw]);
+    items.forEach((x,i)=>{const w=Math.min(bw*0.56,52),x0=pad.l+i*bw+(bw-w)/2,v=x.v,y0=Y(Math.max(v,0)),y1=Y(Math.min(v,0)),h=Math.max(1.5,y1-y0);
       rrect(ctx,x0,y0,w,h,4,v>=0);
-      if(x.proyeccion){ctx.save();ctx.clip();ctx.strokeStyle=color;ctx.lineWidth=2;for(let k=-H;k<w+H;k+=6){ctx.beginPath();ctx.moveTo(x0+k,y1+2);ctx.lineTo(x0+k+(y1-y0)+4,y0-2);ctx.stroke();}ctx.restore();rrect(ctx,x0+0.75,y0+0.75,w-1.5,h-1.5,4,v>=0);ctx.strokeStyle=color;ctx.lineWidth=1.5;ctx.stroke();}
+      if(x.parcial){ctx.save();ctx.clip();ctx.strokeStyle=color;ctx.lineWidth=2;for(let k=-H;k<w+H;k+=6){ctx.beginPath();ctx.moveTo(x0+k,y1+2);ctx.lineTo(x0+k+(y1-y0)+4,y0-2);ctx.stroke();}ctx.restore();rrect(ctx,x0+.75,y0+.75,w-1.5,h-1.5,4,v>=0);ctx.strokeStyle=color;ctx.lineWidth=1.5;ctx.stroke();}
       else{ctx.fillStyle=color;ctx.fill();}
-      ctx.fillStyle=css('--text');ctx.font='600 11px JetBrains Mono';ctx.textAlign='center';ctx.fillText(f(v,opt.dec??1)+'%',x0+w/2,v>=0?y0-5:y1+13);
-      ctx.fillStyle=css('--dim');ctx.font='500 10px JetBrains Mono';ctx.fillText(x.etq||x.periodo,x0+w/2,H-8);});
-    const hit=e=>{const rc=cv.getBoundingClientRect();const mx_=e.clientX-rc.left;return geo.findIndex(g=>mx_>=g[0]&&mx_<g[1]);};
-    cv.onmousemove=e=>{const i=hit(e);if(i<0){hideTip();return;}const x=items[i];showTip(e,`${esc(x.periodo)} · ${f(x.valor,opt.dec??1)}%<small>${esc(x.tip||'')}</small>`);};
+      ctx.fillStyle=css('--text');ctx.font='600 10.5px JetBrains Mono';ctx.textAlign='center';ctx.fillText(fmtU(v,o),x0+w/2,v>=0?y0-5:y1+12);
+      ctx.fillStyle=css('--dim');ctx.font='500 10px JetBrains Mono';ctx.fillText(x.a+(x.parcial?'*':''),x0+w/2,H-7);});
+    cv.onmousemove=e=>{const rc=cv.getBoundingClientRect();const i=Math.floor((e.clientX-rc.left-pad.l)/bw);const x=items[i];if(!x){hideTip();return;}showTip(e,`${x.a} · ${fmtU(x.v,o)}<small>${esc(x.det)}</small>`);};
     cv.onmouseleave=hideTip;cv.onclick=cv.onmousemove;}
-  let I=null;
-  function drawAll(){if(D){const ipc=D.ipc||[];if(ipc.length){bars($('d1'),ipc,'interanual',css('--acento'));bars($('d2'),ipc,'mensual',css('--azul'));}const h=D.tc_historico||[];if(h.length>1)line($('d3'),h);}
-    if(I){const pa=I.pib.anual.map(x=>({...x,tip:x.fuente}));barsQ($('dp1'),pa,css('--azul'),{dec:2});
-      barsQ($('de1'),I.desempleo.trimestral.map(x=>({...x,etq:x.periodo.replace(' 20',' ’'),tip:'Área urbana · INE, ECE'})),css('--acento'),{dec:1});}}
-  let lastInf=null,lastTc=null;
-  function renderSum(){const s=[];const cls=v=>v>10?'bad':v>5?'warn':'ok';
-    if(I){const a=I.pib.anual.filter(x=>!x.proyeccion).slice(-1)[0];s.push(`<div><small>PIB real ${a.periodo}</small><b class="${a.valor<0?'bad':'ok'}">${a.valor>0?'+':''}${f(a.valor,2)}%</b><span>${esc(a.fuente)}</span></div>`);
-      const q=I.pib.reciente.slice(-1)[0];s.push(`<div><small>PIB ${esc(q.etiqueta.toLowerCase())}</small><b class="${q.valor<0?'bad':'ok'}">${q.valor>0?'+':''}${f(q.valor,2)}%</b><span>${esc(q.fuente)}</span></div>`);}
-    if(lastInf)s.push(`<div><small>Inflación interanual</small><b class="${cls(lastInf.interanual)}">${f(lastInf.interanual,2)}%</b><span>INE · ${lastInf.mes} ${lastInf.anio}</span></div>`);
-    if(I){const u=I.desempleo.trimestral.slice(-1)[0];s.push(`<div><small>Desocupación urbana</small><b>${f(u.valor,1)}%</b><span>INE · ${esc(u.periodo)}</span></div>`);}
-    if(lastTc)s.push(`<div><small>Dólar oficial</small><b>Bs ${f(lastTc.oficial_bs_usd,2)}</b><span>BCB · ${lastTc.fecha||''}</span></div>`);
-    $('dsum').innerHTML=s.join('');}
-  const srcList=fs=>(fs||[]).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nombre)}</a>`).join('<br>');
-  fetch('data/indicadores.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{I=d;
-    const P=d.pib,a=P.anual,last=a.filter(x=>!x.proyeccion),pr=a.find(x=>x.proyeccion);
-    const sg=v=>(v>0?'+':'')+f(v,2)+'%';
-    $('pstat').innerHTML=last.slice(-3).map(x=>`<div><small>PIB real ${x.periodo}</small><b class="${x.valor<0?'bad':'ok'}">${sg(x.valor)}</b><span>${esc(x.fuente)}</span></div>`).join('')+
-      P.reciente.map(x=>`<div><small>PIB ${esc(x.etiqueta.toLowerCase())}</small><b class="${x.valor<0?'bad':'ok'}">${sg(x.valor)}</b><span>${esc(x.fuente)}</span></div>`).join('')+
-      (pr?`<div><small>Proyección ${pr.periodo}</small><b class="${pr.valor<0?'bad':'ok'}">${sg(pr.valor)}</b><span>${esc(pr.fuente)}</span></div>`:'');
-    $('pnote').innerHTML=`La economía pasó de crecer <b>${f(a[0].valor,2)}%</b> en ${a[0].periodo} a contraerse <b>${f(Math.abs(last.slice(-1)[0].valor),2)}%</b> en ${last.slice(-1)[0].periodo}, el segundo año de recesión. ${esc(P.notas)}`;
-    $('psrc').innerHTML=srcList(P.fuentes);
-    const E=d.desempleo,t=E.trimestral,u=t.slice(-1)[0],inf=E.informalidad;
-    $('estat').innerHTML=`<div><small>Desocupación urbana</small><b>${f(u.valor,1)}%</b><span>INE · ${esc(u.periodo)}</span></div>`+
-      (t.length>4?`<div><small>Un año antes</small><b>${f(t[t.length-5].valor,1)}%</b><span>INE · ${esc(t[t.length-5].periodo)}</span></div>`:'')+
-      (inf?`<div><small>Empleo informal</small><b class="bad">${f(inf.valor,1)}%</b><span>INE · ${esc(inf.periodo)} (${f(inf.anterior,1)}% en ${esc(inf.periodo_anterior)})</span></div>`:'');
-    $('enote').innerHTML=`La desocupación es baja, pero casi todo el empleo es informal: <b>${f(inf.valor,1)}%</b> de los ocupados en ${esc(inf.periodo)}. Bolivia tiene poca gente sin trabajo y mucha gente con trabajos precarios. ${esc(E.notas)}`;
-    $('esrc').innerHTML=srcList(E.fuentes)+`<br>Datos actualizados a mano · última revisión ${esc(d.actualizado)}`;
-    renderSum();if($('v-datos').classList.contains('on'))drawAll();
-  }).catch(()=>{$('pstat').innerHTML='<div><small>PIB</small><b>—</b><span>No se pudo leer data/indicadores.json</span></div>';});
-  fetch('data/macro.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{D=d;const ipc=d.ipc||[],last=ipc[ipc.length-1]||{},tc=d.tipo_cambio||{},ufv=d.ufv||{};
-    const cls=v=>v>10?'bad':v>5?'warn':'ok';
-    $('dpill').textContent='datos '+(d.actualizado||'').slice(0,10);$('dpill').classList.toggle('off',!!(d.errores&&d.errores.length));$('dupd').textContent=d.errores&&d.errores.length?'avisos: '+d.errores.join('; '):'';
-    const dec=ipc.filter(x=>x.periodo.endsWith('-12')).slice(-3);
-    $('dstat').innerHTML=`<div><small>Inflación interanual</small><b class="${cls(last.interanual)}">${f(last.interanual,2)}%</b><span>INE · ${last.mes||''} ${last.anio||''}</span></div>
-      <div><small>Acumulada ${last.anio||''}</small><b class="${last.acumulada>10?'bad':'warn'}">${f(last.acumulada,2)}%</b><span>INE · a ${last.mes||''}</span></div>
-      <div><small>Mensual</small><b class="${last.mensual>1.5?'bad':last.mensual<0?'ok':'warn'}">${f(last.mensual,2)}%</b><span>INE · ${last.mes||''}</span></div>
-      ${dec.map(x=>`<div><small>Inflación ${x.anio}</small><b class="${cls(x.interanual)}">${f(x.interanual,2)}%</b><span>INE · cierre</span></div>`).join('')}`;
-    $('tstat').innerHTML=`<div><small>Dólar oficial</small><b>Bs ${f(tc.oficial_bs_usd,2)}</b><span>BCB · ${tc.fecha||''} · tabla ${tc.tabla||''}</span></div><div><small>UFV</small><b>Bs ${f(ufv.valor,5)}</b><span>BCB · ${ufv.fecha||''}</span></div>`;
-    lastInf=last.anio?last:null;lastTc=tc.oficial_bs_usd?tc:null;renderSum();
-    const h=d.tc_historico||[];if(h.length>1){$('d3sub').textContent=`BCB · ${h[0].fecha} → ${h[h.length-1].fecha}`;}
-    const ms=tc.monedas||{};$('d4sub').textContent='BCB · '+(tc.fecha||'');$('fx').innerHTML=Object.keys(ms).slice(0,16).map(k=>`<div><small>${k}</small><b>${f(ms[k].bs_por_unidad,3)}</b><span>${ms[k].pais.toLowerCase()}</span></div>`).join('');
-    $('dtable').querySelector('tbody').innerHTML=ipc.slice().reverse().slice(0,24).map(x=>`<tr><td>${x.mes} ${x.anio}</td><td class="n">${f(x.indice,2)}</td><td class="n" style="color:${x.mensual<0?'var(--ok)':x.mensual>1.5?'var(--bad)':'inherit'}">${f(x.mensual,2)}%</td><td class="n">${f(x.acumulada,2)}%</td><td class="n">${f(x.interanual,2)}%</td></tr>`).join('');
-    const FU=d.fuentes||{};$('dsrc').innerHTML=(FU.ipc||'')+'<br>Actualización automática diaria desde el BCB';$('tsrc').innerHTML=[FU.tipo_cambio,FU.ufv].filter(Boolean).join('<br>')+'<br>Actualización automática diaria desde el BCB';
-    if(ipc.length){const top=ipc.reduce((a,b)=>b.interanual>a.interanual?b:a);$('dnote').innerHTML=`Último dato: <b>${last.mes} ${last.anio}</b>, interanual ${f(last.interanual,2)}%. Pico de la serie: ${top.mes} ${top.anio} con ${f(top.interanual,2)}%. Pasa el cursor o toca una barra para ver el detalle del mes.`;}
-    if($('v-datos').classList.contains('on'))drawAll();window.addEventListener('resize',drawAll);
-  }).catch(()=>{$('dpill').textContent='sin datos';$('dpill').classList.add('off');$('dstat').innerHTML='<div><small>Inflación</small><b class="bad">—</b><span>Abre desde GitHub Pages o ejecuta scripts/actualizar_datos.py</span></div>';});
+  // inflación mensual (últimos 24 meses)
+  function monthBars(cv,rows){const [ctx,W,H]=setup(cv,0.46,230);const color=css('--acento');
+    const vals=rows.map(x=>x.interanual);const mx=Math.max(...vals,1)*1.08,mn=Math.min(...vals,0);const pad={l:36,r:6,t:8,b:24};
+    const Y=v=>pad.t+(mx-v)/(mx-mn||1)*(H-pad.t-pad.b);const bw=(W-pad.l-pad.r)/rows.length;
+    ctx.strokeStyle=css('--line');ctx.lineWidth=1;ctx.font='500 9.5px JetBrains Mono';ctx.fillStyle=css('--dim');ctx.textAlign='right';
+    const step=(mx-mn)>15?5:(mx-mn)>6?2:1;for(let v=Math.ceil(mn/step)*step;v<=mx;v+=step){const y=Y(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();ctx.fillText(v+'%',pad.l-5,y+3);}
+    rows.forEach((x,i)=>{const v=x.interanual,x0=pad.l+i*bw+bw*0.15,w=bw*0.7,y0=Y(Math.max(v,0)),y1=Y(Math.min(v,0));rrect(ctx,x0,y0,w,Math.max(1,y1-y0),2,v>=0);ctx.fillStyle=color;ctx.fill();
+      if(x.periodo.endsWith('-01')||i===rows.length-1){ctx.fillStyle=css('--dim');ctx.textAlign='center';ctx.fillText(x.periodo.endsWith('-01')?String(x.anio):MES[+x.periodo.slice(5)-1]+' '+String(x.anio).slice(2),x0+w/2,H-7);}});
+    const last=rows[rows.length-1];ctx.fillStyle=css('--text');ctx.font='600 10.5px JetBrains Mono';ctx.textAlign='right';ctx.fillText(f(last.interanual,2)+'%',W-pad.r,Y(last.interanual)-5);
+    cv.onmousemove=e=>{const rc=cv.getBoundingClientRect();const x=rows[Math.floor((e.clientX-rc.left-pad.l)/bw)];if(!x){hideTip();return;}showTip(e,`${x.mes} ${x.anio} · ${f(x.interanual,2)}%<small>mensual ${f(x.mensual,2)}% · acumulada en el año ${f(x.acumulada,2)}%</small>`);};
+    cv.onmouseleave=hideTip;cv.onclick=cv.onmousemove;}
+  // dólar oficial día a día en 2026
+  function fxLine(cv,pts){const [ctx,W,H]=setup(cv,0.46,230);
+    const pad={l:36,r:10,t:10,b:24};const t0=+new Date(pts[0].fecha),t1=+new Date(pts[pts.length-1].fecha);const vs=pts.map(p=>p.oficial);const mn=Math.floor(Math.min(...vs)-0.3),mx=Math.ceil(Math.max(...vs)+0.3);
+    const X=t=>pad.l+(t-t0)/((t1-t0)||1)*(W-pad.l-pad.r),Y=v=>pad.t+(mx-v)/((mx-mn)||1)*(H-pad.t-pad.b);
+    ctx.strokeStyle=css('--line');ctx.lineWidth=1;ctx.font='500 9.5px JetBrains Mono';ctx.fillStyle=css('--dim');ctx.textAlign='right';
+    const st=(mx-mn)>4?1:0.5;for(let v=mn;v<=mx+1e-9;v+=st){ctx.beginPath();ctx.moveTo(pad.l,Y(v));ctx.lineTo(W-pad.r,Y(v));ctx.stroke();ctx.fillText(f(v,st<1?1:0),pad.l-5,Y(v)+3);}
+    ctx.beginPath();ctx.strokeStyle=css('--acento');ctx.lineWidth=2;pts.forEach((p,i)=>{const x=X(+new Date(p.fecha)),y=Y(p.oficial);i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
+    ctx.fillStyle=css('--acento');pts.forEach(p=>{ctx.beginPath();ctx.arc(X(+new Date(p.fecha)),Y(p.oficial),2.5,0,7);ctx.fill();});
+    const L=pts[pts.length-1];ctx.beginPath();ctx.arc(X(t1),Y(L.oficial),4.5,0,7);ctx.fill();
+    ctx.fillStyle=css('--text');ctx.font='600 10.5px JetBrains Mono';ctx.textAlign='right';ctx.fillText('Bs '+f(L.oficial,2),W-pad.r,Y(L.oficial)-8);
+    const fd=s=>{const [y,m,d]=s.split('-');return `${+d} ${MES[+m-1]}`;};ctx.fillStyle=css('--dim');ctx.font='500 9.5px JetBrains Mono';ctx.textAlign='left';ctx.fillText(fd(pts[0].fecha),pad.l,H-7);ctx.textAlign='right';ctx.fillText(fd(L.fecha),W-pad.r,H-7);
+    cv.onmousemove=e=>{const rc=cv.getBoundingClientRect();const t=t0+(e.clientX-rc.left-pad.l)/(W-pad.l-pad.r)*(t1-t0);let b=pts[0];pts.forEach(p=>{if(Math.abs(+new Date(p.fecha)-t)<Math.abs(+new Date(b.fecha)-t))b=p;});showTip(e,`${fd(b.fecha)} · Bs ${f(b.oficial,2)}`);};
+    cv.onmouseleave=hideTip;cv.onclick=cv.onmousemove;}
+  // series anuales armadas con los mismos años
+  function series(){if(!I||!D)return null;const A=I.anios,ipc=D.ipc||[],last=ipc[ipc.length-1],tc=D.tipo_cambio||{};
+    const dec=y=>{const r=ipc.find(x=>x.periodo===y+'-12');return r?r.interanual:null;};
+    const mk=(get,parcial)=>A.map((a,i)=>({a,...(i<A.length-1?get(a):parcial),parcial:i===A.length-1}));
+    return {
+      pib:mk(a=>({v:I.pib.anual[a],det:'Variación anual · INE'+(a==='2025'?' (p)':'')}),{v:I.pib.actual.valor,det:I.pib.actual.periodo+' · '+I.pib.actual.fuente,c:I.pib.actual.corto}),
+      inf:mk(a=>({v:dec(a)??NaN,det:'Diciembre '+a+' · INE'}),{v:last.interanual,det:last.mes+' '+last.anio+' · INE',c:'a '+MES[+last.periodo.slice(5)-1]}),
+      emp:mk(a=>({v:I.desempleo.anual[a],det:'Cuarto trimestre '+a+' · INE'}),{v:I.desempleo.actual.valor,det:I.desempleo.actual.periodo+' · INE',c:I.desempleo.actual.corto}),
+      tc:mk(a=>({v:I.dolar.anual[a],det:'Diciembre '+a+' · BCB'}),{v:tc.oficial_bs_usd,det:'Cotización del '+(tc.fecha||'')+' · BCB',c:'hoy'})};}
+  function render(){const S=series();if(!S)return;const ipc=D.ipc,last=ipc[ipc.length-1],tc=D.tipo_cambio||{};
+    const yAgo=ipc.find(x=>x.periodo===(last.anio-1)+last.periodo.slice(4));
+    const sg=v=>(v>0?'+':'')+f(v,2)+'%';const cls=v=>v>10?'bad':v>5?'warn':'ok';
+    $('dhoy').innerHTML=[
+      `<div><small>PIB real</small><b class="${I.pib.actual.valor<0?'bad':'ok'}">${sg(I.pib.actual.valor)}</b><span>${esc(I.pib.actual.periodo)} · ${esc(I.pib.actual.fuente)}</span><em>${esc(I.pib.anio_antes.periodo)}: ${sg(I.pib.anio_antes.valor)}</em></div>`,
+      `<div><small>Inflación a 12 meses</small><b class="${cls(last.interanual)}">${f(last.interanual,2)}%</b><span>${last.mes} ${last.anio} · INE</span><em>${yAgo?`${yAgo.mes} ${yAgo.anio}: ${f(yAgo.interanual,2)}%`:''}</em></div>`,
+      `<div><small>Desocupación urbana</small><b>${f(I.desempleo.actual.valor,1)}%</b><span>${esc(I.desempleo.actual.periodo)} · INE</span><em>${esc(I.desempleo.anio_antes.periodo)}: ${f(I.desempleo.anio_antes.valor,1)}%</em></div>`,
+      `<div><small>Dólar oficial</small><b>Bs ${f(tc.oficial_bs_usd,2)}</b><span>${tc.fecha||''} · BCB</span><em>Un año antes: Bs ${f(I.dolar.anual['2025'],2)}</em></div>`].join('');
+    const A=I.anios;const row=(name,sub,arr,o)=>`<tr><td>${name}<small>${sub}</small></td>${arr.map(x=>`<td class="n${x.parcial?' now':''}">${isNaN(x.v)?'—':(o.unit==='Bs'?f(x.v,2):fmtU(x.v,o))}${x.parcial?`<small>${esc(x.c||'')}</small>`:''}</td>`).join('')}</tr>`;
+    $('devo').innerHTML=`<thead><tr><th>Indicador</th>${A.map((a,i)=>`<th${i===A.length-1?' class="now"':''}>${a}${i===A.length-1?'*':''}</th>`).join('')}</tr></thead><tbody>`+
+      row('Crecimiento del PIB real','variación anual',S.pib,{dec:2})+row('Inflación a 12 meses','a diciembre',S.inf,{dec:2})+row('Desocupación urbana','cuarto trimestre',S.emp,{dec:1})+row('Dólar oficial (Bs)','por USD, a diciembre',S.tc,{unit:'Bs'})+'</tbody>';
+    $('s-inf-sub').textContent=`INE · ${ipc[Math.max(0,ipc.length-24)].mes.toLowerCase()} ${ipc[Math.max(0,ipc.length-24)].anio} – ${last.mes.toLowerCase()} ${last.anio} · %`;
+    const fx=(D.tc_historico||[]).filter(p=>p.fecha>='2026-01-01');if(fx.length)$('s-tc-sub').textContent=`BCB · desde el ${+fx[0].fecha.slice(8)} de ${MESL2[+fx[0].fecha.slice(5,7)-1]} · Bs por USD`;
+    const links=fs=>(fs||[]).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nombre)}</a>`).join('<br>');const FU=D.fuentes||{};
+    $('dnotas').innerHTML=[
+      ['Crecimiento del PIB real',I.pib.nota,links(I.pib.fuentes)],
+      ['Inflación a 12 meses',I.inflacion.nota,esc(FU.ipc||'')],
+      ['Desocupación urbana',I.desempleo.nota,links(I.desempleo.fuentes)],
+      ['Dólar oficial',I.dolar.nota,esc(FU.tipo_cambio||'')]].map(([h,p,s])=>`<div class="card"><h4>${h}</h4><p>${esc(p)}</p><div class="src">${s}</div></div>`).join('');
+    drawAll();}
+  function drawAll(){const S=series();if(!S||!$('v-datos').classList.contains('on'))return;
+    yearBars($('c-pib'),S.pib,{dec:2});yearBars($('c-inf'),S.inf,{dec:2});yearBars($('c-emp'),S.emp,{dec:1});yearBars($('c-tc'),S.tc,{unit:'Bs'});
+    monthBars($('s-inf'),D.ipc.slice(-24));const fx=(D.tc_historico||[]).filter(p=>p.fecha>='2026-01-01');if(fx.length>1)fxLine($('s-tc'),fx);}
+  window.addEventListener('resize',drawAll);
+  fetch('data/indicadores.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{I=d;render();}).catch(()=>{$('dhoy').innerHTML='<div><small>Datos</small><b>—</b><span>No se pudo leer data/indicadores.json</span></div>';});
+  fetch('data/macro.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{D=d;
+    $('dpill').textContent='datos al '+(d.actualizado||'').slice(0,10);$('dpill').classList.toggle('off',!!(d.errores&&d.errores.length));render();
+  }).catch(()=>{$('dpill').textContent='sin datos';$('dpill').classList.add('off');});
 })();
 </script>
 </body>
