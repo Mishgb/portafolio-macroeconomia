@@ -460,11 +460,12 @@
     // 4 · Lecturas
     const ls=c.lecturas||[];
     const fileA=f=>`<a class="rfile" href="${esc(f.archivo)}" target="_blank" rel="noopener"><span class="ico">PDF</span><span class="tx"><small>${esc(f.tipo||'Archivo')}</small><b>${esc(f.nombre||'')}</b>${f.detalle?`<em>${esc(f.detalle)}</em>`:''}</span><span class="go" aria-hidden="true">↗</span></a>`;
-    $('lects').innerHTML=ls.length?`<div class="rgrid">${ls.map((l,i)=>{const fs=l.archivos||(l.archivo?[{tipo:'Lectura',nombre:l.titulo,archivo:l.archivo}]:[]);
-      return `<div class="rcard"><div class="id">${String(i+1).padStart(2,'0')}</div><h3>${esc(l.titulo)}</h3>${l.autor?`<div class="by">${esc(l.autor)}</div>`:''}${l.descripcion?`<p>${esc(l.descripcion)}</p>`:''}<div class="rfiles">${fs.map(fileA).join('')}</div></div>`;}).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las lecturas del curso.</div>';
+    const rcard=(l,i,tipo)=>{const fs=l.archivos||(l.archivo?[{tipo:tipo,nombre:l.titulo,archivo:l.archivo}]:[]);
+      return `<div class="rcard"><div class="id">${String(i+1).padStart(2,'0')}</div><h3>${esc(l.titulo)}</h3>${l.autor?`<div class="by">${esc(l.autor)}</div>`:''}${l.descripcion?`<p>${esc(l.descripcion)}</p>`:''}<div class="rfiles">${fs.map(fileA).join('')}</div></div>`;};
+    $('lects').innerHTML=ls.length?`<div class="rgrid">${ls.map((l,i)=>rcard(l,i,'Lectura')).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las lecturas del curso.</div>';
     // 5 · Ejercicios
     const es=c.ejercicios||[];
-    $('exs').innerHTML=es.length?es.map(e=>`<div class="work${e.fecha?'':' nodate'}">${e.fecha?`<div class="d">${esc(e.fecha)}<small>${esc(e.sesion||'')}</small></div>`:''}<div><h3>${esc(e.titulo)}</h3>${e.descripcion?`<p>${esc(e.descripcion)}</p>`:''}${e.enunciado?`<p>${esc(e.enunciado)}</p>`:''}${e.archivo?link(e.archivo,'abrir práctica',true):''}${e.solucion?`<br><button class="btn">Ver solución</button><div class="sol">${esc(e.solucion)}</div>`:''}</div></div>`).join(''):'<div class="empty">Próximamente: aquí estarán las prácticas resueltas en clase.</div>';
+    $('exs').innerHTML=es.length?`<div class="rgrid">${es.map((e,i)=>rcard(e,i,'Práctica')).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las prácticas resueltas en clase.</div>';
     $('exs').querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>{const w=b.closest('.work');w.classList.toggle('open');b.textContent=w.classList.contains('open')?'Ocultar solución':'Ver solución';}));
     // 7 · Trabajos
     const ws=(c.trabajos||[]).slice().sort((a,b)=>b.fecha.localeCompare(a.fecha));

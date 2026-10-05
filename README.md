@@ -42,7 +42,7 @@ trabajos/                archivos entregados
 
 ## Agregar un ejercicio o una lectura
 
-Misma idea. Lista `ejercicios`: `titulo`, `sesion`, `fecha` (opcional), `descripcion`, `archivo`; opcionalmente `enunciado` y `solucion` (muestra el botón "Ver solución"). Lista `lecturas`: una tarjeta por lectura con `titulo`, `descripcion` y `archivos` (cada archivo: `tipo`, por ejemplo "Lectura" o "Ejercicio", `nombre`, `detalle` y `archivo`, guardado en `lecturas/`).
+Misma idea. Lista `ejercicios`: mismo formato que `lecturas` (una tarjeta con `titulo`, `descripcion` y `archivos`); los archivos van en `ejercicios/`.
 
 ## Pestaña Macroeconomía
 

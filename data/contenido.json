@@ -953,7 +953,20 @@
       "archivo": "trabajos/Apuntes Macroeconomía.docx"
     }
   ],
-  "ejercicios": [],
+  "ejercicios": [
+    {
+      "titulo": "La macroeconomía del acuerdo con el FMI",
+      "descripcion": "Práctica resuelta a mano por el grupo: la curva IS en el acuerdo Bolivia–FMI, la clasificación de las medidas del memorando y sus efectos en el modelo IS-LM, con gráficos.",
+      "archivos": [
+        {
+          "tipo": "Práctica",
+          "nombre": "La macroeconomía del acuerdo con el FMI",
+          "detalle": "Henning Aguilar, Michelle Griffiths, Pablo Jaldín, Ofelia Plata, Eliana Vera · PDF, 21 páginas",
+          "archivo": "ejercicios/01-practica-macroeconomia-acuerdo-fmi.pdf"
+        }
+      ]
+    }
+  ],
   "lecturas": [
     {
       "titulo": "Analizar la política monetaria de Bolivia",
