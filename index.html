@@ -44,17 +44,66 @@
   .hero2 .live b.bad{color:var(--bad)}.hero2 .live b.warn{color:var(--warn)}.hero2 .live b.ok{color:var(--ok)}
   .hero2 .live span{display:block;font-family:'JetBrains Mono';font-size:10px;color:var(--dim);margin-top:2px}
   /* macroeconomía cards */
-  .mcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-  .mcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px;min-height:170px;position:relative;overflow:hidden}
+  .mcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  .mcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 18px 22px;display:flex;flex-direction:column;gap:8px;min-height:170px;position:relative;overflow:hidden;min-width:0}
+  .mcard.wide{margin-top:12px;gap:10px;padding:clamp(18px,3vw,26px) clamp(18px,3vw,28px) clamp(18px,3vw,26px) clamp(22px,3.4vw,32px)}
   .mcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acento)}
   .mcard .id{font-family:'JetBrains Mono';font-size:11px;color:var(--acento);font-weight:600;letter-spacing:.1em}
   .mcard h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:0}
   .mcard p{font-size:13.5px}
-  .mcard ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
-  .mcard li{font-size:13.5px;color:var(--text);font-weight:600;padding-left:14px;position:relative}
-  .mcard li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--acento)}
-  .mcard .files{display:flex;flex-direction:column;gap:6px;margin-top:auto}
-  .mcard .files a{color:var(--text);font-size:13px;text-decoration:none;border-bottom:1px solid var(--acento);align-self:flex-start}
+  .mcard p.lead{font-size:15.5px;font-weight:700;color:var(--text);line-height:1.35}
+  .people{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+  .people li{font-size:13.5px;color:var(--text);font-weight:600;padding-left:14px;position:relative}
+  .people li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--acento)}
+  .kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;margin-top:2px}
+  .kv dt{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding-top:3px;white-space:nowrap}
+  .kv dd{font-size:13.5px;color:var(--text);line-height:1.45;min-width:0}
+  .kv dd a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--acento);overflow-wrap:anywhere}
+  .sub-h{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:14px 0 8px}
+  .scols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:8px 30px}
+  .scols p{line-height:1.6}
+  @media (max-width:760px){.scols{grid-template-columns:1fr}}
+  .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+  .tiles div{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+  .tiles b{display:block;font-family:'JetBrains Mono';font-size:22px;font-weight:600;color:var(--acento)}
+  .tiles b small{font-size:11px;color:var(--dim);font-weight:500}
+  .tiles span{display:block;font-size:12px;color:var(--muted);line-height:1.35;margin-top:2px}
+  .mcard p.tiles-note{font-family:'JetBrains Mono';font-size:10.5px;color:var(--dim);margin-top:6px}
+  ol.obj{list-style:none;counter-reset:o;display:flex;flex-direction:column;gap:9px}
+  ol.obj li{counter-increment:o;display:grid;grid-template-columns:26px 1fr;font-size:13.5px;line-height:1.5;color:var(--muted)}
+  ol.obj li::before{content:counter(o,decimal-leading-zero);font-family:'JetBrains Mono';font-size:11px;font-weight:600;color:var(--acento);padding-top:2px}
+  .prog-h{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:22px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+  .openall{background:transparent;border:1px solid var(--line);color:var(--muted);font:600 12px 'Manrope';padding:6px 12px;border-radius:999px;cursor:pointer}
+  .openall:hover{border-color:var(--acento);color:var(--text)}
+  .ses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;align-items:start}
+  .ses{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-width:0}
+  .ses .top{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+  .ses .top b,.ses .top span{display:block}
+  .ses .top span{margin-top:3px}
+  .ses .top b{color:var(--acento);font-weight:600}
+  .ses .top span{color:var(--dim)}
+  .ses .bl{list-style:none;padding:0;margin-top:10px;display:flex;flex-direction:column;gap:6px}
+  .ses .bl li{font-size:14px;font-weight:700;color:var(--text);line-height:1.35;padding-left:14px;position:relative}
+  .ses .bl li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--acento)}
+  .ses details{margin-top:12px;border-top:1px solid var(--line);padding-top:9px}
+  .ses summary{cursor:pointer;font:700 12.5px 'Manrope';color:var(--acento);list-style:none;user-select:none}
+  .ses summary::-webkit-details-marker{display:none}
+  .ses summary::after{content:" +";font-family:'JetBrains Mono'}
+  .ses details[open] summary::after{content:" −"}
+  .blq{margin-top:12px}
+  .blq+.blq{padding-top:12px;border-top:1px dashed var(--line)}
+  .blq h5{font-size:13.5px;font-weight:700;color:var(--text);line-height:1.35}
+  .blq p,.blq li{font-size:12.8px;line-height:1.5;color:var(--muted)}
+  .blq ul{padding-left:16px;margin:2px 0 0}
+  .blq li{margin-bottom:2px}
+  .blq .lab{display:block;font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:9px 0 2px}
+  .blq .lab:first-child{margin-top:0;color:var(--acento)}
+  ol.bib{list-style:none;counter-reset:b;display:flex;flex-direction:column;gap:10px;margin-top:4px}
+  ol.bib li{counter-increment:b;display:grid;grid-template-columns:26px 1fr;font-size:13.8px;line-height:1.5;color:var(--muted)}
+  ol.bib li::before{content:counter(b,decimal-leading-zero);font-family:'JetBrains Mono';font-size:11px;font-weight:600;color:var(--acento);padding-top:2px}
+  ol.bib b{color:var(--text);font-weight:700}
+  ol.bib i{color:var(--text)}
+  @media (max-width:560px){.tiles{grid-template-columns:1fr 1fr 1fr;gap:6px}.tiles div{padding:8px}.tiles b{font-size:18px}.tiles span{font-size:11px}}
   .soon{margin-top:auto;align-self:flex-start;font-family:'JetBrains Mono';font-size:10.5px;padding:3px 9px;border:1px dashed var(--line);border-radius:999px;color:var(--dim)}
   /* cuaderno */
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -158,7 +207,7 @@
       </div>
       <div class="live" id="hero-live"></div>
     </header>
-    <section style="border-top:0;padding-top:0"><div class="mcards" id="mcards"></div></section>
+    <section style="border-top:0;padding-top:0"><div class="mcards" id="mcards"></div><div id="msilabo"></div><div id="mbiblio"></div></section>
   </div>
 
   <!-- 2 · DATOS -->
@@ -333,13 +382,42 @@
 
   const link=(href,txt,first)=>`<a${first?' class="first"':''} href="${esc(href)}" target="_blank" rel="noopener">${esc(txt||'abrir archivo')} ↗</a>`;
 
+  // macroeconomía: tarjetas con los datos del sílabo
+  function renderMacro(M,integ){const C=M.curso||{},P=M.profesor||{},S=M.silabo||{},B=M.bibliografia||[];
+    const kv=rows=>`<dl class="kv">${rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)?`<a href="mailto:${esc(v)}">${esc(v)}</a>`:esc(v)}</dd>`).join('')}</dl>`;
+    const card=(n,t,body,cls='')=>`<div class="mcard ${cls}"><div class="id">${n}</div><h3>${t}</h3>${body}</div>`;
+    $('mcards').innerHTML=
+      card('01','Curso',`<p class="lead">${esc(C.nombre||'')}</p>${kv(C.datos||[])}`)+
+      card('02','Profesor',`<p class="lead">${esc(P.nombre||'')}</p>${kv(P.datos||[])}`)+
+      card('03','Nosotros',`<p>Integrantes del grupo</p><ul class="people">${integ.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`);
+    const prog=S.programa||[];
+    const ses=s=>`<div class="ses"><div class="top"><b>Sesión ${String(s.n).padStart(2,'0')}</b><span>Unidad ${esc((s.unidades||[]).join(' / '))}</span></div>
+      <ul class="bl">${s.bloques.map(b=>`<li>${esc(b.titulo)}</li>`).join('')}</ul>
+      <details><summary>Ver contenidos</summary>${s.bloques.map((b,k)=>`<div class="blq">${s.bloques.length>1?`<span class="lab">Bloque ${k+1}</span>`:''}<h5>${esc(b.titulo)}</h5>
+        <span class="lab">Objetivo</span><p>${esc(b.objetivo)}</p>
+        <span class="lab">Contenidos</span><ul>${b.contenidos.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+        <span class="lab">Lecturas</span><p>${esc(b.lecturas)}</p>
+        <span class="lab">Aplicación Bolivia / América Latina</span><p>${esc(b.aplicacion)}</p>
+        <span class="lab">Actividad con IA</span><p>${esc(b.actividad_ia)}</p></div>`).join('')}</details></div>`;
+    $('msilabo').innerHTML=card('04','Sílabo',`
+      <div class="scols"><div>
+        <div class="sub-h">Justificación</div><p>${esc(S.justificacion||'')}</p>
+        <div class="sub-h">Metodología</div><p>${esc(S.metodologia||'')}</p>
+        <div class="tiles">${(S.sesion_tipo||[]).map(t=>`<div><b>${t.min}<small> min</small></b><span>${esc(t.actividad)}</span></div>`).join('')}</div>
+        <p class="tiles-note">Distribución recomendada de cada sesión de 90 minutos.</p>
+      </div><div>
+        <div class="sub-h">Objetivos</div><ol class="obj">${(S.objetivos||[]).map(o=>`<li>${esc(o)}</li>`).join('')}</ol>
+      </div></div>
+      <div class="prog-h"><div class="sub-h" style="margin:0">Programa · ${prog.length} sesiones</div><button class="openall" id="openall">Abrir todo</button></div>
+      <div class="ses-grid">${prog.map(ses).join('')}</div>`,'wide');
+    $('mbiblio').innerHTML=card('05','Bibliografía',`<ol class="bib">${B.map(b=>`<li><div><b>${esc(b.autor)}</b> · <i>${esc(b.obra)}</i>${b.detalle?`. ${esc(b.detalle)}`:''}</div></li>`).join('')}</ol>`,'wide');
+    const oa=$('openall');if(oa)oa.addEventListener('click',()=>{const ds=[...document.querySelectorAll('#msilabo details')];const open=!ds.every(d=>d.open);ds.forEach(d=>d.open=open);oa.textContent=open?'Cerrar todo':'Abrir todo';});
+  }
+
   // contenido
   fetch('data/contenido.json',{cache:'no-store'}).then(r=>r.json()).then(c=>{
-    $('f-name').textContent=c.estudiante;
     // 1 · Macroeconomía
-    $('mcards').innerHTML=(c.macroeconomia||[]).map((m,i)=>{const fs=m.archivos||[];
-      const lista=m.lista_integrantes?(c.integrantes||[]):(m.lista||[]);
-      return `<div class="mcard"><div class="id">${String(i+1).padStart(2,'0')}</div><h3>${esc(m.titulo)}</h3>${m.texto?`<p>${esc(m.texto)}</p>`:''}${lista.length?`<ul>${lista.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${fs.length?`<div class="files">${fs.map(a=>link(a.archivo,a.nombre)).join('')}</div>`:(!m.texto&&!lista.length?'<span class="soon">archivo pendiente</span>':'')}</div>`;}).join('');
+    renderMacro(c.macroeconomia||{},c.integrantes||[]);
     // 3 · Apuntes
     nbInit(c.cuaderno);
     $('notes').innerHTML=c.apuntes.map((a,i)=>`<a class="note-card" href="${a.archivo}" data-i="${i}"><div class="id">${a.unidad}${a.sesiones?' · '+a.sesiones:''}</div><h3>${a.titulo}</h3><p>${a.resumen}</p><div class="tags">${(a.interactivo||[]).map(t=>`<span class="i">${t}</span>`).join('')}</div></a>`).join('');

@@ -4,39 +4,680 @@
   "docente": "Gonzalo Chávez A.",
   "universidad": "Universidad Católica Boliviana",
   "gestion": "2026",
-  "macroeconomia": [
-    {
-      "id": "curso",
-      "titulo": "Curso",
-      "texto": "Macroeconomía del Desarrollo · Universidad Católica Boliviana · Gestión 2026.",
-      "archivos": []
+  "macroeconomia": {
+    "curso": {
+      "nombre": "Macroeconomía para el Desarrollo",
+      "datos": [
+        [
+          "Código",
+          "GPP-117"
+        ],
+        [
+          "Programa",
+          "Maestría en Gestión y Política Pública"
+        ],
+        [
+          "Institución",
+          "Maestrías para el Desarrollo (MpD) · Universidad Católica Boliviana"
+        ],
+        [
+          "Bimestre",
+          "Tercero · gestión 2026"
+        ],
+        [
+          "Duración",
+          "16 sesiones · 53,28 horas académicas"
+        ],
+        [
+          "Pre-requisito",
+          "Ninguno"
+        ]
+      ]
     },
-    {
-      "id": "profesor",
-      "titulo": "Profesor",
-      "texto": "Gonzalo Chávez A.",
-      "archivos": []
+    "profesor": {
+      "nombre": "Gonzalo Chávez A.",
+      "datos": [
+        [
+          "Correo",
+          "gchavez.a@ucb.edu.bo"
+        ],
+        [
+          "Atención",
+          "Reuniones virtuales o en oficina, con cita previa por correo o vía Canvas"
+        ]
+      ]
     },
-    {
-      "id": "nosotros",
-      "titulo": "Nosotros",
-      "texto": "Integrantes del grupo:",
-      "lista_integrantes": true,
-      "archivos": []
+    "silabo": {
+      "justificacion": "Este curso desarrolla los fundamentos de la macroeconomía, combinando el rigor analítico de los modelos clásicos (Mankiw) y de mediano plazo (Blanchard) con una perspectiva didáctica orientada a ejemplos concretos, aplicaciones bolivianas y latinoamericanas, y el uso de inteligencia artificial como herramienta de aprendizaje activo. El curso está organizado en 30 sesiones agrupadas en siete unidades temáticas, desde la medición del producto hasta los dilemas de la política económica en economías abiertas.",
+      "objetivos": [
+        "Comprender y aplicar los métodos de medición del producto, el desempleo y la inflación.",
+        "Analizar los determinantes del crecimiento económico de corto y largo plazo, incluyendo las teorías neoclásica y endógena.",
+        "Dominar el modelo IS-LM y su extensión a una economía abierta de manera introductoria (Mundell-Fleming).",
+        "Evaluar los efectos de la política fiscal, monetaria y cambiaria bajo distintos regímenes de tipo de cambio.",
+        "Aplicar el marco teórico a casos concretos de Bolivia y América Latina, desarrollando pensamiento crítico sobre los datos y las fuentes.",
+        "Utilizar herramientas de inteligencia artificial de forma rigurosa: como apoyo para simular, comparar y sintetizar información, verificando siempre las fuentes."
+      ],
+      "metodologia": "Cada sesión combina exposición magistral, resolución de problemas numéricos y gráficos, discusión de casos aplicados (con énfasis en Bolivia y la región) y una actividad práctica apoyada en inteligencia artificial.",
+      "sesion_tipo": [
+        {
+          "min": 40,
+          "actividad": "Exposición teórica"
+        },
+        {
+          "min": 30,
+          "actividad": "Aplicación / caso"
+        },
+        {
+          "min": 20,
+          "actividad": "Actividad con IA y discusión"
+        }
+      ],
+      "programa": [
+        {
+          "n": 1,
+          "unidad": "Presentación del curso y la macroeconomía como ciencia + El Producto Interno Bruto (PIB): definición y enfoque del gasto",
+          "bloques": [
+            {
+              "sesion_original": 1,
+              "titulo": "Presentación del curso y la macroeconomía como ciencia",
+              "objetivo": "Comprender el objeto de estudio de la macroeconomía abierta y su método.",
+              "contenidos": [
+                "Qué es la macroeconomía: variables agregadas vs. microeconomía",
+                "Corto, mediano y largo plazo (mapa de ruta del curso)",
+                "La macroeconomía abierta: por qué importa el resto del mundo",
+                "Modelos, supuestos y el rol de la teoría"
+              ],
+              "lecturas": "Mankiw, Cap. 1 (La ciencia de la macroeconomía); Blanchard, Cap. 1-2 (Una gira por el mundo y por el libro)",
+              "aplicacion": "Panorama macroeconómico boliviano y latinoamericano actual: crecimiento, inflación y desempleo comparados (uso del Informe IISEC)",
+              "actividad_ia": "Pedir a un chatbot de IA que construya una línea de tiempo de los principales choques macroeconómicos bolivianos (1985, 2008, 2014, 2023-2026) y discutir en clase la calidad de las fuentes citadas."
+            },
+            {
+              "sesion_original": 2,
+              "titulo": "El Producto Interno Bruto (PIB): definición y enfoque del gasto",
+              "objetivo": "Definir el PIB y derivar la identidad macroeconómica desde el enfoque del gasto.",
+              "contenidos": [
+                "Definición de PIB: valor de mercado de bienes y servicios finales producidos en un periodo",
+                "El flujo circular de la renta",
+                "Enfoque del gasto: Y = C + I + G + (X-M)",
+                "Diferencia entre PIB y PNB; conceptos de valor agregado"
+              ],
+              "lecturas": "Mankiw, Cap. 2 (Los datos de la macroeconomía); DatosMacrosCap3 (ejercicio del PIB por enfoque de gasto)",
+              "aplicacion": "Cálculo del PIB de una economía ficticia latinoamericana ('Catania') aplicando el enfoque del gasto",
+              "actividad_ia": "Usar IA para generar un set de datos simulado de una economía pequeña y pedir a los estudiantes que calculen el PIB por el enfoque del gasto, verificando los cálculos con una hoja de cálculo asistida por IA."
+            }
+          ],
+          "unidades": [
+            "I · Fundamentos y medición"
+          ]
+        },
+        {
+          "n": 2,
+          "unidad": "Enfoques del ingreso y de la producción (valor agregado) + PIB nominal, PIB real y el deflactor del PIB",
+          "bloques": [
+            {
+              "sesion_original": 3,
+              "titulo": "Enfoques del ingreso y de la producción (valor agregado)",
+              "objetivo": "Reconciliar los tres métodos de cálculo del PIB y mostrar su equivalencia contable.",
+              "contenidos": [
+                "Enfoque del ingreso: salarios, renta, interés, beneficios",
+                "Enfoque de la producción (valor agregado): evitar doble contabilización",
+                "Equivalencia PIB-gasto = PIB-ingreso = PIB-producción",
+                "PIB a precios de mercado vs. costo de factores"
+              ],
+              "lecturas": "Mankiw, Cap. 2-3 (Datos macro / de dónde viene el ingreso nacional); DatosMacrosCap3 (tabla de valor agregado bruto)",
+              "aplicacion": "Cadena de valor de un producto boliviano de exportación (ej. quinua, minerales, soya) y su aporte al PIB por valor agregado",
+              "actividad_ia": "Pedir a la IA que arme un diagrama de flujo de una cadena productiva boliviana real y que el estudiante identifique dónde se genera valor agregado en cada eslabón."
+            },
+            {
+              "sesion_original": 4,
+              "titulo": "PIB nominal, PIB real y el deflactor del PIB",
+              "objetivo": "Distinguir variaciones de precios y de cantidades en el PIB, y calcular el deflactor.",
+              "contenidos": [
+                "PIB nominal vs. PIB real: por qué necesitamos un año base",
+                "El deflactor del PIB = (PIB nominal/PIB real) x 100",
+                "Tasas de crecimiento real vs. nominal",
+                "Índices de precios encadenados"
+              ],
+              "lecturas": "Mankiw, Cap. 2; DatosMacrosCap3 (actividad de cálculo del IPC/deflactor)",
+              "aplicacion": "Comparación de crecimiento nominal vs. real de Bolivia en años de alta inflación (1985) frente a años de estabilidad",
+              "actividad_ia": "Pedir a la IA que grafique series hipotéticas de PIB nominal y real y que el estudiante audite si el 'crecimiento' reportado por un titular de prensa es real o solo nominal (pensamiento crítico sobre medios)."
+            }
+          ],
+          "unidades": [
+            "I · Fundamentos y medición"
+          ]
+        },
+        {
+          "n": 3,
+          "unidad": "El Índice de Precios al Consumidor (IPC) y otras medidas de precios + Limitaciones del PIB como indicador de bienestar",
+          "bloques": [
+            {
+              "sesion_original": 5,
+              "titulo": "El Índice de Precios al Consumidor (IPC) y otras medidas de precios",
+              "objetivo": "Construir y explicar el IPC y diferenciarlo del deflactor del PIB.",
+              "contenidos": [
+                "Construcción de la canasta familiar",
+                "Cálculo del IPC y de la tasa de inflación",
+                "Diferencias IPC vs. deflactor del PIB (canasta fija vs. variable, bienes importados)",
+                "Sesgos de medición del IPC (sustitución, calidad, nuevos bienes)"
+              ],
+              "lecturas": "Dinero_Cap2 (tipo de cambio y comercio); DatosMacrosCap3, actividad 3.4 'La canasta de la familia Gutiérrez'",
+              "aplicacion": "Construcción de una canasta familiar boliviana simplificada y cálculo de inflación con datos del INE",
+              "actividad_ia": "Usar IA para simular tres años de precios de una canasta de 10 productos bolivianos y pedir a los estudiantes que calculen el IPC y la tasa de inflación, contrastando con datos reales del INE."
+            },
+            {
+              "sesion_original": 6,
+              "titulo": "Limitaciones del PIB como indicador de bienestar",
+              "objetivo": "Evaluar críticamente al PIB como medida de bienestar social.",
+              "contenidos": [
+                "Lo que el PIB no mide: economía informal, trabajo no remunerado, distribución, sostenibilidad ambiental",
+                "Indicadores alternativos: IDH, Índice de Progreso Genuino, Felicidad Nacional Bruta",
+                "El PIB per cápita y la desigualdad (curva de Lorenz, Gini)",
+                "Debate: crecimiento vs. desarrollo"
+              ],
+              "lecturas": "Mankiw, Cap. 2 (sección sobre bienestar económico); lectura complementaria del Informe IISEC",
+              "aplicacion": "Informalidad laboral en Bolivia y su subregistro en el PIB oficial; comparación PIB vs. IDH en países andinos",
+              "actividad_ia": "Debate estructurado apoyado en IA: pedir a un modelo que redacte los argumentos a favor y en contra de reemplazar el PIB por un índice de bienestar multidimensional, y que los estudiantes evalúen la solidez de cada argumento."
+            }
+          ],
+          "unidades": [
+            "I · Fundamentos y medición"
+          ]
+        },
+        {
+          "n": 4,
+          "unidad": "Tipos de desempleo: cíclico, estructural y friccional + Medición del desempleo: problemas y limitaciones",
+          "bloques": [
+            {
+              "sesion_original": 7,
+              "titulo": "Tipos de desempleo: cíclico, estructural y friccional",
+              "objetivo": "Clasificar el desempleo según sus causas y duración.",
+              "contenidos": [
+                "Definición de fuerza laboral, ocupados, desocupados, tasa de desempleo y de participación",
+                "Desempleo friccional: búsqueda y emparejamiento",
+                "Desempleo estructural: salarios rígidos, sindicatos, salario mínimo, salario de eficiencia",
+                "Desempleo cíclico: relación con el ciclo económico y la Ley de Okun"
+              ],
+              "lecturas": "Mankiw, capítulo de desempleo (síntesis); Blanchard, Cap. 2 (Ley de Okun)",
+              "aplicacion": "Estructura del mercado laboral boliviano: alta informalidad y baja tasa de desempleo abierto — paradoja aparente",
+              "actividad_ia": "Pedir a la IA que compare las tasas de desempleo oficiales de 5 países latinoamericanos y que identifique posibles distorsiones por informalidad, con base en fuentes citadas y verificables."
+            },
+            {
+              "sesion_original": 8,
+              "titulo": "Medición del desempleo: problemas y limitaciones",
+              "objetivo": "Analizar cómo se miden las estadísticas de empleo y sus sesgos.",
+              "contenidos": [
+                "Metodología de encuestas de hogares (EPH, ECH)",
+                "Trabajadores desalentados y subempleo",
+                "Tasa de desempleo abierto vs. tasa de subutilización de la fuerza laboral (U1-U6 tipo BLS)",
+                "Informalidad como amortiguador social en economías en desarrollo"
+              ],
+              "lecturas": "Complementaria: Informe IISEC (Economía Boliviana) y datos INE",
+              "aplicacion": "Comparación de metodologías de medición del desempleo entre Bolivia, Perú y Chile",
+              "actividad_ia": "Simulación con IA de una encuesta de hogares simplificada: los estudiantes clasifican 'individuos ficticios' generados por IA en ocupado/desocupado/inactivo y calculan las tasas."
+            }
+          ],
+          "unidades": [
+            "II · Desempleo"
+          ]
+        },
+        {
+          "n": 5,
+          "unidad": "Taller aplicado: mercado laboral en Bolivia y América Latina",
+          "bloques": [
+            {
+              "sesion_original": 9,
+              "titulo": "Taller aplicado: mercado laboral en Bolivia y América Latina",
+              "objetivo": "Aplicar los conceptos de desempleo a un caso real con datos actuales.",
+              "contenidos": [
+                "Análisis de series de tiempo del desempleo boliviano",
+                "Rol del sector informal y del empleo público",
+                "Políticas activas y pasivas de empleo",
+                "Síntesis de la Unidad II"
+              ],
+              "lecturas": "Repaso de Mankiw/Blanchard + Informe IISEC (datos recientes)",
+              "aplicacion": "Taller grupal: presentación de un diagnóstico del mercado laboral de un país latinoamericano a elección",
+              "actividad_ia": "Los grupos usan IA para generar un primer borrador de diagnóstico laboral que luego deben verificar, corregir y sustentar con fuentes primarias (INE, CEPAL, OIT)."
+            }
+          ],
+          "unidades": [
+            "II · Desempleo"
+          ]
+        },
+        {
+          "n": 6,
+          "unidad": "Definiciones y tipos de inflación + Medición de la inflación: IPC y deflactor del PIB revisitados",
+          "bloques": [
+            {
+              "sesion_original": 10,
+              "titulo": "Definiciones y tipos de inflación",
+              "objetivo": "Distinguir los tipos de inflación según su origen.",
+              "contenidos": [
+                "Definición de inflación, deflación y desinflación",
+                "Inflación de demanda (demand-pull)",
+                "Inflación de costos (cost-push)",
+                "Inflación estructural (cuellos de botella sectoriales, rigideces de oferta en economías en desarrollo)"
+              ],
+              "lecturas": "Mankiw, Cap. 4-5 (Sistema monetario e inflación, síntesis); Dinero_Cap2",
+              "aplicacion": "Inflación importada en economías dolarizadas o con tipo de cambio fijo: el caso boliviano",
+              "actividad_ia": "Pedir a la IA ejemplos reales recientes (2024-2026) de shocks de oferta (precios de alimentos, combustibles) y que el estudiante clasifique cada episodio según su tipo de inflación."
+            },
+            {
+              "sesion_original": 11,
+              "titulo": "Medición de la inflación: IPC y deflactor del PIB revisitados",
+              "objetivo": "Profundizar en el cálculo e interpretación de los índices de inflación.",
+              "contenidos": [
+                "Repaso técnico del cálculo del IPC",
+                "Inflación subyacente (core) vs. inflación general",
+                "Inflación mensual, interanual y acumulada",
+                "Expectativas de inflación y su medición (encuestas, mercados)"
+              ],
+              "lecturas": "DatosMacrosCap3 (actividad IPC); Mankiw Cap. 2 y 4",
+              "aplicacion": "Evolución del IPC boliviano 2020-2026 y su relación con el tipo de cambio paralelo",
+              "actividad_ia": "Uso de IA para construir un tablero simple (spreadsheet) que calcule inflación interanual y acumulada a partir de series de IPC descargadas del INE."
+            }
+          ],
+          "unidades": [
+            "III · Inflación"
+          ]
+        },
+        {
+          "n": 7,
+          "unidad": "Teorías de la inflación: monetarismo vs. estructuralismo + Caso de estudio: la hiperinflación boliviana de 1985",
+          "bloques": [
+            {
+              "sesion_original": 12,
+              "titulo": "Teorías de la inflación: monetarismo vs. estructuralismo",
+              "objetivo": "Contrastar las explicaciones monetarista y estructuralista de la inflación.",
+              "contenidos": [
+                "Teoría cuantitativa del dinero: MV = PY",
+                "Monetarismo: la inflación es siempre y en todo lugar un fenómeno monetario (Friedman)",
+                "Estructuralismo latinoamericano (CEPAL, Prebisch, Noyola, Sunkel): rigideces estructurales, pugna distributiva",
+                "Síntesis moderna: inflación inercial y expectativas racionales"
+              ],
+              "lecturas": "Mankiw, Cap. 4-5; Blanchard, Cap. 4 (mercados financieros); lectura complementaria sobre estructuralismo cepalino",
+              "aplicacion": "Debate histórico monetaristas vs. estructuralistas aplicado a la inflación latinoamericana de los años 70-80",
+              "actividad_ia": "Pedir a la IA que redacte el mejor argumento posible desde la perspectiva monetarista y desde la estructuralista para un mismo episodio inflacionario, y que los estudiantes identifiquen supuestos ocultos en cada relato."
+            },
+            {
+              "sesion_original": 13,
+              "titulo": "Caso de estudio: la hiperinflación boliviana de 1985",
+              "objetivo": "Analizar un caso extremo de inflación y su estabilización con las herramientas del curso.",
+              "contenidos": [
+                "Antecedentes: déficit fiscal, financiamiento monetario, choque externo",
+                "Dinámica de la hiperinflación: expectativas, dolarización, huida del dinero",
+                "El Decreto Supremo 21060 y el plan de estabilización de 1985",
+                "Lecciones: credibilidad, anclas nominales y coordinación fiscal-monetaria"
+              ],
+              "lecturas": "Bolivia Hiperinflación (Gonzalo Chávez); Informe 'De la crisis a la estabilidad económica' (para contraste con la crisis 2023-2026)",
+              "aplicacion": "Comparación entre la hiperinflación de 1985 y la crisis cambiaria e inflacionaria boliviana de 2023-2026",
+              "actividad_ia": "Pedir a la IA que resuma (sin citar textualmente) los mecanismos de la hiperinflación de 1985 descritos en la literatura, y contrastar ese resumen con la lectura original para evaluar precisión y sesgos del modelo."
+            }
+          ],
+          "unidades": [
+            "III · Inflación"
+          ]
+        },
+        {
+          "n": 8,
+          "unidad": "Determinantes del crecimiento: corto y largo plazo + El modelo de Solow (I): acumulación de capital",
+          "bloques": [
+            {
+              "sesion_original": 14,
+              "titulo": "Determinantes del crecimiento: corto y largo plazo",
+              "objetivo": "Diferenciar los factores que explican las fluctuaciones de corto plazo de los que explican el crecimiento sostenido.",
+              "contenidos": [
+                "Corto plazo: demanda agregada, política fiscal y monetaria, shocks",
+                "Largo plazo: acumulación de factores (capital físico, capital humano) y tecnología",
+                "La curva de posibilidades de producción y el crecimiento potencial",
+                "Contabilidad del crecimiento: residuo de Solow (productividad total de los factores)"
+              ],
+              "lecturas": "Mankiw, Cap. 7-8 (introducción); Blanchard, Cap. 2 (corto, medio y largo plazo)",
+              "aplicacion": "Fuentes del crecimiento en Bolivia: bonanza de materias primas (2006-2014) vs. desaceleración posterior",
+              "actividad_ia": "Usar IA para descomponer el crecimiento del PIB boliviano en contribución de capital, trabajo y PTF con datos simplificados, y discutir la plausibilidad de los supuestos usados por el modelo."
+            },
+            {
+              "sesion_original": 15,
+              "titulo": "El modelo de Solow (I): acumulación de capital",
+              "objetivo": "Construir el modelo de Solow con ahorro exógeno y analizar el estado estacionario.",
+              "contenidos": [
+                "Función de producción per cápita y rendimientos decrecientes del capital",
+                "Ahorro, inversión y depreciación",
+                "El estado estacionario (steady state)",
+                "Efectos de un aumento de la tasa de ahorro"
+              ],
+              "lecturas": "Mankiw, Cap. 7 (Crecimiento económico I)",
+              "aplicacion": "Simulación numérica del modelo de Solow con parámetros aproximados para Bolivia",
+              "actividad_ia": "Pedir a la IA que genere una hoja de cálculo o script simple que simule la convergencia al estado estacionario del modelo de Solow variando la tasa de ahorro, para que los estudiantes interpreten los resultados."
+            }
+          ],
+          "unidades": [
+            "IV · Crecimiento económico"
+          ]
+        },
+        {
+          "n": 9,
+          "unidad": "El modelo de Solow (II): progreso tecnológico y regla de oro + Teorías del crecimiento endógeno: capital humano, ideas y el modelo de Romer",
+          "bloques": [
+            {
+              "sesion_original": 16,
+              "titulo": "El modelo de Solow (II): progreso tecnológico y regla de oro",
+              "objetivo": "Incorporar el progreso tecnológico al modelo de Solow y determinar el nivel óptimo de capital.",
+              "contenidos": [
+                "Progreso tecnológico ahorrador de trabajo (labor-augmenting)",
+                "Estado estacionario con crecimiento tecnológico",
+                "La regla de oro del capital (Golden Rule)",
+                "Convergencia condicional y absoluta entre países"
+              ],
+              "lecturas": "Mankiw, Cap. 8 (Crecimiento económico II)",
+              "aplicacion": "¿Converge América Latina hacia los países desarrollados? Evidencia empírica de convergencia condicional",
+              "actividad_ia": "Pedir a la IA que busque y resuma (con fuentes) evidencia empírica reciente sobre convergencia de ingresos en América Latina, que el estudiante deba verificar y citar correctamente."
+            },
+            {
+              "sesion_original": 17,
+              "titulo": "Teorías del crecimiento endógeno: capital humano, ideas y el modelo de Romer",
+              "objetivo": "Explicar por qué el crecimiento puede sostenerse sin depender de fuerzas externas (tecnología exógena).",
+              "contenidos": [
+                "Límites del modelo de Solow: la tecnología como 'caja negra'",
+                "Capital humano como factor acumulable (Lucas)",
+                "El modelo de Romer: ideas como bien no rival y parcialmente excluible",
+                "Investigación y desarrollo, patentes, spillovers tecnológicos, política de innovación"
+              ],
+              "lecturas": "Mankiw, Cap. 8 (sección de crecimiento endógeno); lecturas complementarias sobre Romer y Lucas",
+              "aplicacion": "Inversión en capital humano y en I+D en Bolivia frente a economías con alto crecimiento endógeno (Corea del Sur, Chile)",
+              "actividad_ia": "Pedir a la IA que compare el gasto en I+D como % del PIB de Bolivia con el de otros países, y discutir con los estudiantes las implicancias para las políticas de innovación."
+            }
+          ],
+          "unidades": [
+            "IV · Crecimiento económico"
+          ]
+        },
+        {
+          "n": 10,
+          "unidad": "Taller: modelos de crecimiento aplicados a Bolivia y América Latina",
+          "bloques": [
+            {
+              "sesion_original": 18,
+              "titulo": "Taller: modelos de crecimiento aplicados a Bolivia y América Latina",
+              "objetivo": "Integrar Solow, capital humano y crecimiento endógeno en un análisis aplicado.",
+              "contenidos": [
+                "Diagnóstico de las fuentes del crecimiento en un país elegido",
+                "Discusión de política: ¿ahorro, educación o innovación?",
+                "Síntesis de la Unidad IV",
+                "Preparación para la evaluación parcial"
+              ],
+              "lecturas": "Repaso integrado de Mankiw Cap. 7-8",
+              "aplicacion": "Trabajo grupal: propuesta de política de crecimiento de largo plazo para Bolivia",
+              "actividad_ia": "Los estudiantes usan IA como 'asistente de investigación' para recopilar datos de crecimiento comparado, pero deben presentar su propia interpretación y verificar cada dato con la fuente original."
+            }
+          ],
+          "unidades": [
+            "IV · Crecimiento económico"
+          ]
+        },
+        {
+          "n": 11,
+          "unidad": "El mercado de bienes y la curva IS + El mercado de dinero y la curva LM",
+          "bloques": [
+            {
+              "sesion_original": 19,
+              "titulo": "El mercado de bienes y la curva IS",
+              "objetivo": "Derivar la curva IS a partir del equilibrio del mercado de bienes.",
+              "contenidos": [
+                "La cruz keynesiana: gasto planeado y producción de equilibrio",
+                "El multiplicador del gasto autónomo",
+                "Inversión sensible al tipo de interés",
+                "Derivación gráfica y algebraica de la curva IS"
+              ],
+              "lecturas": "Mankiw, Cap. 11 (bloque IS); Blanchard, Cap. 3 (El mercado de bienes)",
+              "aplicacion": "Efecto multiplicador del gasto público en un programa de inversión pública boliviano",
+              "actividad_ia": "Pedir a la IA que genere ejercicios numéricos variando la propensión marginal a consumir y el gasto autónomo, para que los estudiantes calculen multiplicadores y verifiquen manualmente los resultados."
+            },
+            {
+              "sesion_original": 20,
+              "titulo": "El mercado de dinero y la curva LM",
+              "objetivo": "Derivar la curva LM a partir del equilibrio en el mercado de dinero.",
+              "contenidos": [
+                "Demanda de dinero: motivos de transacción y especulación",
+                "Oferta monetaria y el rol del banco central",
+                "Preferencia por la liquidez y el tipo de interés de equilibrio",
+                "Derivación gráfica y algebraica de la curva LM"
+              ],
+              "lecturas": "Mankiw, Cap. 11 (bloque LM); Blanchard, Cap. 4 (Mercados financieros I)",
+              "aplicacion": "Trampa de liquidez y límite inferior cero: relevancia para bancos centrales latinoamericanos en episodios de baja inflación",
+              "actividad_ia": "Simulación con IA de escenarios de demanda de dinero para que los estudiantes calculen el tipo de interés de equilibrio ante cambios en la oferta monetaria."
+            }
+          ],
+          "unidades": [
+            "V · Modelo IS-LM"
+          ]
+        },
+        {
+          "n": 12,
+          "unidad": "Equilibrio IS-LM y política fiscal + Equilibrio IS-LM y política monetaria",
+          "bloques": [
+            {
+              "sesion_original": 21,
+              "titulo": "Equilibrio IS-LM y política fiscal",
+              "objetivo": "Analizar los efectos de la política fiscal en el modelo IS-LM.",
+              "contenidos": [
+                "Equilibrio simultáneo en el mercado de bienes y de dinero",
+                "Efecto de un aumento del gasto público o una reducción de impuestos",
+                "El efecto desplazamiento (crowding-out) sobre la inversión",
+                "Multiplicador fiscal con tipo de interés endógeno"
+              ],
+              "lecturas": "Mankiw, Cap. 11-12; Blanchard, Cap. 5 (El modelo IS-LM)",
+              "aplicacion": "Política fiscal expansiva y su efecto sobre el tipo de interés en Bolivia durante periodos de bonanza y de ajuste",
+              "actividad_ia": "Pedir a la IA que arme una tabla comparativa de multiplicadores fiscales estimados en distintos países, para discutir por qué difieren (grado de apertura, credibilidad, tipo de cambio)."
+            },
+            {
+              "sesion_original": 22,
+              "titulo": "Equilibrio IS-LM y política monetaria",
+              "objetivo": "Analizar los efectos de la política monetaria en el modelo IS-LM.",
+              "contenidos": [
+                "Efecto de una expansión/contracción monetaria sobre el tipo de interés y el producto",
+                "Mecanismo de transmisión de la política monetaria",
+                "Combinación de políticas (policy mix): el caso Clinton-Greenspan como referencia",
+                "Límites de la política monetaria en economías dolarizadas"
+              ],
+              "lecturas": "Mankiw, Cap. 12; Blanchard, Cap. 5",
+              "aplicacion": "Limitada autonomía de la política monetaria del Banco Central de Bolivia bajo un tipo de cambio administrado",
+              "actividad_ia": "Pedir a la IA que simule los efectos de un cambio en la tasa de política monetaria sobre variables clave usando el modelo IS-LM, y que el estudiante verifique la dirección de los efectos con la teoría."
+            }
+          ],
+          "unidades": [
+            "V · Modelo IS-LM"
+          ]
+        },
+        {
+          "n": 13,
+          "unidad": "De IS-LM a la demanda agregada; aplicaciones a la crisis 2008 y COVID-19 + Taller y evaluación: modelo IS-LM aplicado a Bolivia",
+          "bloques": [
+            {
+              "sesion_original": 23,
+              "titulo": "De IS-LM a la demanda agregada; aplicaciones a la crisis 2008 y COVID-19",
+              "objetivo": "Derivar la curva de demanda agregada a partir del modelo IS-LM y aplicarlo a episodios reales.",
+              "contenidos": [
+                "Derivación de la curva de demanda agregada desde IS-LM ante cambios en el nivel de precios",
+                "Desplazamientos de la demanda agregada por política fiscal y monetaria",
+                "Corto plazo vs. largo plazo en el modelo IS-LM (precios flexibles)",
+                "Aplicación: la Gran Recesión 2008-2009 y la pandemia de COVID-19"
+              ],
+              "lecturas": "Mankiw, Cap. 12 (IS-LM como teoría de la demanda agregada)",
+              "aplicacion": "Respuesta de política fiscal y monetaria en Bolivia y la región durante la pandemia de COVID-19",
+              "actividad_ia": "Pedir a la IA que compare (con fuentes verificables) los paquetes de estímulo fiscal de varios países latinoamericanos durante 2020-2021, y discutir su efectividad usando el marco IS-LM."
+            },
+            {
+              "sesion_original": 24,
+              "titulo": "Taller y evaluación: modelo IS-LM aplicado a Bolivia",
+              "objetivo": "Aplicar el modelo IS-LM completo a un caso boliviano reciente.",
+              "contenidos": [
+                "Construcción de un diagrama IS-LM con datos aproximados de la economía boliviana",
+                "Simulación de una política fiscal o monetaria concreta",
+                "Presentación de resultados",
+                "Síntesis de la Unidad V"
+              ],
+              "lecturas": "Repaso integrado de Mankiw Cap. 11-12 y Blanchard Cap. 3-5",
+              "aplicacion": "Evaluación grupal: efectos de una política contracíclica sobre la economía boliviana actual",
+              "actividad_ia": "Los estudiantes usan IA para generar un primer boceto de presentación (guion y gráficos) que luego deben corregir y defender oralmente en clase."
+            }
+          ],
+          "unidades": [
+            "V · Modelo IS-LM"
+          ]
+        },
+        {
+          "n": 14,
+          "unidad": "Balanza de pagos y tipo de cambio nominal y real + Extensión del modelo IS-LM a una economía abierta: Mundell-Fleming + Tipo de cambio flexible: efectos de la política fiscal y monetaria",
+          "bloques": [
+            {
+              "sesion_original": 25,
+              "titulo": "Balanza de pagos y tipo de cambio nominal y real",
+              "objetivo": "Introducir los conceptos básicos de la economía abierta.",
+              "contenidos": [
+                "Cuenta corriente, cuenta de capital y cuenta financiera",
+                "Tipo de cambio nominal: definición, cotización compra/venta",
+                "Tipo de cambio real y su relación con la competitividad",
+                "Paridad del poder adquisitivo (PPA)"
+              ],
+              "lecturas": "Dinero_Cap2 (tipo de cambio y comercio internacional)",
+              "aplicacion": "El tipo de cambio fijo boliviano (1985-2023) y la aparición del tipo de cambio paralelo desde 2023",
+              "actividad_ia": "Pedir a la IA que calcule, a partir de precios ficticios de un bien transable, el tipo de cambio real implícito y que el estudiante interprete si el peso/boliviano está sobre o subvaluado."
+            },
+            {
+              "sesion_original": 26,
+              "titulo": "Extensión del modelo IS-LM a una economía abierta: Mundell-Fleming",
+              "objetivo": "Incorporar el sector externo al modelo IS-LM.",
+              "contenidos": [
+                "La curva IS* en economía abierta: exportaciones netas y tipo de cambio",
+                "Movilidad de capitales y la condición de paridad de tasas de interés",
+                "El modelo Mundell-Fleming: supuestos de economía pequeña y abierta",
+                "Diferencias entre economía cerrada y abierta"
+              ],
+              "lecturas": "Mankiw, Cap. 12 (puente hacia economía abierta) + lectura complementaria sobre Mundell-Fleming; Dinero_Cap2",
+              "aplicacion": "Grado de movilidad de capitales y apertura financiera de Bolivia comparado con Chile o Perú",
+              "actividad_ia": "Pedir a la IA que explique el modelo Mundell-Fleming con un ejemplo numérico simplificado, y que el estudiante identifique los supuestos clave que la IA utilizó."
+            },
+            {
+              "sesion_original": 27,
+              "titulo": "Tipo de cambio flexible: efectos de la política fiscal y monetaria",
+              "objetivo": "Analizar los efectos de política bajo tipo de cambio flexible y perfecta movilidad de capitales.",
+              "contenidos": [
+                "Política fiscal bajo tipo de cambio flexible: crowding-out vía apreciación",
+                "Política monetaria bajo tipo de cambio flexible: alta efectividad",
+                "El trilema de la política económica (imposibilidad de la trinidad)",
+                "Evidencia comparada: Chile, Perú, Colombia (esquemas de flotación)"
+              ],
+              "lecturas": "Mankiw, Cap. 12 y lectura complementaria de economía abierta; Blanchard Cap. 5 (referencia IS-LM)",
+              "aplicacion": "Regímenes de tipo de cambio flotante en la región y su respuesta a shocks de términos de intercambio",
+              "actividad_ia": "Pedir a la IA que arme un cuadro comparativo de los regímenes cambiarios de 6 países latinoamericanos y que el estudiante verifique la vigencia de cada dato con fuentes de bancos centrales."
+            }
+          ],
+          "unidades": [
+            "VI · Economía abierta"
+          ]
+        },
+        {
+          "n": 15,
+          "unidad": "Tipo de cambio fijo: efectos de la política fiscal, monetaria y cambiaria + Caso integrador: dolarización, crisis cambiaria y estabilización en Bolivia",
+          "bloques": [
+            {
+              "sesion_original": 28,
+              "titulo": "Tipo de cambio fijo: efectos de la política fiscal, monetaria y cambiaria",
+              "objetivo": "Analizar los efectos de política bajo tipo de cambio fijo.",
+              "contenidos": [
+                "Política monetaria bajo tipo de cambio fijo: pérdida de autonomía",
+                "Política fiscal bajo tipo de cambio fijo: alta efectividad",
+                "Devaluación y revaluación: efectos esperados",
+                "Reservas internacionales como ancla de la credibilidad cambiaria"
+              ],
+              "lecturas": "Mankiw, lectura complementaria de economía abierta; Dinero_Cap2",
+              "aplicacion": "El ancla cambiaria boliviana y la pérdida/reconstrucción de reservas internacionales (2014-2026)",
+              "actividad_ia": "Pedir a la IA que modele (de forma simplificada) el efecto de una caída de reservas internacionales sobre la sostenibilidad de un tipo de cambio fijo, contrastando con el caso boliviano reciente."
+            },
+            {
+              "sesion_original": 29,
+              "titulo": "Caso integrador: dolarización, crisis cambiaria y estabilización en Bolivia",
+              "objetivo": "Integrar los conceptos de economía abierta en el análisis de la crisis boliviana reciente.",
+              "contenidos": [
+                "Antecedentes de la escasez de dólares desde 2023",
+                "Aparición y evolución del tipo de cambio paralelo",
+                "Medidas de estabilización 2025-2026 y su lógica macroeconómica",
+                "Comparación con la hiperinflación de 1985 (Sesión 13): similitudes y diferencias"
+              ],
+              "lecturas": "Informe 'De la crisis a la estabilidad económica'; Bolivia Hiperinflación (Gonzalo Chávez); Dinero_Cap2",
+              "aplicacion": "Panel de discusión: ¿qué combinación de política fiscal, monetaria y cambiaria explica la reciente estabilización boliviana?",
+              "actividad_ia": "Pedir a la IA que reconstruya, con las fuentes disponibles, la secuencia de medidas de política económica boliviana 2023-2026, para que el estudiante la verifique y complemente con fuentes oficiales (BCB, Ministerio de Economía)."
+            }
+          ],
+          "unidades": [
+            "VI · Economía abierta"
+          ]
+        },
+        {
+          "n": 16,
+          "unidad": "Dilemas de política económica y cierre del curso",
+          "bloques": [
+            {
+              "sesion_original": 30,
+              "titulo": "Dilemas de política económica y cierre del curso",
+              "objetivo": "Sintetizar los dilemas de política macroeconómica en economías abiertas y evaluar el aprendizaje del curso.",
+              "contenidos": [
+                "El trilema de la política económica revisitado",
+                "Disyuntivas: crecimiento vs. estabilidad, credibilidad vs. flexibilidad",
+                "Independencia del banco central y reglas vs. discreción",
+                "Integración regional y coordinación de políticas en América Latina",
+                "Evaluación final integradora"
+              ],
+              "lecturas": "Síntesis de todo el curso (Mankiw Cap. 1-2, 3-4, 7-8, 11-12; Blanchard Cap. 2-6; materiales bolivianos)",
+              "aplicacion": "Mesa redonda final: recomendaciones de política macroeconómica para Bolivia en el actual entorno regional",
+              "actividad_ia": "Los estudiantes usan IA para generar un contraargumento a su propia propuesta de política ('red team' con IA) y deben responder a esas objeciones en su entrega final."
+            }
+          ],
+          "unidades": [
+            "VII · Síntesis"
+          ]
+        }
+      ]
     },
-    {
-      "id": "silabos",
-      "titulo": "Sílabos",
-      "texto": "",
-      "archivos": []
-    },
-    {
-      "id": "bibliografia",
-      "titulo": "Bibliografía",
-      "texto": "",
-      "archivos": []
-    }
-  ],
+    "bibliografia": [
+      {
+        "autor": "Mankiw, N. G.",
+        "obra": "Macroeconomics",
+        "detalle": "Capítulos 1-2, 3-4, 7, 8, 11 y 12 disponibles en el curso."
+      },
+      {
+        "autor": "Blanchard, O.",
+        "obra": "Macroeconomía",
+        "detalle": "Capítulos 2-3 y 5-6 disponibles en el curso."
+      },
+      {
+        "autor": "Material de apoyo",
+        "obra": "Dinero y comercio (Cap. 2)",
+        "detalle": "Tipo de cambio, divisas y comercio internacional."
+      },
+      {
+        "autor": "Material de apoyo",
+        "obra": "Datos macroeconómicos (Cap. 3)",
+        "detalle": "Actividades de cálculo de PIB e IPC."
+      },
+      {
+        "autor": "Chávez, Gonzalo",
+        "obra": "La hiperinflación boliviana de 1985",
+        "detalle": "Estudio de caso."
+      },
+      {
+        "autor": "Ministerio de Economía y Finanzas Públicas de Bolivia",
+        "obra": "De la crisis a la estabilidad económica",
+        "detalle": "Informe, 2025-2026."
+      },
+      {
+        "autor": "IISEC",
+        "obra": "Informe de Economía (11 de julio)",
+        "detalle": "Diagnóstico de coyuntura boliviana."
+      }
+    ]
+  },
   "cuaderno": [
     {
       "pag": "1",

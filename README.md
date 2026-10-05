@@ -46,7 +46,7 @@ Misma idea. Lista `ejercicios`: `titulo`, `sesion`, `fecha` (opcional), `descrip
 
 ## Pestaña Macroeconomía
 
-Lista `macroeconomia`: una tarjeta por elemento (`titulo`, `texto`, `archivos`). Para subir el sílabo o la bibliografía, agregar en `archivos` una entrada `{"nombre": "Sílabo 2026", "archivo": "macroeconomia/silabo.pdf"}`.
+Las tarjetas salen del objeto `macroeconomia` de `data/contenido.json`, con los datos del sílabo (GPP-117, gestión 2026): `curso` y `profesor` (pares etiqueta/valor), `silabo` (justificación, objetivos, metodología y `programa` con las 16 sesiones y sus bloques) y `bibliografia`. La tarjeta Nosotros usa la lista `integrantes`.
 
 ## Datos
 
