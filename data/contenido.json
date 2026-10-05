@@ -37,6 +37,183 @@
       "archivos": []
     }
   ],
+  "cuaderno": [
+    {
+      "pag": "1",
+      "titulo": "¿Qué es la Macroeconomía?",
+      "archivo": "apuntes/cuaderno/01-hoja-1.jpg",
+      "w": 1724,
+      "h": 2519
+    },
+    {
+      "pag": "1B",
+      "titulo": "Bolivia y el mapa del curso",
+      "archivo": "apuntes/cuaderno/02-hoja-1b.jpg",
+      "w": 1470,
+      "h": 2528
+    },
+    {
+      "pag": "2",
+      "titulo": "El PIB: enfoque del gasto",
+      "archivo": "apuntes/cuaderno/03-hoja-2.jpg",
+      "w": 1677,
+      "h": 2521
+    },
+    {
+      "pag": "2B",
+      "titulo": "Gasto: casos y trampas",
+      "archivo": "apuntes/cuaderno/04-hoja-2b.jpg",
+      "w": 1767,
+      "h": 2518
+    },
+    {
+      "pag": "3",
+      "titulo": "Tres miradas, un mismo PIB",
+      "archivo": "apuntes/cuaderno/05-hoja-3.jpg",
+      "w": 1781,
+      "h": 2517
+    },
+    {
+      "pag": "3B",
+      "titulo": "Valor agregado en cadena",
+      "archivo": "apuntes/cuaderno/06-hoja-3b.jpg",
+      "w": 1781,
+      "h": 2517
+    },
+    {
+      "pag": "4",
+      "titulo": "PIB nominal, real y deflactor",
+      "archivo": "apuntes/cuaderno/07-hoja-4.jpg",
+      "w": 1742,
+      "h": 2519
+    },
+    {
+      "pag": "4B",
+      "titulo": "Deflactor, año base y 1985",
+      "archivo": "apuntes/cuaderno/08-hoja-4b.jpg",
+      "w": 1742,
+      "h": 2519
+    },
+    {
+      "pag": "5",
+      "titulo": "La hiperinflación de 1985",
+      "archivo": "apuntes/cuaderno/09-hoja-5.jpg",
+      "w": 1671,
+      "h": 2521
+    },
+    {
+      "pag": "5B",
+      "titulo": "De 1985 a 2026",
+      "archivo": "apuntes/cuaderno/10-hoja-5b.jpg",
+      "w": 1556,
+      "h": 2525
+    },
+    {
+      "pag": "6",
+      "titulo": "Crecimiento económico",
+      "archivo": "apuntes/cuaderno/11-hoja-6.jpg",
+      "w": 1781,
+      "h": 2517
+    },
+    {
+      "pag": "6B",
+      "titulo": "Instituciones y desarrollo",
+      "archivo": "apuntes/cuaderno/12-hoja-6b.jpg",
+      "w": 1731,
+      "h": 2519
+    },
+    {
+      "pag": "7",
+      "titulo": "El modelo de Solow",
+      "archivo": "apuntes/cuaderno/13-hoja-7.jpg",
+      "w": 1727,
+      "h": 2519
+    },
+    {
+      "pag": "7B",
+      "titulo": "Solow aplicado a Bolivia",
+      "archivo": "apuntes/cuaderno/14-hoja-7b.jpg",
+      "w": 1609,
+      "h": 2523
+    },
+    {
+      "pag": "8",
+      "titulo": "El sistema monetario",
+      "archivo": "apuntes/cuaderno/15-hoja-8.jpg",
+      "w": 1734,
+      "h": 2519
+    },
+    {
+      "pag": "8B",
+      "titulo": "El dinero: origen y medida",
+      "archivo": "apuntes/cuaderno/16-hoja-8b.jpg",
+      "w": 1458,
+      "h": 2528
+    },
+    {
+      "pag": "8C",
+      "titulo": "Los bancos crean dinero",
+      "archivo": "apuntes/cuaderno/17-hoja-8c.jpg",
+      "w": 1547,
+      "h": 2525
+    },
+    {
+      "pag": "8D",
+      "titulo": "El multiplicador en acción",
+      "archivo": "apuntes/cuaderno/18-hoja-8d.jpg",
+      "w": 1389,
+      "h": 2530
+    },
+    {
+      "pag": "9",
+      "titulo": "Inflación I: dinero y precios",
+      "archivo": "apuntes/cuaderno/19-hoja-9.jpg",
+      "w": 1622,
+      "h": 2523
+    },
+    {
+      "pag": "9B",
+      "titulo": "Inflación I: a fondo",
+      "archivo": "apuntes/cuaderno/20-hoja-9b.jpg",
+      "w": 1410,
+      "h": 2530
+    },
+    {
+      "pag": "10",
+      "titulo": "Inflación II: costes y teorías",
+      "archivo": "apuntes/cuaderno/21-hoja-10.jpg",
+      "w": 1781,
+      "h": 2517
+    },
+    {
+      "pag": "10B",
+      "titulo": "Inflación II: teorías a fondo",
+      "archivo": "apuntes/cuaderno/22-hoja-10b.jpg",
+      "w": 1311,
+      "h": 2533
+    },
+    {
+      "pag": "11",
+      "titulo": "Bolivia 2026: la coyuntura",
+      "archivo": "apuntes/cuaderno/23-hoja-11.jpg",
+      "w": 1358,
+      "h": 2531
+    },
+    {
+      "pag": "12A",
+      "titulo": "El modelo IS-LM",
+      "archivo": "apuntes/cuaderno/24-hoja-12a.jpg",
+      "w": 1259,
+      "h": 2535
+    },
+    {
+      "pag": "12B",
+      "titulo": "Economía abierta: IS-LM-BP",
+      "archivo": "apuntes/cuaderno/25-hoja-12b.jpg",
+      "w": 1252,
+      "h": 2535
+    }
+  ],
   "apuntes": [
     {
       "id": "01",

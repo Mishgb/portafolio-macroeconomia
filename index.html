@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <style>
   body{min-height:100vh}
-  .poster{min-height:100vh;display:flex;flex-direction:column}
+  .poster{min-height:100vh;display:flex;flex-direction:column;overflow:visible}
   @media (min-width:1140px){.poster{margin:0 auto;box-shadow:none;max-width:none;background:transparent}.poster>*{max-width:1080px;margin-left:auto;margin-right:auto;width:100%}.poster>.aguayo{max-width:none}}
   /* nav */
   nav.top{position:sticky;top:0;z-index:20;background:rgba(245,238,220,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -56,6 +56,32 @@
   .mcard .files{display:flex;flex-direction:column;gap:6px;margin-top:auto}
   .mcard .files a{color:var(--text);font-size:13px;text-decoration:none;border-bottom:1px solid var(--acento);align-self:flex-start}
   .soon{margin-top:auto;align-self:flex-start;font-family:'JetBrains Mono';font-size:10.5px;padding:3px 9px;border:1px dashed var(--line);border-radius:999px;color:var(--dim)}
+  /* cuaderno */
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .nb-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px 16px;flex-wrap:wrap;max-width:860px;margin:0 auto 12px}
+  .nb-head .t{min-width:0}
+  .nb-head .t small{display:block;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acento);font-weight:600;margin-bottom:3px}
+  .nb-head .t b{display:block;font-size:clamp(17px,2.4vw,21px);font-weight:800;letter-spacing:-.01em}
+  .nb-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .nb-tools select,.nb-tools a{background:var(--card);border:1px solid var(--line);color:var(--text);font:600 12.5px 'Manrope';padding:8px 12px;border-radius:999px;text-decoration:none;max-width:250px}
+  .nb-tools select{cursor:pointer;appearance:none;-webkit-appearance:none;padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),linear-gradient(135deg,var(--dim) 50%,transparent 50%);background-position:calc(100% - 16px) 52%,calc(100% - 11px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+  .nb-tools select:hover,.nb-tools a:hover{border-color:var(--acento)}
+  .nb-stage{display:grid;grid-template-columns:52px minmax(0,860px) 52px;gap:16px;justify-content:center;align-items:start}
+  .nb-page{perspective:2200px;min-width:0;touch-action:pan-y pinch-zoom;overflow:hidden;border-radius:10px}
+  .nb-page img{display:block;width:100%;height:auto;border-radius:10px;background:var(--bg2);transform-origin:left center;backface-visibility:hidden;-webkit-user-select:none;user-select:none}
+  .nb-side,.nb-nav button{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--card);border:1px solid var(--line);color:var(--text);cursor:pointer;font:700 13px 'Manrope';transition:border-color .15s,color .15s}
+  .nb-side{position:sticky;top:calc(50vh - 26px);margin-top:min(30vh,260px);width:52px;height:52px;border-radius:50%}
+  .nb-side svg,.nb-nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .nb-side:hover:not(:disabled),.nb-nav button:hover:not(:disabled){border-color:var(--acento);color:var(--acento)}
+  .nb-side:disabled,.nb-nav button:disabled{opacity:.35;cursor:default}
+  .nb-nav{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;max-width:860px;margin:14px auto 0}
+  .nb-nav button{padding:10px 16px 10px 12px;border-radius:999px}
+  .nb-nav #nb-next{padding:10px 12px 10px 16px}
+  .nb-pos{text-align:center;font-family:'JetBrains Mono';font-size:11.5px;color:var(--dim)}
+  .nb-prog{height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin-top:6px}
+  .nb-prog i{display:block;height:100%;width:4%;background:var(--acento);transition:width .3s}
+  @media (max-width:900px){.nb-stage{grid-template-columns:minmax(0,1fr)}.nb-side{display:none}}
+  @media (max-width:560px){.nbsec{padding-left:6px;padding-right:6px}.nb-head,.nb-nav{padding:0 10px}.nb-page,.nb-page img{border-radius:6px}.nb-nav button{padding:10px 12px}.nb-nav #nb-next{padding:10px 12px}}
   /* apuntes cards */
   .notes{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
   .note-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;cursor:pointer;transition:border-color .15s,transform .15s;display:flex;flex-direction:column;gap:8px;min-height:170px;text-decoration:none;color:inherit;position:relative;overflow:hidden}
@@ -158,10 +184,33 @@
       <div>
         <div class="kicker">Cuaderno del curso</div>
         <h1 style="margin-top:10px">Apuntes</h1>
-        <p class="sub">Cada parte del cuaderno convertida en una infografía interactiva. Toca una tarjeta para abrirla.</p>
       </div>
     </header>
-    <section style="border-top:0;padding-top:0"><div class="notes" id="notes"></div></section>
+    <section class="nbsec" style="border-top:0;padding-top:0">
+      <div class="nb" id="nb">
+        <div class="nb-head">
+          <div class="t"><small id="nb-tema">Tema 1</small><b id="nb-title">¿Qué es la Macroeconomía?</b></div>
+          <div class="nb-tools">
+            <label class="nb-jump"><span class="sr">Ir a una hoja</span><select id="nb-jump" aria-label="Ir a una hoja"></select></label>
+            <a id="nb-zoom" href="apuntes/cuaderno/01-hoja-1.jpg" target="_blank" rel="noopener">Ampliar ↗</a>
+          </div>
+        </div>
+        <div class="nb-stage">
+          <button class="nb-side" id="nb-prev-side" aria-label="Hoja anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <div class="nb-page" id="nb-page"><img id="nb-img" src="apuntes/cuaderno/01-hoja-1.jpg" width="1724" height="2519" loading="lazy" decoding="async" alt="Hoja 1 del cuaderno: ¿Qué es la Macroeconomía?"></div>
+          <button class="nb-side" id="nb-next-side" aria-label="Hoja siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="nb-nav">
+          <button id="nb-prev" aria-label="Hoja anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span>Anterior</span></button>
+          <div class="nb-pos"><span id="nb-count" aria-live="polite">Hoja 1 de 25</span><div class="nb-prog"><i id="nb-prog"></i></div></div>
+          <button id="nb-next" aria-label="Hoja siguiente"><span>Siguiente</span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="h2"><h2>Infografías interactivas<small>Toca una tarjeta para abrirla.</small></h2></div>
+      <div class="notes" id="notes"></div>
+    </section>
   </div>
 
   <!-- 4 · LECTURAS -->
@@ -219,7 +268,7 @@
     document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('on',b.dataset.tab===id));
     const act=document.querySelector('#tabs-bottom [data-tab="'+id+'"]');if(act)act.scrollIntoView({block:'nearest',inline:'nearest'});
     if(push)history.replaceState(null,'','#'+id);window.scrollTo({top:0});
-    if(id==='datos')setTimeout(()=>drawAll(),30);if(id==='simulador')loadSim();}
+    if(id==='datos')setTimeout(()=>drawAll(),30);if(id==='simulador')loadSim();if(id==='apuntes')nbPreload();}
   $('tabs-top').innerHTML=TABS.map(t=>`<button data-tab="${t[0]}"><span>${t[1]}</span></button>`).join('');
   $('tabs-bottom').innerHTML=TABS.map(t=>`<button data-tab="${t[0]}">${t[3]}<span>${t[2]}</span></button>`).join('');
   document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
@@ -232,6 +281,49 @@
       const fit=()=>{fr.style.height=Math.ceil(el.getBoundingClientRect().height)+'px';};fit();
       if('ResizeObserver' in window)new ResizeObserver(fit).observe(el);else fr.contentWindow.addEventListener('resize',fit);}catch(e){fr.style.height='1400px';}});
     fr.src='simulador/is-lm.html';}
+
+  // cuaderno: una hoja a la vez, con flechas, teclado y deslizar en celular
+  const NB={pages:[],i:0,busy:false,cache:{}};
+  const nbImg=$('nb-img'),reduceMotion=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function nbLabel(p){return 'Tema '+p.pag;}
+  function nbRender(){const n=NB.pages.length,p=NB.pages[NB.i];if(!p)return;
+    nbImg.width=p.w;nbImg.height=p.h;nbImg.src=p.archivo;nbImg.alt='Hoja '+p.pag+' del cuaderno: '+p.titulo;
+    $('nb-tema').textContent=nbLabel(p);$('nb-title').textContent=p.titulo;$('nb-zoom').href=p.archivo;
+    $('nb-count').textContent='Hoja '+(NB.i+1)+' de '+n;$('nb-prog').style.width=((NB.i+1)/n*100)+'%';$('nb-jump').value=NB.i;
+    ['nb-prev','nb-prev-side'].forEach(id=>$(id).disabled=NB.i===0);['nb-next','nb-next-side'].forEach(id=>$(id).disabled=NB.i===n-1);}
+  function nbLoad(j){const p=NB.pages[j];if(!p)return Promise.resolve();
+    if(!NB.cache[j]){const im=new Image();im.src=p.archivo;NB.cache[j]=(im.decode?im.decode():new Promise(r=>{im.onload=im.onerror=r;})).catch(()=>{});}
+    return NB.cache[j];}
+  function nbPreload(){if(!NB.pages.length||!$('v-apuntes').classList.contains('on'))return;nbLoad(NB.i+1);nbLoad(NB.i-1);}
+  async function nbGo(j){const n=NB.pages.length;if(NB.busy||j<0||j>=n||j===NB.i)return;NB.busy=true;const dir=j>NB.i?1:-1;
+    const top=$('nb').getBoundingClientRect().top;if(top<0)window.scrollTo({top:window.scrollY+top-72,behavior:'instant'});
+    await nbLoad(j);
+    const anim=!reduceMotion&&!!nbImg.animate;let out=null;
+    try{
+      if(anim)out=dir>0?nbImg.animate([{transform:'rotateY(0deg)',opacity:1},{transform:'rotateY(-75deg)',opacity:0}],{duration:300,easing:'cubic-bezier(.45,0,.75,.3)',fill:'forwards'})
+                      :nbImg.animate([{opacity:1},{opacity:0}],{duration:120,fill:'forwards'});
+      if(out)await out.finished;
+      NB.i=j;nbRender();
+      if(anim){const inn=dir>0?nbImg.animate([{opacity:0,transform:'scale(.985)'},{opacity:1,transform:'none'}],{duration:220,easing:'ease-out'})
+                              :nbImg.animate([{transform:'rotateY(-75deg)',opacity:0},{transform:'rotateY(0deg)',opacity:1}],{duration:320,easing:'cubic-bezier(.2,.75,.3,1)'});
+        if(out)out.cancel();await inn.finished;}
+    }catch(e){if(out)out.cancel();NB.i=j;nbRender();}
+    NB.busy=false;nbPreload();}
+  function nbInit(pages){NB.pages=(pages||[]).filter(p=>p&&p.archivo);if(!NB.pages.length){$('nb').innerHTML='<div class="empty">Todavía no hay hojas del cuaderno.</div>';return;}
+    $('nb-jump').innerHTML=NB.pages.map((p,k)=>`<option value="${k}">${esc(nbLabel(p))} · ${esc(p.titulo)}</option>`).join('');
+    NB.i=0;nbRender();nbPreload();}
+  ['nb-prev','nb-prev-side'].forEach(id=>$(id).addEventListener('click',()=>nbGo(NB.i-1)));
+  ['nb-next','nb-next-side'].forEach(id=>$(id).addEventListener('click',()=>nbGo(NB.i+1)));
+  $('nb-jump').addEventListener('change',e=>{const j=+e.target.value;$('nb-jump').value=NB.i;nbGo(j);});
+  window.addEventListener('keydown',e=>{if(!$('v-apuntes').classList.contains('on')||$('viewer').classList.contains('on'))return;
+    if(/^(INPUT|SELECT|TEXTAREA)$/.test((e.target&&e.target.tagName)||'')||e.altKey||e.ctrlKey||e.metaKey)return;
+    if(e.key==='ArrowRight')nbGo(NB.i+1);else if(e.key==='ArrowLeft')nbGo(NB.i-1);});
+  (function(){let t0=null;const pg=$('nb-page');
+    pg.addEventListener('touchstart',e=>{if(e.touches.length!==1){t0=null;return;}const t=e.touches[0];t0={x:t.clientX,y:t.clientY,t:Date.now()};},{passive:true});
+    pg.addEventListener('touchmove',e=>{if(e.touches.length>1)t0=null;},{passive:true});
+    pg.addEventListener('touchend',e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,dt=Date.now()-t0.t;t0=null;
+      if(window.visualViewport&&visualViewport.scale>1.05)return;
+      if(Math.abs(dx)>50&&Math.abs(dx)>1.6*Math.abs(dy)&&dt<800)nbGo(NB.i+(dx<0?1:-1));},{passive:true});})();
   const initial=(location.hash||'#macroeconomia').slice(1);show(TABS.some(t=>t[0]===initial)?initial:'macroeconomia',false);
 
   // viewer
@@ -249,6 +341,7 @@
       const lista=m.lista_integrantes?(c.integrantes||[]):(m.lista||[]);
       return `<div class="mcard"><div class="id">${String(i+1).padStart(2,'0')}</div><h3>${esc(m.titulo)}</h3>${m.texto?`<p>${esc(m.texto)}</p>`:''}${lista.length?`<ul>${lista.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${fs.length?`<div class="files">${fs.map(a=>link(a.archivo,a.nombre)).join('')}</div>`:(!m.texto&&!lista.length?'<span class="soon">archivo pendiente</span>':'')}</div>`;}).join('');
     // 3 · Apuntes
+    nbInit(c.cuaderno);
     $('notes').innerHTML=c.apuntes.map((a,i)=>`<a class="note-card" href="${a.archivo}" data-i="${i}"><div class="id">${a.unidad}${a.sesiones?' · '+a.sesiones:''}</div><h3>${a.titulo}</h3><p>${a.resumen}</p><div class="tags">${(a.interactivo||[]).map(t=>`<span class="i">${t}</span>`).join('')}</div></a>`).join('');
     $('notes').querySelectorAll('.note-card').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openNote(c.apuntes[+el.dataset.i]);}));
     // 4 · Lecturas
