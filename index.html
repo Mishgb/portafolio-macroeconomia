@@ -59,6 +59,7 @@
   .mem .ph svg{width:40px;height:40px;fill:none;stroke:var(--dim);stroke-width:1.6;stroke-linecap:round}
   .mem h4{font-size:15.5px;font-weight:800;color:var(--text);line-height:1.3}
   .mem p{font-size:13px;line-height:1.55;color:var(--muted)}
+  .mem .cargo{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--acento);font-weight:600;line-height:1.4;margin-top:-2px}
   .mem p.pend{font-family:'JetBrains Mono';font-size:11px;color:var(--dim)}
   .kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;margin-top:2px}
   .kv dt{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding-top:3px;white-space:nowrap}
@@ -518,7 +519,7 @@
       card('01','Curso',`<p class="lead">${esc(C.nombre||'')}</p>${kv(C.datos||[])}`)+
       card('02','Profesor',`<p class="lead">${esc(P.nombre||'')}</p>${kv(P.datos||[])}`);
     const avatar='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M4.5 20c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5"/></svg>';
-    const mem=m=>{m=typeof m==='string'?{nombre:m}:m;return `<div class="mem"><div class="ph">${m.foto?`<img src="${esc(m.foto)}" alt="Foto de ${esc(m.nombre)}" loading="lazy" width="600" height="600">`:avatar}</div><h4>${esc(m.nombre)}</h4>${m.perfil?`<p>${esc(m.perfil)}</p>`:'<p class="pend">Perfil por completar</p>'}</div>`;};
+    const mem=m=>{m=typeof m==='string'?{nombre:m}:m;return `<div class="mem"><div class="ph">${m.foto?`<img src="${esc(m.foto)}" alt="Foto de ${esc(m.nombre)}" loading="lazy" width="600" height="600">`:avatar}</div><h4>${esc(m.nombre)}</h4>${m.cargo?`<div class="cargo">${esc(m.cargo)}</div>`:''}${m.perfil?`<p>${esc(m.perfil)}</p>`:'<p class="pend">Perfil por completar</p>'}</div>`;};
     $('mequipo').innerHTML=card('03','Nosotros',`<div class="team">${integ.map(mem).join('')}</div>`,'wide');
     const prog=S.programa||[];
     const ses=s=>`<div class="ses"><div class="top"><b>Sesión ${String(s.n).padStart(2,'0')}</b><span>Unidad ${esc((s.unidades||[]).join(' / '))}</span></div>

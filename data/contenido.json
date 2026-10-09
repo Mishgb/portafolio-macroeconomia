@@ -1069,12 +1069,20 @@
     {
       "nombre": "Michelle Griffiths Boada",
       "perfil": "Licenciada en Creación y Desarrollo de Empresas, con formación en gestión ágil de proyectos y experiencia en administración, coordinación interinstitucional, gestión documental y planificación logística en entornos académicos, comerciales, bancarios y de cooperación internacional.",
-      "foto": "assets/equipo/michelle-griffiths.jpg"
+      "foto": "assets/equipo/michelle-griffiths.jpg",
+      "cargo": "Licenciada en Creación y Desarrollo de Empresas"
     },
     {
       "nombre": "Henning Aguilar Valencia",
       "perfil": "Auditor financiero con formación en finanzas corporativas y cerca de diez años de experiencia en el sector industrial. Actualmente es Gerente General de una empresa B2B de derivados bovinos con presencia en mercados nacionales y de exportación, donde lidera la gestión estratégica, financiera y operativa. Su enfoque profesional integra el análisis financiero, la mejora de procesos y el liderazgo de equipos para impulsar un crecimiento sostenible. Le interesa desarrollar soluciones que conecten la estrategia empresarial, la gestión de proyectos y la innovación tecnológica, con un compromiso constante con el aprendizaje y la toma de decisiones fundamentadas.",
-      "foto": "assets/equipo/henning-aguilar.jpg"
+      "foto": "assets/equipo/henning-aguilar.jpg",
+      "cargo": "Auditor financiero · Gerente General"
+    },
+    {
+      "nombre": "Pablo Alejandro Jaldín",
+      "perfil": "Graduado en Ingeniería Financiera, con una sólida base teórica y gran disposición para el trabajo en equipo. Es una persona responsable y organizada, lista para asumir nuevos retos en el sector administrativo o financiero, con la meta clara de desarrollar sus habilidades y sumar valor desde el primer día.",
+      "foto": "assets/equipo/pablo-jaldin.jpg",
+      "cargo": "Ingeniero Financiero"
     },
     {
       "nombre": "Ofelia Plata Patana",
@@ -1083,11 +1091,6 @@
     },
     {
       "nombre": "Eliana Hilda Vera Espinoza",
-      "perfil": "",
-      "foto": ""
-    },
-    {
-      "nombre": "Pablo Alejandro Jaldín",
       "perfil": "",
       "foto": ""
     }
