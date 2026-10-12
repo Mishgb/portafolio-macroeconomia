@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-10-11T12:48:32+00:00",
+ "actualizado": "2026-10-12T13:10:05+00:00",
  "fuentes": {
   "ipc": "INE (IPC base 2016=100), republicado por BCB · https://www.bcb.gob.bo/?q=indicadores_inflacion",
   "tipo_cambio": "BCB · Tabla de cotizaciones · https://www.bcb.gob.bo/?q=cotizaciones_tc",
@@ -440,7 +440,7 @@
   }
  ],
  "tipo_cambio": {
-  "fecha": "2026-10-11",
+  "fecha": "2026-10-12",
   "tabla": "190-26",
   "oficial_bs_usd": 11.73,
   "monedas": {
@@ -579,8 +579,8 @@
   }
  },
  "ufv": {
-  "fecha": "2026-10-11",
-  "valor": 3.35631
+  "fecha": "2026-10-12",
+  "valor": 3.35681
  },
  "tc_historico": [
   {
@@ -685,6 +685,10 @@
   },
   {
    "fecha": "2026-10-11",
+   "oficial": 11.73
+  },
+  {
+   "fecha": "2026-10-12",
    "oficial": 11.73
   }
  ],
