@@ -1027,6 +1027,72 @@
       ]
     }
   ],
+  "econland": {
+    "grupos": [
+      {
+        "nombre": "Michelle Griffiths y Eliana Vera",
+        "simulaciones": [
+          {
+            "titulo": "Simulación 1",
+            "meta": "Informe de gestión 2019–2026 · 5 de 7 objetivos cumplidos",
+            "descripcion": "La deuda pública bajó de 60% a 41,6% del PIB, el déficit fiscal pasó a superávit (+1,0%) y el PIB creció 4,3% en el último año. Quedaron pendientes el desempleo, que cerró en 5,0%, y la balanza comercial (−4,4% del PIB).",
+            "archivos": [
+              {
+                "tipo": "Presentación",
+                "nombre": "Simulación 1 · Informe de gestión económica",
+                "detalle": "Ver en el navegador · PDF, 26 láminas",
+                "archivo": "econland/michelle-eliana/simulacion-1.pdf"
+              },
+              {
+                "tipo": "Original",
+                "nombre": "Simulación 1 (PowerPoint)",
+                "detalle": "Descargar la presentación · PPTX",
+                "archivo": "econland/michelle-eliana/simulacion-1.pptx"
+              }
+            ]
+          },
+          {
+            "titulo": "Simulación 2",
+            "meta": "Informe de gestión 2019–2026 · 3 de 7 objetivos cumplidos",
+            "descripcion": "Las cuentas quedaron en orden: deuda de 47,0% del PIB, superávit de 0,8% e inflación de 2,5%. El ajuste en plena crisis frenó el crecimiento (2,2% de promedio) y la inversión cayó a 12,9% del PIB.",
+            "archivos": [
+              {
+                "tipo": "Presentación",
+                "nombre": "Simulación 2 · Informe de gestión económica",
+                "detalle": "Ver en el navegador · PDF, 26 láminas",
+                "archivo": "econland/michelle-eliana/simulacion-2.pdf"
+              },
+              {
+                "tipo": "Original",
+                "nombre": "Simulación 2 (PowerPoint)",
+                "detalle": "Descargar la presentación · PPTX",
+                "archivo": "econland/michelle-eliana/simulacion-2.pptx"
+              }
+            ]
+          },
+          {
+            "titulo": "Simulación 3",
+            "meta": "Informe de gestión 2019–2026 · 5 de 7 objetivos cumplidos",
+            "descripcion": "La economía creció todos los años (3,1% en el último), la inversión subió a 16,6% del PIB y el desempleo bajó a 4,9%. La tasa de interés baja por mucho tiempo dejó la inflación en 3,1% y la balanza comercial cerró en −4,5% del PIB.",
+            "archivos": [
+              {
+                "tipo": "Presentación",
+                "nombre": "Simulación 3 · Informe de gestión económica",
+                "detalle": "Ver en el navegador · PDF, 26 láminas",
+                "archivo": "econland/michelle-eliana/simulacion-3.pdf"
+              },
+              {
+                "tipo": "Original",
+                "nombre": "Simulación 3 (PowerPoint)",
+                "detalle": "Descargar la presentación · PPTX",
+                "archivo": "econland/michelle-eliana/simulacion-3.pptx"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "lecturas": [
     {
       "titulo": "Analizar la política monetaria de Bolivia",

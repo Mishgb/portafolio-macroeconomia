@@ -1,6 +1,6 @@
 # Portafolio · Macroeconomía para el Desarrollo
 
-Portafolio académico de grupo, **Macroeconomía para el Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con seis pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabo, bibliografía), Datos macroeconómicos de Bolivia (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Simulador (IS-LM), Trabajos (secciones Lecturas, Ejercicios y Entregas) y Columnas (columnas de opinión del docente).
+Portafolio académico de grupo, **Macroeconomía para el Desarrollo** (UCB, 2026). Integrantes: Henning Aguilar, Ofelia Plata, Michelle Griffiths, Eliana Vera, Pablo Jaldín. Una sola página con seis pestañas, en este orden: Macroeconomía (curso, profesor, nosotros, sílabo, bibliografía), Datos macroeconómicos de Bolivia (INE · BCB), Apuntes (cuaderno hoja por hoja e infografías interactivas), Simulador (IS-LM), Trabajos (secciones Lecturas, Ejercicios, Simulador Econland y Entregas) y Columnas (columnas de opinión del docente).
 
 ## Estructura
 
@@ -10,7 +10,7 @@ assets/style.css         sistema visual compartido
 apuntes/cuaderno/        hojas del cuaderno (una imagen por hoja, en orden)
 infografias/             una infografía interactiva por parte del cuaderno
 simulador/is-lm.html     simulador IS-LM (pestaña Simulador)
-data/contenido.json      macroeconomía, apuntes, lecturas, ejercicios y trabajos (editar aquí para agregar)
+data/contenido.json      macroeconomía, apuntes, lecturas, ejercicios, econland y trabajos (editar aquí para agregar)
 data/macro.json          datos INE/BCB (lo actualiza el script)
 data/indicadores.json    PIB y desempleo (INE/BCB), se actualiza a mano con cada publicación
 data/columnas.json       columnas del docente (título, fecha, resumen, temas y enlaces)
@@ -45,6 +45,8 @@ trabajos/                archivos entregados
 ## Agregar un ejercicio o una lectura
 
 Misma idea. Lista `ejercicios`: mismo formato que `lecturas` (una tarjeta con `titulo`, `descripcion` y `archivos`); los archivos van en `ejercicios/`.
+
+**Simulador Econland.** En `econland.grupos`, un objeto por equipo con `nombre` (por ejemplo, "Michelle Griffiths y Eliana Vera") y `simulaciones`: tarjetas con el mismo formato que `ejercicios`, más un campo opcional `meta` (línea corta bajo el título). Los archivos van en `econland/<equipo>/`; cada presentación se publica como PDF para verla y PPTX para descargar.
 
 ## Pestaña Macroeconomía
 

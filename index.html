@@ -203,6 +203,11 @@
   .tjump button{font:600 12.5px 'Manrope';color:var(--muted);border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px;cursor:pointer}
   .tjump button:hover{border-color:var(--acento);color:var(--text)}
   .tsec{scroll-margin-top:66px}
+  .grp+.grp{margin-top:30px}
+  .grp-h{display:flex;align-items:baseline;gap:6px 12px;flex-wrap:wrap;padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+  .grp-h .lbl{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--acento);font-weight:600}
+  .grp-h h3{font-size:20px;font-weight:800;letter-spacing:-.01em;margin:0;line-height:1.25}
+  .grp-h .n{margin-left:auto;font-family:'JetBrains Mono';font-size:11px;color:var(--dim)}
   .col-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
   .col-filter button{font:600 12px 'Manrope';color:var(--muted);border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 12px;cursor:pointer}
   .col-filter button.on{background:var(--text);color:var(--bg);border-color:var(--text)}
@@ -371,8 +376,8 @@
 
   <!-- 7 · TRABAJOS (lecturas, ejercicios y entregas) -->
   <div class="view" id="v-trabajos">
-    <header class="hero2"><div><div class="kicker">Material y entregas del semestre</div><h1 style="margin-top:10px">Trabajos</h1><p class="sub">Lecturas del curso, ejercicios resueltos y trabajos entregados por el grupo.</p>
-      <div class="col-links tjump"><button data-go="t-lecturas">Lecturas</button><button data-go="t-ejercicios">Ejercicios</button><button data-go="t-entregas">Entregas</button></div></div></header>
+    <header class="hero2"><div><div class="kicker">Material y entregas del semestre</div><h1 style="margin-top:10px">Trabajos</h1><p class="sub">Lecturas del curso, ejercicios resueltos, simulaciones de Econland y trabajos entregados por el grupo.</p>
+      <div class="col-links tjump"><button data-go="t-lecturas">Lecturas</button><button data-go="t-ejercicios">Ejercicios</button><button data-go="t-econland">Simulador Econland</button><button data-go="t-entregas">Entregas</button></div></div></header>
     <section class="tsec" id="t-lecturas" style="border-top:0;padding-top:0">
       <div class="h2"><div class="num">01</div><h2>Lecturas<small>Textos enviados para el curso.</small></h2></div>
       <div id="lects"></div>
@@ -381,8 +386,12 @@
       <div class="h2"><div class="num">02</div><h2>Ejercicios<small>Prácticas resueltas por el grupo.</small></h2></div>
       <div id="exs"></div>
     </section>
+    <section class="tsec" id="t-econland">
+      <div class="h2"><div class="num">03</div><h2>Simulador Econland<small>Informes de gestión de las simulaciones, por equipo.</small></h2></div>
+      <div id="econ"></div>
+    </section>
     <section class="tsec" id="t-entregas">
-      <div class="h2"><div class="num">03</div><h2>Entregas<small>Trabajos entregados, en orden cronológico.</small></h2></div>
+      <div class="h2"><div class="num">04</div><h2>Entregas<small>Trabajos entregados, en orden cronológico.</small></h2></div>
       <div id="works"></div>
     </section>
   </div>
@@ -420,7 +429,7 @@
               ['simulador','Simulador','Simulador','<svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>'],
               ['trabajos','Trabajos','Trabajos','<svg viewBox="0 0 24 24"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3M3 12h18"/></svg>'],
               ['columnas','Columnas','Columnas','<svg viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 01-2-2z"/><path d="M17 9h3v8a2 2 0 01-2 2"/><path d="M7 9h7M7 12h7M7 15h4"/></svg>']];
-  const ALIAS={lecturas:'t-lecturas',ejercicios:'t-ejercicios',entregas:'t-entregas'};
+  const ALIAS={lecturas:'t-lecturas',ejercicios:'t-ejercicios',econland:'t-econland',entregas:'t-entregas'};
   function goSection(sec){const el=$(sec);if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),60);}
   function route(h,push){if(ALIAS[h]){show('trabajos',push);goSection(ALIAS[h]);return true;}if(TABS.some(t=>t[0]===h)){show(h,push);return true;}return false;}
   function show(id,push=true){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+id));
@@ -561,11 +570,14 @@
     const ls=c.lecturas||[];
     const fileA=f=>`<a class="rfile" href="${esc(f.archivo)}" target="_blank" rel="noopener"${/\.pdf$/i.test(f.archivo)?'':' download'}><span class="ico">${esc((f.archivo.split('.').pop()||'').toUpperCase())}</span><span class="tx"><small>${esc(f.tipo||'Archivo')}</small><b>${esc(f.nombre||'')}</b>${f.detalle?`<em>${esc(f.detalle)}</em>`:''}</span><span class="go" aria-hidden="true">${/\.pdf$/i.test(f.archivo)?'↗':'↓'}</span></a>`;
     const rcard=(l,i,tipo)=>{const fs=l.archivos||(l.archivo?[{tipo:tipo,nombre:l.titulo,archivo:l.archivo}]:[]);
-      return `<div class="rcard"><div class="id">${String(i+1).padStart(2,'0')}</div><h3>${esc(l.titulo)}</h3>${l.autor?`<div class="by">${esc(l.autor)}</div>`:''}${l.descripcion?`<p>${esc(l.descripcion)}</p>`:''}<div class="rfiles">${fs.map(fileA).join('')}</div></div>`;};
+      return `<div class="rcard"><div class="id">${String(i+1).padStart(2,'0')}</div><h3>${esc(l.titulo)}</h3>${l.autor?`<div class="by">${esc(l.autor)}</div>`:''}${l.meta?`<div class="by">${esc(l.meta)}</div>`:''}${l.descripcion?`<p>${esc(l.descripcion)}</p>`:''}<div class="rfiles">${fs.map(fileA).join('')}</div></div>`;};
     $('lects').innerHTML=ls.length?`<div class="rgrid">${ls.map((l,i)=>rcard(l,i,'Lectura')).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las lecturas del curso.</div>';
     // 5 · Ejercicios
     const es=c.ejercicios||[];
     $('exs').innerHTML=es.length?`<div class="rgrid">${es.map((e,i)=>rcard(e,i,'Práctica')).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las prácticas resueltas en clase.</div>';
+    // 6 · Simulador Econland (por equipo)
+    const eg=((c.econland||{}).grupos)||[];
+    $('econ').innerHTML=eg.length?eg.map(g=>{const ss=g.simulaciones||[];return `<div class="grp"><div class="grp-h"><span class="lbl">Equipo</span><h3>${esc(g.nombre)}</h3><span class="n">${ss.length} ${ss.length===1?'simulación':'simulaciones'}</span></div><div class="rgrid">${ss.map((s,i)=>rcard(s,i,'Presentación')).join('')}</div></div>`;}).join(''):'<div class="empty">Próximamente: aquí estarán las simulaciones de Econland.</div>';
     $('exs').querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>{const w=b.closest('.work');w.classList.toggle('open');b.textContent=w.classList.contains('open')?'Ocultar solución':'Ver solución';}));
     // 7 · Trabajos
     const ws=(c.trabajos||[]).slice().sort((a,b)=>b.fecha.localeCompare(a.fecha));
