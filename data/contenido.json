@@ -1031,6 +1031,7 @@
     "grupos": [
       {
         "nombre": "Michelle Griffiths y Eliana Vera",
+        "unidad": "presentaciones",
         "simulaciones": [
           {
             "titulo": "Simulación 1",
@@ -1086,6 +1087,69 @@
                 "nombre": "Simulación 3 (PowerPoint)",
                 "detalle": "Descargar la presentación · PPTX",
                 "archivo": "econland/michelle-eliana/simulacion-3.pptx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Ofelia Plata",
+        "unidad": "informes",
+        "simulaciones": [
+          {
+            "titulo": "Informe 1",
+            "meta": "Simulación macroeconómica · Años 2 y 3",
+            "descripcion": "Partiendo de una economía desacelerada (0,5% de crecimiento en el año 1), se aplicó una política monetaria expansiva y luego un estímulo fiscal y monetario combinado. El PIB creció 5,2% y 5,7%, y el desempleo bajó de 5,8% a 2,6%, aunque la inflación subió a 3,9%.",
+            "archivos": [
+              {
+                "tipo": "Informe",
+                "nombre": "Informe 1 · Econland, años 2 y 3",
+                "detalle": "Ver en el navegador · PDF, 6 páginas",
+                "archivo": "econland/ofelia-plata/informe-1.pdf"
+              },
+              {
+                "tipo": "Original",
+                "nombre": "Informe 1 (Word)",
+                "detalle": "Descargar el documento · DOCX",
+                "archivo": "econland/ofelia-plata/informe-1.docx"
+              }
+            ]
+          },
+          {
+            "titulo": "Informe 2",
+            "meta": "Simulación macroeconómica · Años 1 y 2",
+            "descripcion": "Una baja de la tasa de interés y del impuesto corporativo no dio resultado a corto plazo: el crecimiento cayó a 1,4% y el desempleo subió a 5,5%. Con más gasto público en el año 2 y el efecto retardado de esas medidas, la economía creció 6,0%, el desempleo bajó a menos de 4% y la inflación a 1,8%.",
+            "archivos": [
+              {
+                "tipo": "Informe",
+                "nombre": "Informe 2 · Econland, años 1 y 2",
+                "detalle": "Ver en el navegador · PDF, 6 páginas",
+                "archivo": "econland/ofelia-plata/informe-2.pdf"
+              },
+              {
+                "tipo": "Original",
+                "nombre": "Informe 2 (Word)",
+                "detalle": "Descargar el documento · DOCX",
+                "archivo": "econland/ofelia-plata/informe-2.docx"
+              }
+            ]
+          },
+          {
+            "titulo": "Informe 3",
+            "meta": "Simulación macroeconómica · Años 1 a 4",
+            "descripcion": "Más gasto en infraestructura llevó el crecimiento a 6,7% en el año 1, pero subir el impuesto a la renta de 24% a 27% hundió la economía a −2% en el año 2. Una expansión fiscal la recuperó al 4% en el año 3; en el año 4, bajar la tasa de interés no evitó una desaceleración a menos de 1%.",
+            "archivos": [
+              {
+                "tipo": "Informe",
+                "nombre": "Informe 3 · Econland, años 1 a 4",
+                "detalle": "Ver en el navegador · PDF, 8 páginas",
+                "archivo": "econland/ofelia-plata/informe-3.pdf"
+              },
+              {
+                "tipo": "Original",
+                "nombre": "Informe 3 (Word)",
+                "detalle": "Descargar el documento · DOCX",
+                "archivo": "econland/ofelia-plata/informe-3.docx"
               }
             ]
           }

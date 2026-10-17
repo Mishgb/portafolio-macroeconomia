@@ -387,7 +387,7 @@
       <div id="exs"></div>
     </section>
     <section class="tsec" id="t-econland">
-      <div class="h2"><div class="num">03</div><h2>Simulador Econland<small>Informes de gestión de las simulaciones, por equipo.</small></h2></div>
+      <div class="h2"><div class="num">03</div><h2>Simulador Econland<small>Presentaciones e informes de las simulaciones, por equipo.</small></h2></div>
       <div id="econ"></div>
     </section>
     <section class="tsec" id="t-entregas">
@@ -577,7 +577,7 @@
     $('exs').innerHTML=es.length?`<div class="rgrid">${es.map((e,i)=>rcard(e,i,'Práctica')).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las prácticas resueltas en clase.</div>';
     // 6 · Simulador Econland (por equipo)
     const eg=((c.econland||{}).grupos)||[];
-    $('econ').innerHTML=eg.length?eg.map(g=>{const ss=g.simulaciones||[];return `<div class="grp"><div class="grp-h"><span class="lbl">Equipo</span><h3>${esc(g.nombre)}</h3><span class="n">${ss.length} ${ss.length===1?'simulación':'simulaciones'}</span></div><div class="rgrid">${ss.map((s,i)=>rcard(s,i,'Presentación')).join('')}</div></div>`;}).join(''):'<div class="empty">Próximamente: aquí estarán las simulaciones de Econland.</div>';
+    $('econ').innerHTML=eg.length?eg.map(g=>{const ss=g.simulaciones||[];return `<div class="grp"><div class="grp-h"><span class="lbl">Equipo</span><h3>${esc(g.nombre)}</h3><span class="n">${ss.length} ${esc(g.unidad||'trabajos')}</span></div><div class="rgrid">${ss.map((s,i)=>rcard(s,i,'Presentación')).join('')}</div></div>`;}).join(''):'<div class="empty">Próximamente: aquí estarán las simulaciones de Econland.</div>';
     $('exs').querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>{const w=b.closest('.work');w.classList.toggle('open');b.textContent=w.classList.contains('open')?'Ocultar solución':'Ver solución';}));
     // 7 · Trabajos
     const ws=(c.trabajos||[]).slice().sort((a,b)=>b.fecha.localeCompare(a.fecha));
