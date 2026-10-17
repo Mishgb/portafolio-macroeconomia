@@ -1216,8 +1216,9 @@
     },
     {
       "nombre": "Ofelia Plata Patana",
-      "perfil": "",
-      "foto": ""
+      "perfil": "Empresaria, administradora de formación. Actualmente ocupa un cargo de responsabilidad en su sector, donde participa en la toma de decisiones coyunturales.",
+      "foto": "assets/equipo/ofelia-plata.jpg",
+      "cargo": "Empresaria · Administradora"
     },
     {
       "nombre": "Eliana Hilda Vera Espinoza",
