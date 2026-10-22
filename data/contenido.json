@@ -1025,6 +1025,18 @@
           "archivo": "ejercicios/05-paquete-de-reactivacion.pdf"
         }
       ]
+    },
+    {
+      "titulo": "Diezelaso",
+      "descripcion": "Práctica resuelta a mano sobre el aumento del precio del diésel y la inflación: el cálculo del alza (83,16%), su traspaso a los fletes y su impacto directo en el IPC, la posición de los distintos actores, el papel de las expectativas y la lectura monetarista y estructuralista del shock.",
+      "archivos": [
+        {
+          "tipo": "Práctica",
+          "nombre": "El aumento del precio del diésel y la inflación",
+          "detalle": "Resuelta a mano · PDF, 6 páginas",
+          "archivo": "ejercicios/06-diezelaso.pdf"
+        }
+      ]
     }
   ],
   "econland": {
