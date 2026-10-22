@@ -1166,6 +1166,31 @@
             ]
           }
         ]
+      },
+      {
+        "nombre": "Henning Aguilar y Pablo Jaldín",
+        "unidad": "presentaciones",
+        "simulaciones": [
+          {
+            "titulo": "Los tres niveles en un resumen",
+            "meta": "Base Case, Rollercoaster y Stagnation · mejor promedio 100, 89 y 100",
+            "descripcion": "Simulación definitiva en los tres niveles de dificultad, con tres intentos por nivel. El mejor promedio fue 100 en el básico, 89 en el intermedio, donde la crisis mundial obligó a elegir entre crecimiento y déficit, y 100 en el difícil. Incluye las reglas estimadas para inflación, desempleo, crecimiento y déficit, y cinco lecciones de política macroeconómica.",
+            "archivos": [
+              {
+                "tipo": "Presentación",
+                "nombre": "Econland: los tres niveles en un resumen",
+                "detalle": "Ver en el navegador · PDF, 12 láminas",
+                "archivo": "econland/henning-pablo/resumen-tres-niveles.pdf"
+              },
+              {
+                "tipo": "Original",
+                "nombre": "Los tres niveles en un resumen (PowerPoint)",
+                "detalle": "Descargar la presentación · PPTX",
+                "archivo": "econland/henning-pablo/resumen-tres-niveles.pptx"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
