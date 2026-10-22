@@ -52,6 +52,13 @@
   .mcard h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:0}
   .mcard p{font-size:13.5px}
   .mcard p.lead{font-size:15.5px;font-weight:700;color:var(--text);line-height:1.35}
+  .prof{display:flex;align-items:center;gap:14px;margin:2px 0 4px}
+  .prof .pph{width:76px;height:76px;flex:none;border-radius:50%;overflow:hidden;background:var(--bg2);border:3px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+  .prof .pph img{width:100%;height:100%;object-fit:cover;display:block}
+  .edu{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .edu li{display:flex;flex-direction:column;gap:1px;padding-left:12px;border-left:2px solid var(--line)}
+  .edu b{font-size:13.5px;font-weight:700;color:var(--text);line-height:1.35}
+  .edu span{font-size:12.5px;color:var(--muted);line-height:1.4}
   .team{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:4px;align-items:stretch}
   .mem{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
   .mem .ph{width:84px;height:84px;border-radius:50%;overflow:hidden;background:var(--bg2);border:3px solid var(--card);box-shadow:0 0 0 1px var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:6px}
@@ -527,7 +534,7 @@
     const card=(n,t,body,cls='')=>`<div class="mcard ${cls}"><div class="id">${n}</div><h3>${t}</h3>${body}</div>`;
     $('mcards').innerHTML=
       card('01','Curso',`<p class="lead">${esc(C.nombre||'')}</p>${kv(C.datos||[])}`)+
-      card('02','Profesor',`<p class="lead">${esc(P.nombre||'')}</p>${kv(P.datos||[])}`);
+      card('02','Profesor',`<div class="prof">${P.foto?`<div class="pph"><img src="${esc(P.foto)}" alt="Foto de ${esc(P.nombre||'')}" width="600" height="600"></div>`:''}<p class="lead">${esc(P.nombre||'')}</p></div>${(P.formacion||[]).length?`<div class="sub-h" style="margin:4px 0 2px">Formación</div><ul class="edu">${P.formacion.map(f=>`<li><b>${esc(f.titulo)}</b><span>${esc(f.institucion||'')}</span></li>`).join('')}</ul><div class="sub-h" style="margin:6px 0 2px">Contacto</div>`:''}${kv(P.datos||[])}`);
     const avatar='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M4.5 20c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5"/></svg>';
     const mem=m=>{m=typeof m==='string'?{nombre:m}:m;return `<div class="mem"><div class="ph">${m.foto?`<img src="${esc(m.foto)}" alt="Foto de ${esc(m.nombre)}" loading="lazy" width="600" height="600">`:avatar}</div><h4>${esc(m.nombre)}</h4>${m.cargo?`<div class="cargo">${esc(m.cargo)}</div>`:''}${m.perfil?m.perfil.split(/\n\s*\n/).map(t=>`<p>${esc(t)}</p>`).join(''):'<p class="pend">Perfil por completar</p>'}</div>`;};
     $('mequipo').innerHTML=card('03','Nosotros',`<div class="team">${integ.map(mem).join('')}</div>`,'wide');

@@ -36,6 +36,25 @@
     },
     "profesor": {
       "nombre": "Gonzalo Chávez A.",
+      "foto": "assets/equipo/gonzalo-chavez.jpg",
+      "formacion": [
+        {
+          "titulo": "Estudios doctorales en Economía",
+          "institucion": "University of Manchester, Reino Unido"
+        },
+        {
+          "titulo": "Máster en Políticas Públicas",
+          "institucion": "Harvard University"
+        },
+        {
+          "titulo": "Máster en Políticas Públicas",
+          "institucion": "Columbia University, Nueva York"
+        },
+        {
+          "titulo": "Máster en Economía y Relaciones Internacionales",
+          "institucion": "PUC, Río de Janeiro, Brasil"
+        }
+      ],
       "datos": [
         [
           "Correo",
