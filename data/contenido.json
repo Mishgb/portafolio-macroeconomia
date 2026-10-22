@@ -1056,6 +1056,24 @@
           "archivo": "ejercicios/06-diezelaso.pdf"
         }
       ]
+    },
+    {
+      "titulo": "Informe técnico del FMI",
+      "descripcion": "Modelo en Excel que simula un programa alternativo al Acuerdo Ampliado (SAF) del FMI con Bolivia para 2026–2029. Compara la senda del FMI con seis escenarios (fiscal gradual, crédito productivo, banda cambiaria, reforma tributaria progresiva, protección social y un programa integrado), evalúa las cinco metas de prueba a diciembre de 2026, simula shocks y responde las objeciones del Fondo. El programa alternativo integrado cumple las cinco metas y obtiene el mayor índice de eficiencia (85,9 de 100).",
+      "archivos": [
+        {
+          "tipo": "Vista del modelo",
+          "nombre": "Bolivia: ¿otro programa de estabilización es posible?",
+          "detalle": "Ver en el navegador · PDF, 12 páginas: portada, dashboard, metas, evaluación y misiones",
+          "archivo": "ejercicios/07-informe-tecnico-fmi.pdf"
+        },
+        {
+          "tipo": "Modelo interactivo",
+          "nombre": "Informe técnico del FMI (Excel)",
+          "detalle": "Descargar para elegir escenarios y shocks · XLSX",
+          "archivo": "ejercicios/07-informe-tecnico-fmi.xlsx"
+        }
+      ]
     }
   ],
   "econland": {
