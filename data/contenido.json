@@ -1043,7 +1043,6 @@
     "grupos": [
       {
         "nombre": "Michelle Griffiths y Eliana Vera",
-        "unidad": "presentaciones",
         "simulaciones": [
           {
             "titulo": "Simulación 1",
@@ -1106,7 +1105,6 @@
       },
       {
         "nombre": "Ofelia Plata",
-        "unidad": "informes",
         "simulaciones": [
           {
             "titulo": "Informe 1",
@@ -1164,12 +1162,30 @@
                 "archivo": "econland/ofelia-plata/informe-3.docx"
               }
             ]
+          },
+          {
+            "titulo": "Stagnation: siete años de gestión",
+            "meta": "Escenario Stagnation · años 0 a 7",
+            "descripcion": "La economía creció 15,7% acumulado, pero cerró el año 7 con crecimiento de 0,7%, desempleo de 5,2% y déficit fiscal persistente. La deuda bajó de 60,0% a 53,4% del PIB porque el PIB nominal creció más rápido que la deuda, y la aprobación promedio fue de 69 puntos.",
+            "archivos": [
+              {
+                "tipo": "Presentación",
+                "nombre": "Stagnation: siete años de gestión en Econland",
+                "detalle": "Ver en el navegador · PDF, 9 láminas",
+                "archivo": "econland/ofelia-plata/stagnation.pdf"
+              },
+              {
+                "tipo": "Original",
+                "nombre": "Stagnation (PowerPoint)",
+                "detalle": "Descargar la presentación · PPTX",
+                "archivo": "econland/ofelia-plata/stagnation.pptx"
+              }
+            ]
           }
         ]
       },
       {
         "nombre": "Henning Aguilar y Pablo Jaldín",
-        "unidad": "presentaciones",
         "simulaciones": [
           {
             "titulo": "Los tres niveles en un resumen",

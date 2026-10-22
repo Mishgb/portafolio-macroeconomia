@@ -576,8 +576,10 @@
     const es=c.ejercicios||[];
     $('exs').innerHTML=es.length?`<div class="rgrid">${es.map((e,i)=>rcard(e,i,'Práctica')).join('')}</div>`:'<div class="empty">Próximamente: aquí estarán las prácticas resueltas en clase.</div>';
     // 6 · Simulador Econland (por equipo)
+    const ECON_U={'Presentación':['presentación','presentaciones'],'Informe':['informe','informes']};
+    const econCount=ss=>{const n={};ss.forEach(x=>{const t=((x.archivos||[])[0]||{}).tipo||'';n[t]=(n[t]||0)+1;});return Object.entries(n).map(([t,k])=>{const u=ECON_U[t]||['trabajo','trabajos'];return k+' '+u[k===1?0:1];}).join(' · ');};
     const eg=((c.econland||{}).grupos)||[];
-    $('econ').innerHTML=eg.length?eg.map(g=>{const ss=g.simulaciones||[];return `<div class="grp"><div class="grp-h"><span class="lbl">Equipo</span><h3>${esc(g.nombre)}</h3><span class="n">${ss.length} ${esc(ss.length===1?({presentaciones:'presentación',informes:'informe'}[g.unidad]||'trabajo'):(g.unidad||'trabajos'))}</span></div><div class="rgrid">${ss.map((s,i)=>rcard(s,i,'Presentación')).join('')}</div></div>`;}).join(''):'<div class="empty">Próximamente: aquí estarán las simulaciones de Econland.</div>';
+    $('econ').innerHTML=eg.length?eg.map(g=>{const ss=g.simulaciones||[];return `<div class="grp"><div class="grp-h"><span class="lbl">Equipo</span><h3>${esc(g.nombre)}</h3><span class="n">${esc(econCount(ss))}</span></div><div class="rgrid">${ss.map((s,i)=>rcard(s,i,'Presentación')).join('')}</div></div>`;}).join(''):'<div class="empty">Próximamente: aquí estarán las simulaciones de Econland.</div>';
     $('exs').querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>{const w=b.closest('.work');w.classList.toggle('open');b.textContent=w.classList.contains('open')?'Ocultar solución':'Ver solución';}));
     // 7 · Trabajos
     const ws=(c.trabajos||[]).slice().sort((a,b)=>b.fecha.localeCompare(a.fecha));
