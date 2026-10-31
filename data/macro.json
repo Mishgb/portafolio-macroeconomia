@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-10-30T18:08:09+00:00",
+ "actualizado": "2026-10-31T17:19:05+00:00",
  "fuentes": {
   "ipc": "INE (IPC base 2016=100), republicado por BCB · https://www.bcb.gob.bo/?q=indicadores_inflacion",
   "tipo_cambio": "BCB · Tabla de cotizaciones · https://www.bcb.gob.bo/?q=cotizaciones_tc",
@@ -440,147 +440,147 @@
   }
  ],
  "tipo_cambio": {
-  "fecha": "2026-10-30",
-  "tabla": "204-26",
-  "oficial_bs_usd": 12.11,
+  "fecha": "2026-10-31",
+  "tabla": "205-26",
+  "oficial_bs_usd": 12.09,
   "monedas": {
    "ARS": {
     "pais": "ARGENTINA",
     "moneda": "PESO",
     "bs_por_unidad": 0.00787,
-    "unidades_por_usd": 1538.8594
+    "unidades_por_usd": 1536.718
    },
    "AUD": {
     "pais": "AUSTRALIA",
     "moneda": "DÓLAR",
-    "bs_por_unidad": 8.51695,
-    "unidades_por_usd": 1.42187
+    "bs_por_unidad": 8.49805,
+    "unidades_por_usd": 1.42268
    },
    "BRL": {
     "pais": "BRASIL",
     "moneda": "REAL",
-    "bs_por_unidad": 2.23518,
-    "unidades_por_usd": 5.4179
+    "bs_por_unidad": 2.21627,
+    "unidades_por_usd": 5.4551
    },
    "CAD": {
     "pais": "CANADÁ",
     "moneda": "DÓLAR",
-    "bs_por_unidad": 8.66361,
-    "unidades_por_usd": 1.3978
+    "bs_por_unidad": 8.65674,
+    "unidades_por_usd": 1.3966
    },
    "CLP": {
     "pais": "CHILE",
     "moneda": "PESO",
-    "bs_por_unidad": 0.01222,
-    "unidades_por_usd": 991.18
+    "bs_por_unidad": 0.01218,
+    "unidades_por_usd": 992.93
    },
    "COP": {
     "pais": "COLOMBIA",
     "moneda": "PESO",
-    "bs_por_unidad": 0.00382,
-    "unidades_por_usd": 3169.63
+    "bs_por_unidad": 0.00378,
+    "unidades_por_usd": 3194.37
    },
    "KRW": {
     "pais": "COREA DEL SUR",
     "moneda": "WON",
-    "bs_por_unidad": 0.00904,
-    "unidades_por_usd": 1339.62
+    "bs_por_unidad": 0.00907,
+    "unidades_por_usd": 1333.56
    },
    "AED": {
     "pais": "EMIRATOS ÁRABES",
     "moneda": "DIRHAM",
-    "bs_por_unidad": 3.29703,
+    "bs_por_unidad": 3.29159,
     "unidades_por_usd": 3.673
    },
    "HKD": {
     "pais": "HONG KONG",
     "moneda": "DÓLAR",
-    "bs_por_unidad": 1.54342,
-    "unidades_por_usd": 7.8462
+    "bs_por_unidad": 1.54133,
+    "unidades_por_usd": 7.8439
    },
    "INR": {
     "pais": "INDIA",
     "moneda": "RUPIA",
-    "bs_por_unidad": 0.12713,
-    "unidades_por_usd": 95.2562
+    "bs_por_unidad": 0.12732,
+    "unidades_por_usd": 94.955
    },
    "JPY": {
     "pais": "JAPÓN",
     "moneda": "YEN",
-    "bs_por_unidad": 0.0767,
-    "unidades_por_usd": 157.89
+    "bs_por_unidad": 0.07674,
+    "unidades_por_usd": 157.54
    },
    "MXN": {
     "pais": "MÉXICO",
     "moneda": "PESO",
-    "bs_por_unidad": 0.64276,
-    "unidades_por_usd": 18.8407
+    "bs_por_unidad": 0.64266,
+    "unidades_por_usd": 18.8125
    },
    "NOK": {
     "pais": "NORUEGA",
     "moneda": "CORONA",
-    "bs_por_unidad": 1.30776,
-    "unidades_por_usd": 9.2601
+    "bs_por_unidad": 1.3143,
+    "unidades_por_usd": 9.1988
    },
    "PYG": {
     "pais": "PARAGUAY",
     "moneda": "GUARANI",
-    "bs_por_unidad": 0.00203,
-    "unidades_por_usd": 5962.5
+    "bs_por_unidad": 0.00204,
+    "unidades_por_usd": 5919.9
    },
    "PEN": {
     "pais": "PERÚ",
     "moneda": "NUEVO SOL",
-    "bs_por_unidad": 3.50071,
-    "unidades_por_usd": 3.4593
+    "bs_por_unidad": 3.48586,
+    "unidades_por_usd": 3.4683
    },
    "GBP": {
     "pais": "REINO UNIDO",
     "moneda": "LIBRA",
-    "bs_por_unidad": 16.18854,
-    "unidades_por_usd": 0.74806
+    "bs_por_unidad": 16.19102,
+    "unidades_por_usd": 0.74671
    },
    "CNY": {
     "pais": "REP. POPULAR CHINA",
     "moneda": "YUAN RENMINBI",
-    "bs_por_unidad": 1.81802,
-    "unidades_por_usd": 6.6611
+    "bs_por_unidad": 1.81687,
+    "unidades_por_usd": 6.6543
    },
    "CNH": {
     "pais": "REP. POPULAR CHINA OFFSHORE",
     "moneda": "YUAN RENMINBI OFFSHORE",
-    "bs_por_unidad": 1.81927,
-    "unidades_por_usd": 6.6565
+    "bs_por_unidad": 1.81706,
+    "unidades_por_usd": 6.6536
    },
    "SEK": {
     "pais": "SUECIA",
     "moneda": "CORONA",
-    "bs_por_unidad": 1.22908,
-    "unidades_por_usd": 9.8529
+    "bs_por_unidad": 1.23116,
+    "unidades_por_usd": 9.82
    },
    "CHF": {
     "pais": "SUIZA",
     "moneda": "FRANCO",
-    "bs_por_unidad": 14.66102,
-    "unidades_por_usd": 0.826
+    "bs_por_unidad": 14.66877,
+    "unidades_por_usd": 0.8242
    },
    "EUR": {
     "pais": "UNIÓN EUROPEA",
     "moneda": "EURO",
-    "bs_por_unidad": 13.52559,
-    "unidades_por_usd": 0.89534
+    "bs_por_unidad": 13.49843,
+    "unidades_por_usd": 0.89566
    },
    "UYU": {
     "pais": "URUGUAY",
     "moneda": "PESO",
-    "bs_por_unidad": 0.30148,
-    "unidades_por_usd": 40.169
+    "bs_por_unidad": 0.3009,
+    "unidades_por_usd": 40.18
    }
   }
  },
  "ufv": {
-  "fecha": "2026-10-30",
-  "valor": 3.36581
+  "fecha": "2026-10-31",
+  "valor": 3.36631
  },
  "tc_historico": [
   {
@@ -762,6 +762,10 @@
   {
    "fecha": "2026-10-30",
    "oficial": 12.11
+  },
+  {
+   "fecha": "2026-10-31",
+   "oficial": 12.09
   }
  ],
  "errores": []
