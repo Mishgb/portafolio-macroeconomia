@@ -1,20 +1,11 @@
 {
- "actualizado": "2026-11-08T17:59:56+00:00",
+ "actualizado": "2026-11-09T22:37:05+00:00",
  "fuentes": {
   "ipc": "INE (IPC base 2016=100), republicado por BCB · https://www.bcb.gob.bo/?q=indicadores_inflacion",
   "tipo_cambio": "BCB · Tabla de cotizaciones · https://www.bcb.gob.bo/?q=cotizaciones_tc",
   "ufv": "BCB · Unidad de Fomento de Vivienda · https://www.bcb.gob.bo/?q=servicios/ufv/datos_estadisticos"
  },
  "ipc": [
-  {
-   "periodo": "2022-09",
-   "mes": "Septiembre",
-   "anio": 2022,
-   "indice": 107.38,
-   "mensual": 0.14,
-   "acumulada": 1.76,
-   "interanual": 1.89
-  },
   {
    "periodo": "2022-10",
    "mes": "Octubre",
@@ -437,10 +428,19 @@
    "mensual": 0.85,
    "acumulada": 3.88,
    "interanual": 5.7
+  },
+  {
+   "periodo": "2026-10",
+   "mes": "Octubre",
+   "anio": 2026,
+   "indice": 156.01,
+   "mensual": 2.07,
+   "acumulada": 6.03,
+   "interanual": 7.08
   }
  ],
  "tipo_cambio": {
-  "fecha": "2026-11-08",
+  "fecha": "2026-11-09",
   "tabla": "209-26",
   "oficial_bs_usd": 11.81,
   "monedas": {
@@ -579,8 +579,8 @@
   }
  },
  "ufv": {
-  "fecha": "2026-11-08",
-  "valor": 3.37047
+  "fecha": "2026-11-09",
+  "valor": 3.37099
  },
  "tc_historico": [
   {
@@ -797,6 +797,10 @@
   },
   {
    "fecha": "2026-11-08",
+   "oficial": 11.81
+  },
+  {
+   "fecha": "2026-11-09",
    "oficial": 11.81
   }
  ],
